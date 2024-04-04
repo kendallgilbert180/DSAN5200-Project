@@ -8,6 +8,10 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - href: data.ipynb 
+        text: Data Gathering 
+      - href: data_cleaning.ipynb 
+        text: Data Cleaning
 
 format:
   html:
