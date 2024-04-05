@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5200 Project - Cleaning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">5200 Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./cleaning.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Data Cleaning</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cleaning-and-tidying-datasets" id="toc-cleaning-and-tidying-datasets" class="nav-link active" data-scroll-target="#cleaning-and-tidying-datasets">Cleaning and Tidying Datasets</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cleaning</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="cleaning-and-tidying-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="cleaning-and-tidying-datasets">Cleaning and Tidying Datasets</h2>
+<p>Fertility Data set</p>
+<div class="cell" data-execution_count="72">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fertility </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fertility <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/Fertility.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>fertility <span class="op">=</span> fertility.rename(columns<span class="op">=</span>{<span class="st">'Year'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>fertility <span class="op">=</span> fertility.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fertility <span class="op">=</span> pd.melt(fertility, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'fertility_rate'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Joining country and year to make easy when merging</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fertility[<span class="st">'Country_Year'</span>] <span class="op">=</span> fertility[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> fertility[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fertility <span class="op">=</span> fertility.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>fertility</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_73916/536427820.py:5: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  fertility = fertility.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="72">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">fertility_rate</th>
+<th data-quarto-table-cell-role="th">Country_Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.9</td>
+<td>Australia_1990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1.46</td>
+<td>Austria_1990</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.62</td>
+<td>Belgium_1990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1.71</td>
+<td>Canada_1990</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2.58</td>
+<td>Chile_1990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1645</td>
+<td>..</td>
+<td>Indonesia_2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1646</td>
+<td>..</td>
+<td>Malta_2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1647</td>
+<td>..</td>
+<td>Romania_2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1648</td>
+<td>..</td>
+<td>Russia_2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1649</td>
+<td>..</td>
+<td>South Africa_2022</td>
+</tr>
+</tbody>
+</table>
+
+<p>1650 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<p>GDP Dataset</p>
+<div class="cell" data-execution_count="73">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Importing Data into Python Environment</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/GDP.csv"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> gdp.rename(columns<span class="op">=</span>{<span class="st">'Time'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> gdp.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> pd.melt(gdp, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'gdp'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'Country_Year'</span>] <span class="op">=</span> gdp[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> gdp[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> gdp.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>gdp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_73916/262549689.py:4: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  gdp = gdp.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="73">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">gdp</th>
+<th data-quarto-table-cell-role="th">Country_Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>539.15</td>
+<td>Australia_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>235.38</td>
+<td>Austria_2000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>284.86</td>
+<td>Belgium_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>901</td>
+<td>Canada_2000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>145.36</td>
+<td>Chile_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1075</td>
+<td>32,775.12</td>
+<td>China_2023</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1076</td>
+<td>..</td>
+<td>India_2023</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1077</td>
+<td>4,378.31</td>
+<td>Indonesia_2023</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1078</td>
+<td>..</td>
+<td>Russia_2023</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1079</td>
+<td>..</td>
+<td>South Africa_2023</td>
+</tr>
+</tbody>
+</table>
+
+<p>1080 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<p>Immigration Inflow Dataset</p>
+<div class="cell" data-execution_count="74">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Importing Data into Python Environment</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>immigration <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/immigration.csv"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>new_header <span class="op">=</span> immigration.iloc[<span class="dv">0</span>] <span class="co">#Grabbing the first row for the header</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>mpa <span class="op">=</span> immigration[<span class="dv">1</span>:] <span class="co">#Taking the data less the header row</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>immigration.columns <span class="op">=</span> new_header <span class="co">#Setting the header row as the df header</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>immigration <span class="op">=</span> immigration.rename(columns<span class="op">=</span>{<span class="st">'Year'</span>: <span class="st">'Country'</span>, <span class="fl">2000.0</span>: <span class="dv">2000</span>, <span class="fl">2005.0</span>: <span class="dv">2005</span>, <span class="fl">2010.0</span>: <span class="dv">2010</span>, <span class="fl">2011.0</span>: <span class="dv">2011</span>, <span class="fl">2012.0</span>: <span class="dv">2012</span>, <span class="fl">2013.0</span>: <span class="dv">2013</span>, <span class="fl">2014.0</span>: <span class="dv">2014</span>, <span class="fl">2015.0</span>: <span class="dv">2015</span>,<span class="fl">2016.0</span>: <span class="dv">2016</span>,<span class="fl">2017.0</span>: <span class="dv">2017</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>                          <span class="fl">2018.0</span>: <span class="dv">2018</span>,<span class="fl">2019.0</span>: <span class="dv">2019</span>,<span class="fl">2020.0</span>: <span class="dv">2020</span>,})</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>immigration <span class="op">=</span> immigration.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>immigration <span class="op">=</span> pd.melt(immigration, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'immigration_rate'</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>immigration[<span class="st">'Country_Year'</span>] <span class="op">=</span> immigration[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> immigration[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>immigration <span class="op">=</span> immigration.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>immigration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_73916/31041099.py:10: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  immigration = immigration.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">immigration_rate</th>
+<th data-quarto-table-cell-role="th">Country_Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2000</td>
+<td>Year_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>107148</td>
+<td>Australia_2000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>65954</td>
+<td>Austria_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>57295</td>
+<td>Belgium_2000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>227455</td>
+<td>Canada_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">846</td>
+<td>..</td>
+<td>Switzerland_2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">847</td>
+<td>..</td>
+<td>Türkiye_2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">848</td>
+<td>..</td>
+<td>United Kingdom_2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">849</td>
+<td>..</td>
+<td>United States_2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">850</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>851 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<p>Infant Mortality</p>
+<div class="cell" data-execution_count="75">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>i_m <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/infant_mortality.csv"</span>, header<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>i_m <span class="op">=</span> i_m.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>i_m <span class="op">=</span> i_m.rename(columns<span class="op">=</span>{<span class="st">'Year'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>i_m <span class="op">=</span> pd.melt(i_m, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'mortality_rate'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>i_m[<span class="st">'Country_Year'</span>] <span class="op">=</span> i_m[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> i_m[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>i_m <span class="op">=</span> i_m.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>i_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_73916/2863281320.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  i_m = i_m.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="75">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">mortality_rate</th>
+<th data-quarto-table-cell-role="th">Country_Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>8.2</td>
+<td>Australia_1990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>7.8</td>
+<td>Austria_1990</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>8</td>
+<td>Belgium_1990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>6.8</td>
+<td>Canada_1990</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>16</td>
+<td>Chile_1990</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1315</td>
+<td>..</td>
+<td>China_2019</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1316</td>
+<td>..</td>
+<td>India_2019</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1317</td>
+<td>..</td>
+<td>Indonesia_2019</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1318</td>
+<td>..</td>
+<td>Russia_2019</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1319</td>
+<td>..</td>
+<td>South Africa_2019</td>
+</tr>
+</tbody>
+</table>
+
+<p>1320 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<p>NEt National Income Dataset</p>
+<div class="cell" data-execution_count="81">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/NNI.csv"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> nni.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> nni.rename(columns<span class="op">=</span>{<span class="st">'Year'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> pd.melt(nni, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'nni'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>nni[<span class="st">'Country_Year'</span>] <span class="op">=</span> nni[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> nni[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> nni.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>nni</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_73916/3140687827.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  nni = nni.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="81">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">nni</th>
+<th data-quarto-table-cell-role="th">Country_Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>31,878.30</td>
+<td>Australia_2003</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>37,926.00</td>
+<td>Austria_2003</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>12,755.70</td>
+<td>Chile_2003</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>19,612.70</td>
+<td>Czechia_2003</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>36,006.90</td>
+<td>Denmark_2003</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">675</td>
+<td>..</td>
+<td>United Kingdom_2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">676</td>
+<td>35,081.90</td>
+<td>Euro area_2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">677</td>
+<td>33,795.30</td>
+<td>European Union_2022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">678</td>
+<td>..</td>
+<td>Russia_2022</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">679</td>
+<td>11,683.50</td>
+<td>South Africa_2022</td>
+</tr>
+</tbody>
+</table>
+
+<p>680 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<p>Population Dataset</p>
+<div class="cell" data-execution_count="83">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/population.csv"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pop.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pop.rename(columns<span class="op">=</span>{<span class="st">'Time'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pd.melt(pop, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'population'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>pop[<span class="st">'Country_Year'</span>] <span class="op">=</span> pop[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> pop[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pop.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_73916/1063633312.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  pop = pop.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="83">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">population</th>
+<th data-quarto-table-cell-role="th">Country_Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>19029000</td>
+<td>Australia_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>8011566</td>
+<td>Austria_2000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>10251250</td>
+<td>Belgium_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>30685730</td>
+<td>Canada_2000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>15397780</td>
+<td>Chile_2000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">625</td>
+<td>..</td>
+<td>China_2014</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">626</td>
+<td>..</td>
+<td>India_2014</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">627</td>
+<td>..</td>
+<td>Indonesia_2014</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">628</td>
+<td>..</td>
+<td>Russia_2014</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">629</td>
+<td>..</td>
+<td>South Africa_2014</td>
+</tr>
+</tbody>
+</table>
+
+<p>630 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<p>Working Population Dataset</p>
+<div class="cell" data-execution_count="77">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/population_working.csv"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pop_working.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pop_working.rename(columns<span class="op">=</span>{<span class="st">'Time period'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pd.melt(pop_working, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'population'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pop_working[pop_working.Country <span class="op">!=</span> <span class="st">'© Terms &amp; conditions'</span>]</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pop_working[pop_working.Country <span class="op">!=</span> <span class="st">'Unnamed: 14'</span>]</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>pop_working[<span class="st">'Country_Year'</span>] <span class="op">=</span> pop_working[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> pop_working[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pop_working.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>pop_working</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_73916/707146143.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+  pop_working = pop_working.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="77">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">population</th>
+<th data-quarto-table-cell-role="th">Country_Year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>11,814</td>
+<td>Australia_2011</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>4,246</td>
+<td>Austria_2011</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>4,856</td>
+<td>Belgium_2011</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>18,670</td>
+<td>Canada_2011</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>8,306</td>
+<td>Chile_2011</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">624</td>
+<td>NaN</td>
+<td>European Union_Unnamed: 14</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">625</td>
+<td>NaN</td>
+<td>OECD_Unnamed: 14</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">626</td>
+<td>NaN</td>
+<td>Brazil_Unnamed: 14</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">627</td>
+<td>NaN</td>
+<td>Russia_Unnamed: 14</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">628</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>616 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<p>If merged with inner you are only left with 112 values.. only merge values you are working with</p>
+<div class="cell" data-execution_count="90">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> pd.merge(fertility, gdp, on<span class="op">=</span><span class="st">'Country_Year'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> pd.merge(merged, immigration, on<span class="op">=</span><span class="st">'Country_Year'</span>, how<span class="op">=</span><span class="st">'inner'</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>merged[[<span class="st">'Country'</span>, <span class="st">'Year'</span>]] <span class="op">=</span> merged[<span class="st">'Country_Year'</span>].<span class="bu">str</span>.split(<span class="st">'_'</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> merged.drop(<span class="st">'Country_Year'</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>merged <span class="op">=</span> merged.replace([<span class="st">'..'</span>, np.nan], <span class="dv">0</span>)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

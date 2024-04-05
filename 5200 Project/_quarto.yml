@@ -10,7 +10,7 @@ website:
       - about.qmd
       - href: data.ipynb 
         text: Data Gathering 
-      - href: data_cleaning.ipynb 
+      - href: cleaning.ipynb 
         text: Data Cleaning
 
 format:
