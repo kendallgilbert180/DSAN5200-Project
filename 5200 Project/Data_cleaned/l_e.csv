@@ -1,0 +1,638 @@
+,Country,Year,age
+0,Australia,2010,81.7
+1,Austria,2010,80.7
+2,Belgium,2010,80.3
+3,Canada,2010,81.4
+4,Chile,2010,78.7
+5,Colombia,2010,74.3
+6,Costa Rica,2010,79.1
+7,Czechia,2010,77.7
+8,Denmark,2010,79.3
+9,Estonia,2010,76.0
+10,Finland,2010,80.2
+11,France,2010,81.9
+12,Germany,2010,80.5
+13,Greece,2010,80.6
+14,Hungary,2010,74.7
+15,Iceland,2010,81.9
+16,Ireland,2010,80.8
+17,Israel,2010,81.7
+18,Italy,2010,82.2
+19,Japan,2010,82.9
+20,Korea,2010,80.2
+21,Latvia,2010,73.1
+22,Lithuania,2010,73.3
+23,Luxembourg,2010,80.8
+24,Mexico,2010,74.8
+25,Netherlands,2010,81.0
+26,New Zealand,2010,80.8
+27,Norway,2010,81.2
+28,Poland,2010,76.4
+29,Portugal,2010,80.1
+30,Slovak Republic,2010,75.6
+31,Slovenia,2010,79.8
+32,Spain,2010,82.4
+33,Sweden,2010,81.6
+34,Switzerland,2010,82.7
+35,Türkiye,2010,74.3
+36,United Kingdom,2010,80.4
+37,United States,2010,78.7
+38,Argentina,2010,75.9
+39,Brazil,2010,72.9
+40,Bulgaria,2010,73.8
+41,China (People's Republic of),2010,75.3
+42,Croatia,2010,76.7
+43,India,2010,66.5
+44,Indonesia,2010,68.5
+45,Peru,2010,73.5
+46,Romania,2010,73.7
+47,Russia,2010,69.0
+48,South Africa,2010,57.4
+49,Australia,2011,81.9
+50,Austria,2011,81.1
+51,Belgium,2011,80.7
+52,Canada,2011,81.6
+53,Chile,2011,79.0
+54,Colombia,2011,74.5
+55,Costa Rica,2011,79.1
+56,Czechia,2011,78.0
+57,Denmark,2011,79.9
+58,Estonia,2011,76.6
+59,Finland,2011,80.6
+60,France,2011,82.3
+61,Germany,2011,80.6
+62,Greece,2011,80.8
+63,Hungary,2011,75.1
+64,Iceland,2011,82.4
+65,Ireland,2011,80.9
+66,Israel,2011,81.8
+67,Italy,2011,82.4
+68,Japan,2011,82.7
+69,Korea,2011,80.6
+70,Latvia,2011,73.9
+71,Lithuania,2011,73.7
+72,Luxembourg,2011,81.1
+73,Mexico,2011,74.9
+74,Netherlands,2011,81.3
+75,New Zealand,2011,81.0
+76,Norway,2011,81.4
+77,Poland,2011,76.8
+78,Portugal,2011,80.7
+79,Slovak Republic,2011,76.1
+80,Slovenia,2011,80.1
+81,Spain,2011,82.6
+82,Sweden,2011,81.9
+83,Switzerland,2011,82.8
+84,Türkiye,2011,74.6
+85,United Kingdom,2011,80.7
+86,United States,2011,78.7
+87,Argentina,2011,75.7
+88,Brazil,2011,73.2
+89,Bulgaria,2011,74.2
+90,China (People's Republic of),2011,75.6
+91,Croatia,2011,77.2
+92,India,2011,66.9
+93,Indonesia,2011,68.7
+94,Peru,2011,73.7
+95,Romania,2011,74.4
+96,Russia,2011,69.8
+97,South Africa,2011,58.9
+98,Australia,2012,82.0
+99,Austria,2012,81.1
+100,Belgium,2012,80.5
+101,Canada,2012,81.8
+102,Chile,2012,79.2
+103,Colombia,2012,74.7
+104,Costa Rica,2012,79.4
+105,Czechia,2012,78.1
+106,Denmark,2012,80.2
+107,Estonia,2012,76.7
+108,Finland,2012,80.7
+109,France,2012,82.1
+110,Germany,2012,80.7
+111,Greece,2012,80.7
+112,Hungary,2012,75.3
+113,Iceland,2012,83.0
+114,Ireland,2012,80.9
+115,Israel,2012,81.8
+116,Italy,2012,82.4
+117,Japan,2012,83.2
+118,Korea,2012,80.9
+119,Latvia,2012,74.1
+120,Lithuania,2012,74.1
+121,Luxembourg,2012,81.5
+122,Mexico,2012,75.0
+123,Netherlands,2012,81.2
+124,New Zealand,2012,81.2
+125,Norway,2012,81.5
+126,Poland,2012,76.9
+127,Portugal,2012,80.6
+128,Slovak Republic,2012,76.3
+129,Slovenia,2012,80.3
+130,Spain,2012,82.5
+131,Sweden,2012,81.8
+132,Switzerland,2012,82.8
+133,Türkiye,2012,74.6
+134,United Kingdom,2012,80.8
+135,United States,2012,78.8
+136,Argentina,2012,76.1
+137,Brazil,2012,73.3
+138,Bulgaria,2012,74.4
+139,China (People's Republic of),2012,75.9
+140,Croatia,2012,77.3
+141,India,2012,67.4
+142,Indonesia,2012,68.8
+143,Peru,2012,74.1
+144,Romania,2012,74.4
+145,Russia,2012,70.2
+146,South Africa,2012,60.7
+147,Australia,2013,82.1
+148,Austria,2013,81.3
+149,Belgium,2013,80.7
+150,Canada,2013,81.8
+151,Chile,2013,79.4
+152,Colombia,2013,75.0
+153,Costa Rica,2013,79.6
+154,Czechia,2013,78.3
+155,Denmark,2013,80.4
+156,Estonia,2013,77.5
+157,Finland,2013,81.1
+158,France,2013,82.4
+159,Germany,2013,80.6
+160,Greece,2013,81.4
+161,Hungary,2013,75.8
+162,Iceland,2013,82.1
+163,Ireland,2013,81.0
+164,Israel,2013,82.1
+165,Italy,2013,82.9
+166,Japan,2013,83.4
+167,Korea,2013,81.4
+168,Latvia,2013,74.3
+169,Lithuania,2013,74.1
+170,Luxembourg,2013,81.9
+171,Mexico,2013,75.0
+172,Netherlands,2013,81.4
+173,New Zealand,2013,81.4
+174,Norway,2013,81.8
+175,Poland,2013,77.1
+176,Portugal,2013,80.9
+177,Slovak Republic,2013,76.6
+178,Slovenia,2013,80.5
+179,Spain,2013,83.2
+180,Sweden,2013,82.0
+181,Switzerland,2013,82.9
+182,Türkiye,2013,78.0
+183,United Kingdom,2013,80.9
+184,United States,2013,78.8
+185,Argentina,2013,76.5
+186,Brazil,2013,73.6
+187,Bulgaria,2013,74.9
+188,China (People's Republic of),2013,76.2
+189,Croatia,2013,77.8
+190,India,2013,67.9
+191,Indonesia,2013,69.0
+192,Peru,2013,74.5
+193,Romania,2013,75.1
+194,Russia,2013,70.7
+195,South Africa,2013,61.8
+196,Australia,2014,82.3
+197,Austria,2014,81.6
+198,Belgium,2014,81.4
+199,Canada,2014,81.9
+200,Chile,2014,79.6
+201,Colombia,2014,75.2
+202,Costa Rica,2014,79.7
+203,Czechia,2014,78.9
+204,Denmark,2014,80.7
+205,Estonia,2014,77.4
+206,Finland,2014,81.3
+207,France,2014,82.9
+208,Germany,2014,81.2
+209,Greece,2014,81.5
+210,Hungary,2014,76.0
+211,Iceland,2014,82.9
+212,Ireland,2014,81.4
+213,Israel,2014,82.2
+214,Italy,2014,83.2
+215,Japan,2014,83.7
+216,Korea,2014,81.8
+217,Latvia,2014,74.5
+218,Lithuania,2014,74.7
+219,Luxembourg,2014,82.3
+220,Mexico,2014,75.0
+221,Netherlands,2014,81.8
+222,New Zealand,2014,81.4
+223,Norway,2014,82.2
+224,Poland,2014,77.8
+225,Portugal,2014,81.3
+226,Slovak Republic,2014,77.0
+227,Slovenia,2014,81.2
+228,Spain,2014,83.3
+229,Sweden,2014,82.3
+230,Switzerland,2014,83.3
+231,Türkiye,2014,78.0
+232,United Kingdom,2014,81.1
+233,United States,2014,78.9
+234,Argentina,2014,76.5
+235,Brazil,2014,73.9
+236,Bulgaria,2014,74.5
+237,China (People's Republic of),2014,76.5
+238,Croatia,2014,77.9
+239,India,2014,68.5
+240,Indonesia,2014,69.3
+241,Peru,2014,75.0
+242,Romania,2014,75.0
+243,Russia,2014,70.9
+244,South Africa,2014,62.5
+245,Australia,2015,82.4
+246,Austria,2015,81.3
+247,Belgium,2015,81.1
+248,Canada,2015,81.9
+249,Chile,2015,79.8
+250,Colombia,2015,75.4
+251,Costa Rica,2015,79.9
+252,Czechia,2015,78.7
+253,Denmark,2015,80.8
+254,Estonia,2015,78.0
+255,Finland,2015,81.6
+256,France,2015,82.4
+257,Germany,2015,80.7
+258,Greece,2015,81.1
+259,Hungary,2015,75.7
+260,Iceland,2015,82.5
+261,Ireland,2015,81.5
+262,Israel,2015,82.2
+263,Italy,2015,82.7
+264,Japan,2015,83.9
+265,Korea,2015,82.1
+266,Latvia,2015,74.8
+267,Lithuania,2015,74.6
+268,Luxembourg,2015,82.4
+269,Mexico,2015,74.7
+270,Netherlands,2015,81.6
+271,New Zealand,2015,81.5
+272,Norway,2015,82.4
+273,Poland,2015,77.5
+274,Portugal,2015,81.3
+275,Slovak Republic,2015,76.7
+276,Slovenia,2015,80.9
+277,Spain,2015,83.0
+278,Sweden,2015,82.2
+279,Switzerland,2015,83.0
+280,Türkiye,2015,78.0
+281,United Kingdom,2015,80.9
+282,United States,2015,78.7
+283,Argentina,2015,76.8
+284,Brazil,2015,74.3
+285,Bulgaria,2015,74.7
+286,China (People's Republic of),2015,76.7
+287,Croatia,2015,77.5
+288,India,2015,69.1
+289,Indonesia,2015,69.5
+290,Peru,2015,75.3
+291,Romania,2015,74.9
+292,Russia,2015,71.3
+293,South Africa,2015,63.4
+294,Australia,2016,82.4
+295,Austria,2016,81.8
+296,Belgium,2016,81.5
+297,Canada,2016,82.0
+298,Chile,2016,80.0
+299,Colombia,2016,75.7
+300,Costa Rica,2016,80.0
+301,Czechia,2016,79.1
+302,Denmark,2016,80.9
+303,Estonia,2016,78.0
+304,Finland,2016,81.5
+305,France,2016,82.7
+306,Germany,2016,81.0
+307,Greece,2016,81.5
+308,Hungary,2016,76.2
+309,Iceland,2016,82.2
+310,Ireland,2016,81.7
+311,Israel,2016,82.5
+312,Italy,2016,83.4
+313,Japan,2016,84.1
+314,Korea,2016,82.4
+315,Latvia,2016,74.9
+316,Lithuania,2016,74.9
+317,Luxembourg,2016,82.7
+318,Mexico,2016,74.8
+319,Netherlands,2016,81.7
+320,New Zealand,2016,81.6
+321,Norway,2016,82.5
+322,Poland,2016,78.0
+323,Portugal,2016,81.3
+324,Slovak Republic,2016,77.3
+325,Slovenia,2016,81.2
+326,Spain,2016,83.5
+327,Sweden,2016,82.4
+328,Switzerland,2016,83.7
+329,Türkiye,2016,78.0
+330,United Kingdom,2016,81.0
+331,United States,2016,78.7
+332,Argentina,2016,76.8
+333,Brazil,2016,74.3
+334,Bulgaria,2016,74.9
+335,China (People's Republic of),2016,77.0
+336,Croatia,2016,78.2
+337,India,2016,69.6
+338,Indonesia,2016,69.7
+339,Peru,2016,75.6
+340,Romania,2016,75.2
+341,Russia,2016,71.8
+342,South Africa,2016,64.0
+343,Australia,2017,82.5
+344,Austria,2017,81.7
+345,Belgium,2017,81.6
+346,Canada,2017,81.9
+347,Chile,2017,80.2
+348,Colombia,2017,75.9
+349,Costa Rica,2017,80.2
+350,Czechia,2017,79.1
+351,Denmark,2017,81.1
+352,Estonia,2017,78.4
+353,Finland,2017,81.7
+354,France,2017,82.7
+355,Germany,2017,81.1
+356,Greece,2017,81.4
+357,Hungary,2017,76.0
+358,Iceland,2017,82.6
+359,Ireland,2017,82.2
+360,Israel,2017,82.7
+361,Italy,2017,83.1
+362,Japan,2017,84.2
+363,Korea,2017,82.7
+364,Latvia,2017,74.9
+365,Lithuania,2017,75.8
+366,Luxembourg,2017,82.1
+367,Mexico,2017,74.9
+368,Netherlands,2017,81.8
+369,New Zealand,2017,81.7
+370,Norway,2017,82.7
+371,Poland,2017,77.8
+372,Portugal,2017,81.6
+373,Slovak Republic,2017,77.3
+374,Slovenia,2017,81.2
+375,Spain,2017,83.4
+376,Sweden,2017,82.5
+377,Switzerland,2017,83.7
+378,Türkiye,2017,78.1
+379,United Kingdom,2017,81.1
+380,United States,2017,78.6
+381,Argentina,2017,76.3
+382,Brazil,2017,74.4
+383,Bulgaria,2017,74.8
+384,China (People's Republic of),2017,77.2
+385,Croatia,2017,78.0
+386,India,2017,70.1
+387,Indonesia,2017,69.8
+388,Peru,2017,75.8
+389,Romania,2017,75.2
+390,Russia,2017,72.6
+391,South Africa,2017,64.7
+392,Australia,2018,82.7
+393,Austria,2018,81.8
+394,Belgium,2018,81.7
+395,Canada,2018,81.9
+396,Chile,2018,80.4
+397,Colombia,2018,76.5
+398,Costa Rica,2018,80.3
+399,Czechia,2018,79.1
+400,Denmark,2018,81.0
+401,Estonia,2018,78.5
+402,Finland,2018,81.8
+403,France,2018,82.8
+404,Germany,2018,81.0
+405,Greece,2018,81.9
+406,Hungary,2018,76.2
+407,Iceland,2018,82.9
+408,Ireland,2018,82.2
+409,Israel,2018,82.9
+410,Italy,2018,83.4
+411,Japan,2018,84.3
+412,Korea,2018,82.7
+413,Latvia,2018,75.1
+414,Lithuania,2018,76.0
+415,Luxembourg,2018,82.3
+416,Mexico,2018,75.0
+417,Netherlands,2018,81.9
+418,New Zealand,2018,81.7
+419,Norway,2018,82.8
+420,Poland,2018,77.7
+421,Portugal,2018,81.5
+422,Slovak Republic,2018,77.4
+423,Slovenia,2018,81.5
+424,Spain,2018,83.5
+425,Sweden,2018,82.6
+426,Switzerland,2018,83.8
+427,Türkiye,2018,78.3
+428,United Kingdom,2018,81.1
+429,United States,2018,78.7
+430,Argentina,2018,76.8
+431,Brazil,2018,74.8
+432,Bulgaria,2018,75.0
+433,China (People's Republic of),2018,77.2
+434,Croatia,2018,78.2
+435,India,2018,70.5
+436,Indonesia,2018,69.9
+437,Peru,2018,75.9
+438,Romania,2018,75.3
+439,Russia,2018,72.8
+440,South Africa,2018,65.4
+441,Australia,2019,82.9
+442,Austria,2019,82.0
+443,Belgium,2019,82.1
+444,Canada,2019,82.3
+445,Chile,2019,80.6
+446,Colombia,2019,76.6
+447,Costa Rica,2019,80.5
+448,Czechia,2019,79.3
+449,Denmark,2019,81.5
+450,Estonia,2019,79.0
+451,Finland,2019,82.1
+452,France,2019,83.0
+453,Germany,2019,81.3
+454,Greece,2019,81.7
+455,Hungary,2019,76.5
+456,Iceland,2019,83.2
+457,Ireland,2019,82.8
+458,Israel,2019,82.9
+459,Italy,2019,83.6
+460,Japan,2019,84.4
+461,Korea,2019,83.3
+462,Latvia,2019,75.7
+463,Lithuania,2019,76.5
+464,Luxembourg,2019,82.7
+465,Mexico,2019,75.1
+466,Netherlands,2019,82.2
+467,New Zealand,2019,82.1
+468,Norway,2019,83.0
+469,Poland,2019,78.0
+470,Portugal,2019,81.9
+471,Slovak Republic,2019,77.8
+472,Slovenia,2019,81.6
+473,Spain,2019,84.0
+474,Sweden,2019,83.2
+475,Switzerland,2019,84.0
+476,Türkiye,2019,78.6
+477,United Kingdom,2019,81.4
+478,United States,2019,78.8
+479,Argentina,2019,77.0
+480,Brazil,2019,75.1
+481,Bulgaria,2019,75.1
+482,China (People's Republic of),2019,77.7
+483,Croatia,2019,78.6
+484,India,2019,70.7
+485,Indonesia,2019,70.3
+486,Peru,2019,76.0
+487,Romania,2019,75.6
+488,Russia,2019,73.2
+489,South Africa,2019,65.7
+490,Australia,2020,83.2
+491,Austria,2020,81.3
+492,Belgium,2020,80.8
+493,Canada,2020,81.7
+494,Chile,2020,80.8
+495,Colombia,2020,76.7
+496,Costa Rica,2020,80.6
+497,Czechia,2020,78.3
+498,Denmark,2020,81.6
+499,Estonia,2020,78.9
+500,Finland,2020,82
+501,France,2020,82.3
+502,Germany,2020,81.1
+503,Greece,2020,81.4
+504,Hungary,2020,75.7
+505,Iceland,2020,83.1
+506,Ireland,2020,82.6
+507,Israel,2020,82.7
+508,Italy,2020,82.3
+509,Japan,2020,84.6
+510,Korea,2020,83.5
+511,Latvia,2020,75.5
+512,Lithuania,2020,75.1
+513,Luxembourg,2020,82.2
+514,Mexico,2020,75.2
+515,Netherlands,2020,81.4
+516,New Zealand,2020,82.3
+517,Norway,2020,83.3
+518,Poland,2020,76.5
+519,Portugal,2020,81.1
+520,Slovak Republic,2020,77
+521,Slovenia,2020,80.6
+522,Spain,2020,82.4
+523,Sweden,2020,82.4
+524,Switzerland,2020,83.1
+525,Türkiye,2020,..
+526,United Kingdom,2020,80.4
+527,United States,2020,77
+528,Argentina,2020,77.3
+529,Brazil,2020,75.3
+530,Bulgaria,2020,73.6
+531,China (People's Republic of),2020,78
+532,Croatia,2020,77.8
+533,India,2020,70.9
+534,Indonesia,2020,70.5
+535,Peru,2020,76.2
+536,Romania,2020,74.2
+537,Russia,2020,..
+538,South Africa,2020,66.2
+539,Australia,2021,83.3
+540,Austria,2021,81.3
+541,Belgium,2021,81.9
+542,Canada,2021,81.6
+543,Chile,2021,81
+544,Colombia,2021,76.8
+545,Costa Rica,2021,80.8
+546,Czechia,2021,77.2
+547,Denmark,2021,81.5
+548,Estonia,2021,77.2
+549,Finland,2021,81.9
+550,France,2021,82.4
+551,Germany,2021,80.8
+552,Greece,2021,80.2
+553,Hungary,2021,74.3
+554,Iceland,2021,83.2
+555,Ireland,2021,82.4
+556,Israel,2021,82.6
+557,Italy,2021,82.7
+558,Japan,2021,84.5
+559,Korea,2021,83.6
+560,Latvia,2021,73.1
+561,Lithuania,2021,74.2
+562,Luxembourg,2021,82.7
+563,Mexico,2021,75.4
+564,Netherlands,2021,81.4
+565,New Zealand,2021,82.3
+566,Norway,2021,83.2
+567,Poland,2021,75.5
+568,Portugal,2021,81.5
+569,Slovak Republic,2021,74.6
+570,Slovenia,2021,80.7
+571,Spain,2021,83.3
+572,Sweden,2021,83.1
+573,Switzerland,2021,83.9
+574,Türkiye,2021,..
+575,United Kingdom,2021,..
+576,United States,2021,76.4
+577,Argentina,2021,75.9
+578,Brazil,2021,74
+579,Bulgaria,2021,71.4
+580,China (People's Republic of),2021,78.1
+581,Croatia,2021,76.7
+582,India,2021,70.2
+583,Indonesia,2021,68.8
+584,Peru,2021,73.7
+585,Romania,2021,72.8
+586,Russia,2021,..
+587,South Africa,2021,65.3
+588,Australia,2022,..
+589,Austria,2022,81.1
+590,Belgium,2022,81.8
+591,Canada,2022,..
+592,Chile,2022,81.2
+593,Colombia,2022,76.9
+594,Costa Rica,2022,80.9
+595,Czechia,2022,79.1
+596,Denmark,2022,81.3
+597,Estonia,2022,78.2
+598,Finland,2022,81.2
+599,France,2022,82.3
+600,Germany,2022,80.7
+601,Greece,2022,80.7
+602,Hungary,2022,76.2
+603,Iceland,2022,82.1
+604,Ireland,2022,..
+605,Israel,2022,82.9
+606,Italy,2022,83
+607,Japan,2022,..
+608,Korea,2022,..
+609,Latvia,2022,74.8
+610,Lithuania,2022,76
+611,Luxembourg,2022,83
+612,Mexico,2022,..
+613,Netherlands,2022,81.7
+614,New Zealand,2022,..
+615,Norway,2022,82.6
+616,Poland,2022,77.4
+617,Portugal,2022,81.7
+618,Slovak Republic,2022,77.2
+619,Slovenia,2022,81.3
+620,Spain,2022,83.2
+621,Sweden,2022,83.1
+622,Switzerland,2022,83.5
+623,Türkiye,2022,..
+624,United Kingdom,2022,..
+625,United States,2022,..
+626,Argentina,2022,75.4
+627,Brazil,2022,72.8
+628,Bulgaria,2022,74.3
+629,China (People's Republic of),2022,78.2
+630,Croatia,2022,77.7
+631,India,2022,67.2
+632,Indonesia,2022,67.6
+633,Peru,2022,72.4
+634,Romania,2022,75.3
+635,Russia,2022,..
+636,South Africa,2022,62.3

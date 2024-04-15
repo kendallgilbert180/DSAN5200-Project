@@ -1,0 +1,1651 @@
+,fertility_rate,Country_Year
+0,1.9,Australia_1990
+1,1.46,Austria_1990
+2,1.62,Belgium_1990
+3,1.71,Canada_1990
+4,2.58,Chile_1990
+5,3.08,Colombia_1990
+6,3.21,Costa Rica_1990
+7,1.89,Czechia_1990
+8,1.67,Denmark_1990
+9,2.05,Estonia_1990
+10,1.79,Finland_1990
+11,1.78,France_1990
+12,1.45,Germany_1990
+13,1.39,Greece_1990
+14,1.84,Hungary_1990
+15,2.31,Iceland_1990
+16,2.12,Ireland_1990
+17,3.02,Israel_1990
+18,1.36,Italy_1990
+19,1.54,Japan_1990
+20,1.57,Korea_1990
+21,2.01,Latvia_1990
+22,2.03,Lithuania_1990
+23,1.62,Luxembourg_1990
+24,3.47,Mexico_1990
+25,1.62,Netherlands_1990
+26,2.18,New Zealand_1990
+27,1.93,Norway_1990
+28,1.99,Poland_1990
+29,1.56,Portugal_1990
+30,2.09,Slovak Republic_1990
+31,1.46,Slovenia_1990
+32,1.36,Spain_1990
+33,2.14,Sweden_1990
+34,1.59,Switzerland_1990
+35,3.07,Türkiye_1990
+36,1.83,United Kingdom_1990
+37,2.08,United States_1990
+38,3.0,Argentina_1990
+39,2.91,Brazil_1990
+40,1.82,Bulgaria_1990
+41,2.51,China_1990
+42,1.67,Croatia_1990
+43,2.41,Cyprus_1990
+44,4.05,India_1990
+45,3.1,Indonesia_1990
+46,2.05,Malta_1990
+47,1.83,Romania_1990
+48,1.89,Russia_1990
+49,3.72,South Africa_1990
+50,1.85,Australia_1991
+51,1.51,Austria_1991
+52,1.66,Belgium_1991
+53,1.72,Canada_1991
+54,2.56,Chile_1991
+55,3.05,Colombia_1991
+56,3.12,Costa Rica_1991
+57,1.86,Czechia_1991
+58,1.68,Denmark_1991
+59,1.8,Estonia_1991
+60,1.8,Finland_1991
+61,1.77,France_1991
+62,1.33,Germany_1991
+63,1.37,Greece_1991
+64,1.86,Hungary_1991
+65,2.19,Iceland_1991
+66,2.09,Ireland_1991
+67,2.91,Israel_1991
+68,1.33,Italy_1991
+69,1.53,Japan_1991
+70,1.71,Korea_1991
+71,1.86,Latvia_1991
+72,2.01,Lithuania_1991
+73,1.6,Luxembourg_1991
+74,3.37,Mexico_1991
+75,1.61,Netherlands_1991
+76,2.09,New Zealand_1991
+77,1.92,Norway_1991
+78,1.98,Poland_1991
+79,1.56,Portugal_1991
+80,2.05,Slovak Republic_1991
+81,1.42,Slovenia_1991
+82,1.33,Spain_1991
+83,2.12,Sweden_1991
+84,1.58,Switzerland_1991
+85,3.0,Türkiye_1991
+86,1.82,United Kingdom_1991
+87,2.06,United States_1991
+88,2.97,Argentina_1991
+89,2.82,Brazil_1991
+90,1.66,Bulgaria_1991
+91,1.93,China_1991
+92,1.55,Croatia_1991
+93,2.32,Cyprus_1991
+94,3.96,India_1991
+95,3.06,Indonesia_1991
+96,2.1,Malta_1991
+97,1.59,Romania_1991
+98,1.73,Russia_1991
+99,3.62,South Africa_1991
+100,1.89,Australia_1992
+101,1.51,Austria_1992
+102,1.65,Belgium_1992
+103,1.71,Canada_1992
+104,2.53,Chile_1992
+105,3.01,Colombia_1992
+106,3.04,Costa Rica_1992
+107,1.72,Czechia_1992
+108,1.76,Denmark_1992
+109,1.71,Estonia_1992
+110,1.85,Finland_1992
+111,1.73,France_1992
+112,1.29,Germany_1992
+113,1.36,Greece_1992
+114,1.77,Hungary_1992
+115,2.21,Iceland_1992
+116,1.99,Ireland_1992
+117,2.93,Israel_1992
+118,1.32,Italy_1992
+119,1.5,Japan_1992
+120,1.76,Korea_1992
+121,1.73,Latvia_1992
+122,1.97,Lithuania_1992
+123,1.67,Luxembourg_1992
+124,3.27,Mexico_1992
+125,1.59,Netherlands_1992
+126,2.06,New Zealand_1992
+127,1.89,Norway_1992
+128,1.85,Poland_1992
+129,1.53,Portugal_1992
+130,1.99,Slovak Republic_1992
+131,1.34,Slovenia_1992
+132,1.32,Spain_1992
+133,2.09,Sweden_1992
+134,1.58,Switzerland_1992
+135,2.93,Türkiye_1992
+136,1.79,United Kingdom_1992
+137,2.05,United States_1992
+138,2.93,Argentina_1992
+139,2.72,Brazil_1992
+140,1.55,Bulgaria_1992
+141,1.78,China_1992
+142,1.39,Croatia_1992
+143,2.48,Cyprus_1992
+144,3.88,India_1992
+145,2.94,Indonesia_1992
+146,2.12,Malta_1992
+147,1.51,Romania_1992
+148,1.55,Russia_1992
+149,3.48,South Africa_1992
+150,1.86,Australia_1993
+151,1.5,Austria_1993
+152,1.61,Belgium_1993
+153,1.69,Canada_1993
+154,2.48,Chile_1993
+155,2.97,Colombia_1993
+156,2.96,Costa Rica_1993
+157,1.67,Czechia_1993
+158,1.75,Denmark_1993
+159,1.49,Estonia_1993
+160,1.81,Finland_1993
+161,1.66,France_1993
+162,1.28,Germany_1993
+163,1.32,Greece_1993
+164,1.69,Hungary_1993
+165,2.22,Iceland_1993
+166,1.91,Ireland_1993
+167,2.92,Israel_1993
+168,1.26,Italy_1993
+169,1.46,Japan_1993
+170,1.65,Korea_1993
+171,1.51,Latvia_1993
+172,1.74,Lithuania_1993
+173,1.69,Luxembourg_1993
+174,3.18,Mexico_1993
+175,1.57,Netherlands_1993
+176,2.04,New Zealand_1993
+177,1.86,Norway_1993
+178,1.77,Poland_1993
+179,1.51,Portugal_1993
+180,1.93,Slovak Republic_1993
+181,1.33,Slovenia_1993
+182,1.27,Spain_1993
+183,2.0,Sweden_1993
+184,1.51,Switzerland_1993
+185,2.87,Türkiye_1993
+186,1.76,United Kingdom_1993
+187,2.02,United States_1993
+188,2.88,Argentina_1993
+189,2.67,Brazil_1993
+190,1.46,Bulgaria_1993
+191,1.69,China_1993
+192,1.43,Croatia_1993
+193,2.24,Cyprus_1993
+194,3.8,India_1993
+195,2.88,Indonesia_1993
+196,2.01,Malta_1993
+197,1.43,Romania_1993
+198,1.39,Russia_1993
+199,3.37,South Africa_1993
+200,1.84,Australia_1994
+201,1.47,Austria_1994
+202,1.56,Belgium_1994
+203,1.69,Canada_1994
+204,2.43,Chile_1994
+205,2.92,Colombia_1994
+206,2.89,Costa Rica_1994
+207,1.44,Czechia_1994
+208,1.81,Denmark_1994
+209,1.42,Estonia_1994
+210,1.85,Finland_1994
+211,1.66,France_1994
+212,1.24,Germany_1994
+213,1.33,Greece_1994
+214,1.64,Hungary_1994
+215,2.14,Iceland_1994
+216,1.85,Ireland_1994
+217,2.9,Israel_1994
+218,1.22,Italy_1994
+219,1.5,Japan_1994
+220,1.66,Korea_1994
+221,1.39,Latvia_1994
+222,1.57,Lithuania_1994
+223,1.72,Luxembourg_1994
+224,3.1,Mexico_1994
+225,1.57,Netherlands_1994
+226,1.98,New Zealand_1994
+227,1.87,Norway_1994
+228,1.72,Poland_1994
+229,1.44,Portugal_1994
+230,1.67,Slovak Republic_1994
+231,1.32,Slovenia_1994
+232,1.2,Spain_1994
+233,1.89,Sweden_1994
+234,1.49,Switzerland_1994
+235,2.81,Türkiye_1994
+236,1.74,United Kingdom_1994
+237,2.0,United States_1994
+238,2.83,Argentina_1994
+239,2.62,Brazil_1994
+240,1.37,Bulgaria_1994
+241,1.63,China_1994
+242,1.43,Croatia_1994
+243,2.17,Cyprus_1994
+244,3.72,India_1994
+245,2.84,Indonesia_1994
+246,1.89,Malta_1994
+247,1.4,Romania_1994
+248,1.4,Russia_1994
+249,3.26,South Africa_1994
+250,1.82,Australia_1995
+251,1.42,Austria_1995
+252,1.56,Belgium_1995
+253,1.67,Canada_1995
+254,2.37,Chile_1995
+255,2.86,Colombia_1995
+256,2.8,Costa Rica_1995
+257,1.28,Czechia_1995
+258,1.81,Denmark_1995
+259,1.38,Estonia_1995
+260,1.81,Finland_1995
+261,1.71,France_1995
+262,1.25,Germany_1995
+263,1.28,Greece_1995
+264,1.57,Hungary_1995
+265,2.08,Iceland_1995
+266,1.85,Ireland_1995
+267,2.88,Israel_1995
+268,1.19,Italy_1995
+269,1.42,Japan_1995
+270,1.63,Korea_1995
+271,1.26,Latvia_1995
+272,1.55,Lithuania_1995
+273,1.67,Luxembourg_1995
+274,3.02,Mexico_1995
+275,1.53,Netherlands_1995
+276,1.98,New Zealand_1995
+277,1.87,Norway_1995
+278,1.55,Poland_1995
+279,1.41,Portugal_1995
+280,1.52,Slovak Republic_1995
+281,1.29,Slovenia_1995
+282,1.17,Spain_1995
+283,1.74,Sweden_1995
+284,1.48,Switzerland_1995
+285,2.75,Türkiye_1995
+286,1.71,United Kingdom_1995
+287,1.98,United States_1995
+288,2.77,Argentina_1995
+289,2.58,Brazil_1995
+290,1.23,Bulgaria_1995
+291,1.59,China_1995
+292,1.5,Croatia_1995
+293,2.03,Cyprus_1995
+294,3.65,India_1995
+295,2.8,Indonesia_1995
+296,1.82,Malta_1995
+297,1.33,Romania_1995
+298,1.34,Russia_1995
+299,3.17,South Africa_1995
+300,1.8,Australia_1996
+301,1.45,Austria_1996
+302,1.59,Belgium_1996
+303,1.63,Canada_1996
+304,2.31,Chile_1996
+305,2.8,Colombia_1996
+306,2.71,Costa Rica_1996
+307,1.19,Czechia_1996
+308,1.75,Denmark_1996
+309,1.37,Estonia_1996
+310,1.76,Finland_1996
+311,1.73,France_1996
+312,1.32,Germany_1996
+313,1.26,Greece_1996
+314,1.46,Hungary_1996
+315,2.12,Iceland_1996
+316,1.89,Ireland_1996
+317,2.94,Israel_1996
+318,1.22,Italy_1996
+319,1.43,Japan_1996
+320,1.57,Korea_1996
+321,1.16,Latvia_1996
+322,1.49,Lithuania_1996
+323,1.76,Luxembourg_1996
+324,2.95,Mexico_1996
+325,1.53,Netherlands_1996
+326,1.96,New Zealand_1996
+327,1.89,Norway_1996
+328,1.53,Poland_1996
+329,1.44,Portugal_1996
+330,1.47,Slovak Republic_1996
+331,1.28,Slovenia_1996
+332,1.16,Spain_1996
+333,1.61,Sweden_1996
+334,1.5,Switzerland_1996
+335,2.69,Türkiye_1996
+336,1.73,United Kingdom_1996
+337,1.98,United States_1996
+338,2.72,Argentina_1996
+339,2.52,Brazil_1996
+340,1.23,Bulgaria_1996
+341,1.55,China_1996
+342,1.64,Croatia_1996
+343,1.95,Cyprus_1996
+344,3.58,India_1996
+345,2.77,Indonesia_1996
+346,2.01,Malta_1996
+347,1.3,Romania_1996
+348,1.27,Russia_1996
+349,2.99,South Africa_1996
+350,1.78,Australia_1997
+351,1.39,Austria_1997
+352,1.6,Belgium_1997
+353,1.57,Canada_1997
+354,2.24,Chile_1997
+355,2.74,Colombia_1997
+356,2.64,Costa Rica_1997
+357,1.17,Czechia_1997
+358,1.76,Denmark_1997
+359,1.32,Estonia_1997
+360,1.75,Finland_1997
+361,1.73,France_1997
+362,1.37,Germany_1997
+363,1.27,Greece_1997
+364,1.38,Hungary_1997
+365,2.04,Iceland_1997
+366,1.94,Ireland_1997
+367,2.93,Israel_1997
+368,1.23,Italy_1997
+369,1.39,Japan_1997
+370,1.54,Korea_1997
+371,1.11,Latvia_1997
+372,1.47,Lithuania_1997
+373,1.71,Luxembourg_1997
+374,2.88,Mexico_1997
+375,1.56,Netherlands_1997
+376,1.96,New Zealand_1997
+377,1.86,Norway_1997
+378,1.47,Poland_1997
+379,1.47,Portugal_1997
+380,1.43,Slovak Republic_1997
+381,1.25,Slovenia_1997
+382,1.18,Spain_1997
+383,1.53,Sweden_1997
+384,1.48,Switzerland_1997
+385,2.63,Türkiye_1997
+386,1.72,United Kingdom_1997
+387,1.97,United States_1997
+388,2.67,Argentina_1997
+389,2.47,Brazil_1997
+390,1.09,Bulgaria_1997
+391,1.53,China_1997
+392,1.69,Croatia_1997
+393,1.86,Cyprus_1997
+394,3.51,India_1997
+395,2.74,Indonesia_1997
+396,1.95,Malta_1997
+397,1.32,Romania_1997
+398,1.22,Russia_1997
+399,2.73,South Africa_1997
+400,1.76,Australia_1998
+401,1.37,Austria_1998
+402,1.6,Belgium_1998
+403,1.56,Canada_1998
+404,2.17,Chile_1998
+405,2.68,Colombia_1998
+406,2.53,Costa Rica_1998
+407,1.16,Czechia_1998
+408,1.73,Denmark_1998
+409,1.28,Estonia_1998
+410,1.71,Finland_1998
+411,1.76,France_1998
+412,1.36,Germany_1998
+413,1.24,Greece_1998
+414,1.33,Hungary_1998
+415,2.05,Iceland_1998
+416,1.95,Ireland_1998
+417,2.98,Israel_1998
+418,1.21,Italy_1998
+419,1.38,Japan_1998
+420,1.46,Korea_1998
+421,1.1,Latvia_1998
+422,1.46,Lithuania_1998
+423,1.67,Luxembourg_1998
+424,2.82,Mexico_1998
+425,1.63,Netherlands_1998
+426,1.89,New Zealand_1998
+427,1.81,Norway_1998
+428,1.41,Poland_1998
+429,1.48,Portugal_1998
+430,1.37,Slovak Republic_1998
+431,1.23,Slovenia_1998
+432,1.16,Spain_1998
+433,1.51,Sweden_1998
+434,1.47,Switzerland_1998
+435,2.56,Türkiye_1998
+436,1.71,United Kingdom_1998
+437,2.0,United States_1998
+438,2.62,Argentina_1998
+439,2.41,Brazil_1998
+440,1.11,Bulgaria_1998
+441,1.52,China_1998
+442,1.45,Croatia_1998
+443,1.76,Cyprus_1998
+444,3.45,India_1998
+445,2.66,Indonesia_1998
+446,1.81,Malta_1998
+447,1.32,Romania_1998
+448,1.23,Russia_1998
+449,2.63,South Africa_1998
+450,1.76,Australia_1999
+451,1.34,Austria_1999
+452,1.62,Belgium_1999
+453,1.55,Canada_1999
+454,2.11,Chile_1999
+455,2.63,Colombia_1999
+456,2.48,Costa Rica_1999
+457,1.13,Czechia_1999
+458,1.74,Denmark_1999
+459,1.3,Estonia_1999
+460,1.73,Finland_1999
+461,1.79,France_1999
+462,1.36,Germany_1999
+463,1.23,Greece_1999
+464,1.29,Hungary_1999
+465,1.99,Iceland_1999
+466,1.91,Ireland_1999
+467,2.94,Israel_1999
+468,1.23,Italy_1999
+469,1.34,Japan_1999
+470,1.43,Korea_1999
+471,1.18,Latvia_1999
+472,1.46,Lithuania_1999
+473,1.71,Luxembourg_1999
+474,2.77,Mexico_1999
+475,1.65,Netherlands_1999
+476,1.97,New Zealand_1999
+477,1.85,Norway_1999
+478,1.37,Poland_1999
+479,1.51,Portugal_1999
+480,1.33,Slovak Republic_1999
+481,1.21,Slovenia_1999
+482,1.19,Spain_1999
+483,1.5,Sweden_1999
+484,1.48,Switzerland_1999
+485,2.48,Türkiye_1999
+486,1.68,United Kingdom_1999
+487,2.01,United States_1999
+488,2.58,Argentina_1999
+489,2.33,Brazil_1999
+490,1.23,Bulgaria_1999
+491,1.53,China_1999
+492,1.38,Croatia_1999
+493,1.67,Cyprus_1999
+494,3.38,India_1999
+495,2.58,Indonesia_1999
+496,1.72,Malta_1999
+497,1.3,Romania_1999
+498,1.16,Russia_1999
+499,2.56,South Africa_1999
+500,1.76,Australia_2000
+501,1.36,Austria_2000
+502,1.67,Belgium_2000
+503,1.51,Canada_2000
+504,2.06,Chile_2000
+505,2.57,Colombia_2000
+506,2.41,Costa Rica_2000
+507,1.14,Czechia_2000
+508,1.77,Denmark_2000
+509,1.36,Estonia_2000
+510,1.73,Finland_2000
+511,1.87,France_2000
+512,1.38,Germany_2000
+513,1.25,Greece_2000
+514,1.33,Hungary_2000
+515,2.08,Iceland_2000
+516,1.9,Ireland_2000
+517,2.95,Israel_2000
+518,1.26,Italy_2000
+519,1.36,Japan_2000
+520,1.48,Korea_2000
+521,1.25,Latvia_2000
+522,1.39,Lithuania_2000
+523,1.78,Luxembourg_2000
+524,2.72,Mexico_2000
+525,1.72,Netherlands_2000
+526,1.98,New Zealand_2000
+527,1.85,Norway_2000
+528,1.37,Poland_2000
+529,1.56,Portugal_2000
+530,1.29,Slovak Republic_2000
+531,1.26,Slovenia_2000
+532,1.23,Spain_2000
+533,1.55,Sweden_2000
+534,1.5,Switzerland_2000
+535,2.27,Türkiye_2000
+536,1.64,United Kingdom_2000
+537,2.06,United States_2000
+538,2.54,Argentina_2000
+539,2.26,Brazil_2000
+540,1.26,Bulgaria_2000
+541,1.63,China_2000
+542,1.39,Croatia_2000
+543,1.64,Cyprus_2000
+544,3.35,India_2000
+545,2.54,Indonesia_2000
+546,1.69,Malta_2000
+547,1.31,Romania_2000
+548,1.2,Russia_2000
+549,2.41,South Africa_2000
+550,1.73,Australia_2001
+551,1.33,Austria_2001
+552,1.67,Belgium_2001
+553,1.54,Canada_2001
+554,2.01,Chile_2001
+555,2.52,Colombia_2001
+556,2.33,Costa Rica_2001
+557,1.15,Czechia_2001
+558,1.75,Denmark_2001
+559,1.32,Estonia_2001
+560,1.73,Finland_2001
+561,1.88,France_2001
+562,1.35,Germany_2001
+563,1.25,Greece_2001
+564,1.31,Hungary_2001
+565,1.95,Iceland_2001
+566,1.96,Ireland_2001
+567,2.89,Israel_2001
+568,1.25,Italy_2001
+569,1.33,Japan_2001
+570,1.31,Korea_2001
+571,1.22,Latvia_2001
+572,1.29,Lithuania_2001
+573,1.66,Luxembourg_2001
+574,2.67,Mexico_2001
+575,1.71,Netherlands_2001
+576,1.97,New Zealand_2001
+577,1.78,Norway_2001
+578,1.32,Poland_2001
+579,1.46,Portugal_2001
+580,1.2,Slovak Republic_2001
+581,1.21,Slovenia_2001
+582,1.24,Spain_2001
+583,1.57,Sweden_2001
+584,1.38,Switzerland_2001
+585,2.37,Türkiye_2001
+586,1.63,United Kingdom_2001
+587,2.03,United States_2001
+588,2.51,Argentina_2001
+589,2.18,Brazil_2001
+590,1.21,Bulgaria_2001
+591,1.56,China_2001
+592,1.46,Croatia_2001
+593,1.57,Cyprus_2001
+594,3.3,India_2001
+595,2.5,Indonesia_2001
+596,1.5,Malta_2001
+597,1.27,Romania_2001
+598,1.22,Russia_2001
+599,2.37,South Africa_2001
+600,1.77,Australia_2002
+601,1.39,Austria_2002
+602,1.65,Belgium_2002
+603,1.52,Canada_2002
+604,1.97,Chile_2002
+605,2.46,Colombia_2002
+606,2.2,Costa Rica_2002
+607,1.17,Czechia_2002
+608,1.72,Denmark_2002
+609,1.36,Estonia_2002
+610,1.72,Finland_2002
+611,1.86,France_2002
+612,1.34,Germany_2002
+613,1.28,Greece_2002
+614,1.31,Hungary_2002
+615,1.93,Iceland_2002
+616,1.98,Ireland_2002
+617,2.89,Israel_2002
+618,1.27,Italy_2002
+619,1.32,Japan_2002
+620,1.18,Korea_2002
+621,1.26,Latvia_2002
+622,1.23,Lithuania_2002
+623,1.63,Luxembourg_2002
+624,2.62,Mexico_2002
+625,1.73,Netherlands_2002
+626,1.89,New Zealand_2002
+627,1.75,Norway_2002
+628,1.25,Poland_2002
+629,1.47,Portugal_2002
+630,1.19,Slovak Republic_2002
+631,1.21,Slovenia_2002
+632,1.25,Spain_2002
+633,1.65,Sweden_2002
+634,1.39,Switzerland_2002
+635,2.17,Türkiye_2002
+636,1.63,United Kingdom_2002
+637,2.01,United States_2002
+638,2.49,Argentina_2002
+639,2.1,Brazil_2002
+640,1.21,Bulgaria_2002
+641,1.57,China_2002
+642,1.42,Croatia_2002
+643,1.49,Cyprus_2002
+644,3.22,India_2002
+645,2.46,Indonesia_2002
+646,1.45,Malta_2002
+647,1.27,Romania_2002
+648,1.29,Russia_2002
+649,2.32,South Africa_2002
+650,1.77,Australia_2003
+651,1.38,Austria_2003
+652,1.67,Belgium_2003
+653,1.55,Canada_2003
+654,1.94,Chile_2003
+655,2.4,Colombia_2003
+656,2.14,Costa Rica_2003
+657,1.18,Czechia_2003
+658,1.76,Denmark_2003
+659,1.36,Estonia_2003
+660,1.76,Finland_2003
+661,1.87,France_2003
+662,1.34,Germany_2003
+663,1.29,Greece_2003
+664,1.28,Hungary_2003
+665,1.99,Iceland_2003
+666,1.98,Ireland_2003
+667,2.95,Israel_2003
+668,1.29,Italy_2003
+669,1.29,Japan_2003
+670,1.19,Korea_2003
+671,1.32,Latvia_2003
+672,1.26,Lithuania_2003
+673,1.62,Luxembourg_2003
+674,2.58,Mexico_2003
+675,1.75,Netherlands_2003
+676,1.93,New Zealand_2003
+677,1.8,Norway_2003
+678,1.22,Poland_2003
+679,1.44,Portugal_2003
+680,1.2,Slovak Republic_2003
+681,1.2,Slovenia_2003
+682,1.3,Spain_2003
+683,1.72,Sweden_2003
+684,1.39,Switzerland_2003
+685,2.09,Türkiye_2003
+686,1.7,United Kingdom_2003
+687,2.04,United States_2003
+688,2.46,Argentina_2003
+689,2.02,Brazil_2003
+690,1.23,Bulgaria_2003
+691,1.57,China_2003
+692,1.41,Croatia_2003
+693,1.51,Cyprus_2003
+694,3.12,India_2003
+695,2.43,Indonesia_2003
+696,1.48,Malta_2003
+697,1.3,Romania_2003
+698,1.32,Russia_2003
+699,2.36,South Africa_2003
+700,1.78,Australia_2004
+701,1.42,Austria_2004
+702,1.72,Belgium_2004
+703,1.56,Canada_2004
+704,1.92,Chile_2004
+705,2.33,Colombia_2004
+706,2.08,Costa Rica_2004
+707,1.23,Czechia_2004
+708,1.79,Denmark_2004
+709,1.47,Estonia_2004
+710,1.8,Finland_2004
+711,1.9,France_2004
+712,1.36,Germany_2004
+713,1.31,Greece_2004
+714,1.28,Hungary_2004
+715,2.03,Iceland_2004
+716,1.95,Ireland_2004
+717,2.9,Israel_2004
+718,1.34,Italy_2004
+719,1.29,Japan_2004
+720,1.16,Korea_2004
+721,1.29,Latvia_2004
+722,1.27,Lithuania_2004
+723,1.66,Luxembourg_2004
+724,2.54,Mexico_2004
+725,1.73,Netherlands_2004
+726,1.98,New Zealand_2004
+727,1.83,Norway_2004
+728,1.23,Poland_2004
+729,1.41,Portugal_2004
+730,1.24,Slovak Republic_2004
+731,1.25,Slovenia_2004
+732,1.31,Spain_2004
+733,1.75,Sweden_2004
+734,1.42,Switzerland_2004
+735,2.11,Türkiye_2004
+736,1.75,United Kingdom_2004
+737,2.05,United States_2004
+738,2.44,Argentina_2004
+739,2.0,Brazil_2004
+740,1.29,Bulgaria_2004
+741,1.61,China_2004
+742,1.43,Croatia_2004
+743,1.52,Cyprus_2004
+744,3.05,India_2004
+745,2.42,Indonesia_2004
+746,1.4,Malta_2004
+747,1.33,Romania_2004
+748,1.34,Russia_2004
+749,2.44,South Africa_2004
+750,1.85,Australia_2005
+751,1.41,Austria_2005
+752,1.76,Belgium_2005
+753,1.58,Canada_2005
+754,1.91,Chile_2005
+755,2.26,Colombia_2005
+756,2.04,Costa Rica_2005
+757,1.28,Czechia_2005
+758,1.8,Denmark_2005
+759,1.52,Estonia_2005
+760,1.8,Finland_2005
+761,1.92,France_2005
+762,1.34,Germany_2005
+763,1.34,Greece_2005
+764,1.32,Hungary_2005
+765,2.05,Iceland_2005
+766,1.88,Ireland_2005
+767,2.84,Israel_2005
+768,1.33,Italy_2005
+769,1.26,Japan_2005
+770,1.09,Korea_2005
+771,1.39,Latvia_2005
+772,1.29,Lithuania_2005
+773,1.62,Luxembourg_2005
+774,2.5,Mexico_2005
+775,1.71,Netherlands_2005
+776,1.97,New Zealand_2005
+777,1.84,Norway_2005
+778,1.24,Poland_2005
+779,1.42,Portugal_2005
+780,1.25,Slovak Republic_2005
+781,1.26,Slovenia_2005
+782,1.33,Spain_2005
+783,1.77,Sweden_2005
+784,1.42,Switzerland_2005
+785,2.12,Türkiye_2005
+786,1.76,United Kingdom_2005
+787,2.06,United States_2005
+788,2.42,Argentina_2005
+789,1.97,Brazil_2005
+790,1.32,Bulgaria_2005
+791,1.62,China_2005
+792,1.5,Croatia_2005
+793,1.48,Cyprus_2005
+794,2.96,India_2005
+795,2.43,Indonesia_2005
+796,1.38,Malta_2005
+797,1.4,Romania_2005
+798,1.29,Russia_2005
+799,2.51,South Africa_2005
+800,1.88,Australia_2006
+801,1.41,Austria_2006
+802,1.8,Belgium_2006
+803,1.63,Canada_2006
+804,1.9,Chile_2006
+805,2.2,Colombia_2006
+806,2.01,Costa Rica_2006
+807,1.33,Czechia_2006
+808,1.85,Denmark_2006
+809,1.58,Estonia_2006
+810,1.84,Finland_2006
+811,1.98,France_2006
+812,1.33,Germany_2006
+813,1.4,Greece_2006
+814,1.35,Hungary_2006
+815,2.07,Iceland_2006
+816,1.94,Ireland_2006
+817,2.88,Israel_2006
+818,1.37,Italy_2006
+819,1.32,Japan_2006
+820,1.13,Korea_2006
+821,1.46,Latvia_2006
+822,1.33,Lithuania_2006
+823,1.64,Luxembourg_2006
+824,2.46,Mexico_2006
+825,1.72,Netherlands_2006
+826,2.01,New Zealand_2006
+827,1.9,Norway_2006
+828,1.27,Poland_2006
+829,1.38,Portugal_2006
+830,1.24,Slovak Republic_2006
+831,1.31,Slovenia_2006
+832,1.36,Spain_2006
+833,1.85,Sweden_2006
+834,1.44,Switzerland_2006
+835,2.12,Türkiye_2006
+836,1.82,United Kingdom_2006
+837,2.11,United States_2006
+838,2.4,Argentina_2006
+839,1.93,Brazil_2006
+840,1.38,Bulgaria_2006
+841,1.64,China_2006
+842,1.47,Croatia_2006
+843,1.52,Cyprus_2006
+844,2.86,India_2006
+845,2.45,Indonesia_2006
+846,1.36,Malta_2006
+847,1.42,Romania_2006
+848,1.31,Russia_2006
+849,2.55,South Africa_2006
+850,1.99,Australia_2007
+851,1.39,Austria_2007
+852,1.82,Belgium_2007
+853,1.67,Canada_2007
+854,1.9,Chile_2007
+855,2.14,Colombia_2007
+856,2.01,Costa Rica_2007
+857,1.44,Czechia_2007
+858,1.84,Denmark_2007
+859,1.69,Estonia_2007
+860,1.83,Finland_2007
+861,1.95,France_2007
+862,1.37,Germany_2007
+863,1.41,Greece_2007
+864,1.32,Hungary_2007
+865,2.09,Iceland_2007
+866,2.01,Ireland_2007
+867,2.9,Israel_2007
+868,1.39,Italy_2007
+869,1.34,Japan_2007
+870,1.26,Korea_2007
+871,1.54,Latvia_2007
+872,1.36,Lithuania_2007
+873,1.61,Luxembourg_2007
+874,2.42,Mexico_2007
+875,1.72,Netherlands_2007
+876,2.18,New Zealand_2007
+877,1.9,Norway_2007
+878,1.31,Poland_2007
+879,1.35,Portugal_2007
+880,1.25,Slovak Republic_2007
+881,1.38,Slovenia_2007
+882,1.38,Spain_2007
+883,1.88,Sweden_2007
+884,1.46,Switzerland_2007
+885,2.16,Türkiye_2007
+886,1.86,United Kingdom_2007
+887,2.12,United States_2007
+888,2.38,Argentina_2007
+889,1.88,Brazil_2007
+890,1.49,Bulgaria_2007
+891,1.67,China_2007
+892,1.48,Croatia_2007
+893,1.44,Cyprus_2007
+894,2.78,India_2007
+895,2.49,Indonesia_2007
+896,1.35,Malta_2007
+897,1.45,Romania_2007
+898,1.42,Russia_2007
+899,2.55,South Africa_2007
+900,2.02,Australia_2008
+901,1.42,Austria_2008
+902,1.85,Belgium_2008
+903,1.7,Canada_2008
+904,1.9,Chile_2008
+905,2.08,Colombia_2008
+906,2.02,Costa Rica_2008
+907,1.5,Czechia_2008
+908,1.89,Denmark_2008
+909,1.72,Estonia_2008
+910,1.85,Finland_2008
+911,1.99,France_2008
+912,1.38,Germany_2008
+913,1.5,Greece_2008
+914,1.35,Hungary_2008
+915,2.14,Iceland_2008
+916,2.06,Ireland_2008
+917,2.96,Israel_2008
+918,1.44,Italy_2008
+919,1.37,Japan_2008
+920,1.19,Korea_2008
+921,1.58,Latvia_2008
+922,1.45,Lithuania_2008
+923,1.6,Luxembourg_2008
+924,2.39,Mexico_2008
+925,1.77,Netherlands_2008
+926,2.19,New Zealand_2008
+927,1.96,Norway_2008
+928,1.39,Poland_2008
+929,1.4,Portugal_2008
+930,1.32,Slovak Republic_2008
+931,1.53,Slovenia_2008
+932,1.45,Spain_2008
+933,1.91,Sweden_2008
+934,1.48,Switzerland_2008
+935,2.15,Türkiye_2008
+936,1.91,United Kingdom_2008
+937,2.07,United States_2008
+938,2.37,Argentina_2008
+939,1.84,Brazil_2008
+940,1.56,Bulgaria_2008
+941,1.7,China_2008
+942,1.55,Croatia_2008
+943,1.48,Cyprus_2008
+944,2.72,India_2008
+945,2.48,Indonesia_2008
+946,1.43,Malta_2008
+947,1.6,Romania_2008
+948,1.5,Russia_2008
+949,2.68,South Africa_2008
+950,1.97,Australia_2009
+951,1.4,Austria_2009
+952,1.84,Belgium_2009
+953,1.69,Canada_2009
+954,1.89,Chile_2009
+955,2.03,Colombia_2009
+956,1.98,Costa Rica_2009
+957,1.49,Czechia_2009
+958,1.84,Denmark_2009
+959,1.7,Estonia_2009
+960,1.86,Finland_2009
+961,1.99,France_2009
+962,1.36,Germany_2009
+963,1.5,Greece_2009
+964,1.33,Hungary_2009
+965,2.22,Iceland_2009
+966,2.06,Ireland_2009
+967,2.96,Israel_2009
+968,1.44,Italy_2009
+969,1.37,Japan_2009
+970,1.15,Korea_2009
+971,1.46,Latvia_2009
+972,1.5,Lithuania_2009
+973,1.59,Luxembourg_2009
+974,2.36,Mexico_2009
+975,1.79,Netherlands_2009
+976,2.13,New Zealand_2009
+977,1.98,Norway_2009
+978,1.4,Poland_2009
+979,1.35,Portugal_2009
+980,1.41,Slovak Republic_2009
+981,1.53,Slovenia_2009
+982,1.38,Spain_2009
+983,1.94,Sweden_2009
+984,1.5,Switzerland_2009
+985,2.1,Türkiye_2009
+986,1.89,United Kingdom_2009
+987,2.0,United States_2009
+988,2.36,Argentina_2009
+989,1.83,Brazil_2009
+990,1.66,Bulgaria_2009
+991,1.71,China_2009
+992,1.58,Croatia_2009
+993,1.47,Cyprus_2009
+994,2.67,India_2009
+995,2.46,Indonesia_2009
+996,1.42,Malta_2009
+997,1.66,Romania_2009
+998,1.54,Russia_2009
+999,2.5,South Africa_2009
+1000,1.95,Australia_2010
+1001,1.44,Austria_2010
+1002,1.86,Belgium_2010
+1003,1.65,Canada_2010
+1004,1.88,Chile_2010
+1005,1.99,Colombia_2010
+1006,1.93,Costa Rica_2010
+1007,1.49,Czechia_2010
+1008,1.87,Denmark_2010
+1009,1.72,Estonia_2010
+1010,1.87,Finland_2010
+1011,2.02,France_2010
+1012,1.39,Germany_2010
+1013,1.48,Greece_2010
+1014,1.26,Hungary_2010
+1015,2.2,Iceland_2010
+1016,2.05,Ireland_2010
+1017,3.03,Israel_2010
+1018,1.44,Italy_2010
+1019,1.39,Japan_2010
+1020,1.23,Korea_2010
+1021,1.36,Latvia_2010
+1022,1.5,Lithuania_2010
+1023,1.63,Luxembourg_2010
+1024,2.34,Mexico_2010
+1025,1.8,Netherlands_2010
+1026,2.17,New Zealand_2010
+1027,1.95,Norway_2010
+1028,1.38,Poland_2010
+1029,1.39,Portugal_2010
+1030,1.4,Slovak Republic_2010
+1031,1.57,Slovenia_2010
+1032,1.37,Spain_2010
+1033,1.98,Sweden_2010
+1034,1.54,Switzerland_2010
+1035,2.08,Türkiye_2010
+1036,1.92,United Kingdom_2010
+1037,1.93,United States_2010
+1038,2.35,Argentina_2010
+1039,1.81,Brazil_2010
+1040,1.57,Bulgaria_2010
+1041,1.69,China_2010
+1042,1.55,Croatia_2010
+1043,1.44,Cyprus_2010
+1044,2.6,India_2010
+1045,2.45,Indonesia_2010
+1046,1.36,Malta_2010
+1047,1.59,Romania_2010
+1048,1.57,Russia_2010
+1049,2.44,South Africa_2010
+1050,1.92,Australia_2011
+1051,1.43,Austria_2011
+1052,1.81,Belgium_2011
+1053,1.63,Canada_2011
+1054,1.82,Chile_2011
+1055,1.96,Colombia_2011
+1056,1.9,Costa Rica_2011
+1057,1.43,Czechia_2011
+1058,1.75,Denmark_2011
+1059,1.61,Estonia_2011
+1060,1.83,Finland_2011
+1061,2.0,France_2011
+1062,1.39,Germany_2011
+1063,1.4,Greece_2011
+1064,1.24,Hungary_2011
+1065,2.02,Iceland_2011
+1066,2.03,Ireland_2011
+1067,3.0,Israel_2011
+1068,1.42,Italy_2011
+1069,1.39,Japan_2011
+1070,1.24,Korea_2011
+1071,1.33,Latvia_2011
+1072,1.55,Lithuania_2011
+1073,1.51,Luxembourg_2011
+1074,2.32,Mexico_2011
+1075,1.76,Netherlands_2011
+1076,2.09,New Zealand_2011
+1077,1.88,Norway_2011
+1078,1.3,Poland_2011
+1079,1.35,Portugal_2011
+1080,1.45,Slovak Republic_2011
+1081,1.56,Slovenia_2011
+1082,1.34,Spain_2011
+1083,1.9,Sweden_2011
+1084,1.52,Switzerland_2011
+1085,2.05,Türkiye_2011
+1086,1.91,United Kingdom_2011
+1087,1.89,United States_2011
+1088,2.34,Argentina_2011
+1089,1.8,Brazil_2011
+1090,1.51,Bulgaria_2011
+1091,1.67,China_2011
+1092,1.48,Croatia_2011
+1093,1.35,Cyprus_2011
+1094,2.54,India_2011
+1095,2.5,Indonesia_2011
+1096,1.45,Malta_2011
+1097,1.47,Romania_2011
+1098,1.58,Russia_2011
+1099,2.44,South Africa_2011
+1100,1.93,Australia_2012
+1101,1.44,Austria_2012
+1102,1.8,Belgium_2012
+1103,1.63,Canada_2012
+1104,1.8,Chile_2012
+1105,1.93,Colombia_2012
+1106,1.88,Costa Rica_2012
+1107,1.45,Czechia_2012
+1108,1.73,Denmark_2012
+1109,1.56,Estonia_2012
+1110,1.8,Finland_2012
+1111,1.99,France_2012
+1112,1.41,Germany_2012
+1113,1.34,Greece_2012
+1114,1.34,Hungary_2012
+1115,2.04,Iceland_2012
+1116,1.98,Ireland_2012
+1117,3.05,Israel_2012
+1118,1.42,Italy_2012
+1119,1.41,Japan_2012
+1120,1.3,Korea_2012
+1121,1.44,Latvia_2012
+1122,1.6,Lithuania_2012
+1123,1.57,Luxembourg_2012
+1124,2.29,Mexico_2012
+1125,1.72,Netherlands_2012
+1126,2.1,New Zealand_2012
+1127,1.85,Norway_2012
+1128,1.3,Poland_2012
+1129,1.29,Portugal_2012
+1130,1.34,Slovak Republic_2012
+1131,1.58,Slovenia_2012
+1132,1.32,Spain_2012
+1133,1.91,Sweden_2012
+1134,1.53,Switzerland_2012
+1135,2.11,Türkiye_2012
+1136,1.92,United Kingdom_2012
+1137,1.88,United States_2012
+1138,2.33,Argentina_2012
+1139,1.77,Brazil_2012
+1140,1.5,Bulgaria_2012
+1141,1.8,China_2012
+1142,1.51,Croatia_2012
+1143,1.39,Cyprus_2012
+1144,2.47,India_2012
+1145,2.49,Indonesia_2012
+1146,1.42,Malta_2012
+1147,1.52,Romania_2012
+1148,1.69,Russia_2012
+1149,2.45,South Africa_2012
+1150,1.88,Australia_2013
+1151,1.44,Austria_2013
+1152,1.76,Belgium_2013
+1153,1.61,Canada_2013
+1154,1.79,Chile_2013
+1155,1.91,Colombia_2013
+1156,1.84,Costa Rica_2013
+1157,1.46,Czechia_2013
+1158,1.67,Denmark_2013
+1159,1.52,Estonia_2013
+1160,1.75,Finland_2013
+1161,1.97,France_2013
+1162,1.42,Germany_2013
+1163,1.29,Greece_2013
+1164,1.34,Hungary_2013
+1165,1.93,Iceland_2013
+1166,1.93,Ireland_2013
+1167,3.03,Israel_2013
+1168,1.39,Italy_2013
+1169,1.43,Japan_2013
+1170,1.19,Korea_2013
+1171,1.52,Latvia_2013
+1172,1.59,Lithuania_2013
+1173,1.55,Luxembourg_2013
+1174,2.27,Mexico_2013
+1175,1.68,Netherlands_2013
+1176,2.01,New Zealand_2013
+1177,1.78,Norway_2013
+1178,1.26,Poland_2013
+1179,1.21,Portugal_2013
+1180,1.34,Slovak Republic_2013
+1181,1.55,Slovenia_2013
+1182,1.27,Spain_2013
+1183,1.89,Sweden_2013
+1184,1.52,Switzerland_2013
+1185,2.11,Türkiye_2013
+1186,1.83,United Kingdom_2013
+1187,1.86,United States_2013
+1188,2.32,Argentina_2013
+1189,1.75,Brazil_2013
+1190,1.48,Bulgaria_2013
+1191,1.71,China_2013
+1192,1.46,Croatia_2013
+1193,1.3,Cyprus_2013
+1194,2.41,India_2013
+1195,2.43,Indonesia_2013
+1196,1.36,Malta_2013
+1197,1.41,Romania_2013
+1198,1.71,Russia_2013
+1199,2.43,South Africa_2013
+1200,1.79,Australia_2014
+1201,1.46,Austria_2014
+1202,1.74,Belgium_2014
+1203,1.61,Canada_2014
+1204,1.77,Chile_2014
+1205,1.88,Colombia_2014
+1206,1.82,Costa Rica_2014
+1207,1.53,Czechia_2014
+1208,1.69,Denmark_2014
+1209,1.54,Estonia_2014
+1210,1.71,Finland_2014
+1211,1.97,France_2014
+1212,1.47,Germany_2014
+1213,1.3,Greece_2014
+1214,1.41,Hungary_2014
+1215,1.93,Iceland_2014
+1216,1.89,Ireland_2014
+1217,3.08,Israel_2014
+1218,1.38,Italy_2014
+1219,1.42,Japan_2014
+1220,1.21,Korea_2014
+1221,1.65,Latvia_2014
+1222,1.63,Lithuania_2014
+1223,1.5,Luxembourg_2014
+1224,2.21,Mexico_2014
+1225,1.71,Netherlands_2014
+1226,1.92,New Zealand_2014
+1227,1.76,Norway_2014
+1228,1.29,Poland_2014
+1229,1.23,Portugal_2014
+1230,1.37,Slovak Republic_2014
+1231,1.58,Slovenia_2014
+1232,1.32,Spain_2014
+1233,1.88,Sweden_2014
+1234,1.54,Switzerland_2014
+1235,2.18,Türkiye_2014
+1236,1.81,United Kingdom_2014
+1237,1.86,United States_2014
+1238,2.31,Argentina_2014
+1239,1.77,Brazil_2014
+1240,1.53,Bulgaria_2014
+1241,1.77,China_2014
+1242,1.46,Croatia_2014
+1243,1.31,Cyprus_2014
+1244,2.31,India_2014
+1245,2.39,Indonesia_2014
+1246,1.38,Malta_2014
+1247,1.52,Romania_2014
+1248,1.75,Russia_2014
+1249,2.42,South Africa_2014
+1250,1.79,Australia_2015
+1251,1.49,Austria_2015
+1252,1.7,Belgium_2015
+1253,1.6,Canada_2015
+1254,1.74,Chile_2015
+1255,1.86,Colombia_2015
+1256,1.79,Costa Rica_2015
+1257,1.57,Czechia_2015
+1258,1.71,Denmark_2015
+1259,1.58,Estonia_2015
+1260,1.65,Finland_2015
+1261,1.93,France_2015
+1262,1.5,Germany_2015
+1263,1.33,Greece_2015
+1264,1.44,Hungary_2015
+1265,1.81,Iceland_2015
+1266,1.85,Ireland_2015
+1267,3.09,Israel_2015
+1268,1.36,Italy_2015
+1269,1.45,Japan_2015
+1270,1.24,Korea_2015
+1271,1.7,Latvia_2015
+1272,1.7,Lithuania_2015
+1273,1.47,Luxembourg_2015
+1274,2.14,Mexico_2015
+1275,1.66,Netherlands_2015
+1276,1.99,New Zealand_2015
+1277,1.73,Norway_2015
+1278,1.29,Poland_2015
+1279,1.31,Portugal_2015
+1280,1.4,Slovak Republic_2015
+1281,1.57,Slovenia_2015
+1282,1.33,Spain_2015
+1283,1.85,Sweden_2015
+1284,1.54,Switzerland_2015
+1285,2.15,Türkiye_2015
+1286,1.8,United Kingdom_2015
+1287,1.84,United States_2015
+1288,2.3,Argentina_2015
+1289,1.78,Brazil_2015
+1290,1.53,Bulgaria_2015
+1291,1.67,China_2015
+1292,1.4,Croatia_2015
+1293,1.32,Cyprus_2015
+1294,2.29,India_2015
+1295,2.35,Indonesia_2015
+1296,1.37,Malta_2015
+1297,1.58,Romania_2015
+1298,1.78,Russia_2015
+1299,2.36,South Africa_2015
+1300,1.79,Australia_2016
+1301,1.53,Austria_2016
+1302,1.68,Belgium_2016
+1303,1.59,Canada_2016
+1304,1.68,Chile_2016
+1305,1.84,Colombia_2016
+1306,1.75,Costa Rica_2016
+1307,1.63,Czechia_2016
+1308,1.79,Denmark_2016
+1309,1.6,Estonia_2016
+1310,1.57,Finland_2016
+1311,1.89,France_2016
+1312,1.59,Germany_2016
+1313,1.38,Greece_2016
+1314,1.49,Hungary_2016
+1315,1.75,Iceland_2016
+1316,1.82,Ireland_2016
+1317,3.11,Israel_2016
+1318,1.36,Italy_2016
+1319,1.44,Japan_2016
+1320,1.17,Korea_2016
+1321,1.74,Latvia_2016
+1322,1.69,Lithuania_2016
+1323,1.41,Luxembourg_2016
+1324,2.09,Mexico_2016
+1325,1.66,Netherlands_2016
+1326,1.87,New Zealand_2016
+1327,1.71,Norway_2016
+1328,1.36,Poland_2016
+1329,1.36,Portugal_2016
+1330,1.48,Slovak Republic_2016
+1331,1.58,Slovenia_2016
+1332,1.34,Spain_2016
+1333,1.85,Sweden_2016
+1334,1.54,Switzerland_2016
+1335,2.11,Türkiye_2016
+1336,1.79,United Kingdom_2016
+1337,1.82,United States_2016
+1338,2.24,Argentina_2016
+1339,1.71,Brazil_2016
+1340,1.54,Bulgaria_2016
+1341,1.77,China_2016
+1342,1.42,Croatia_2016
+1343,1.37,Cyprus_2016
+1344,2.27,India_2016
+1345,2.31,Indonesia_2016
+1346,1.37,Malta_2016
+1347,1.64,Romania_2016
+1348,1.76,Russia_2016
+1349,2.26,South Africa_2016
+1350,1.74,Australia_2017
+1351,1.52,Austria_2017
+1352,1.65,Belgium_2017
+1353,1.55,Canada_2017
+1354,1.6,Chile_2017
+1355,1.82,Colombia_2017
+1356,1.74,Costa Rica_2017
+1357,1.69,Czechia_2017
+1358,1.75,Denmark_2017
+1359,1.59,Estonia_2017
+1360,1.49,Finland_2017
+1361,1.86,France_2017
+1362,1.57,Germany_2017
+1363,1.35,Greece_2017
+1364,1.49,Hungary_2017
+1365,1.71,Iceland_2017
+1366,1.78,Ireland_2017
+1367,3.11,Israel_2017
+1368,1.34,Italy_2017
+1369,1.43,Japan_2017
+1370,1.05,Korea_2017
+1371,1.69,Latvia_2017
+1372,1.63,Lithuania_2017
+1373,1.39,Luxembourg_2017
+1374,2.04,Mexico_2017
+1375,1.62,Netherlands_2017
+1376,1.81,New Zealand_2017
+1377,1.62,Norway_2017
+1378,1.45,Poland_2017
+1379,1.38,Portugal_2017
+1380,1.52,Slovak Republic_2017
+1381,1.62,Slovenia_2017
+1382,1.31,Spain_2017
+1383,1.78,Sweden_2017
+1384,1.52,Switzerland_2017
+1385,2.07,Türkiye_2017
+1386,1.74,United Kingdom_2017
+1387,1.77,United States_2017
+1388,2.17,Argentina_2017
+1389,1.74,Brazil_2017
+1390,1.56,Bulgaria_2017
+1391,1.81,China_2017
+1392,1.42,Croatia_2017
+1393,1.32,Cyprus_2017
+1394,2.2,India_2017
+1395,2.26,Indonesia_2017
+1396,1.26,Malta_2017
+1397,1.71,Romania_2017
+1398,1.62,Russia_2017
+1399,2.33,South Africa_2017
+1400,1.74,Australia_2018
+1401,1.48,Austria_2018
+1402,1.62,Belgium_2018
+1403,1.51,Canada_2018
+1404,1.56,Chile_2018
+1405,1.79,Colombia_2018
+1406,1.71,Costa Rica_2018
+1407,1.71,Czechia_2018
+1408,1.73,Denmark_2018
+1409,1.67,Estonia_2018
+1410,1.41,Finland_2018
+1411,1.84,France_2018
+1412,1.57,Germany_2018
+1413,1.35,Greece_2018
+1414,1.49,Hungary_2018
+1415,1.71,Iceland_2018
+1416,1.75,Ireland_2018
+1417,3.09,Israel_2018
+1418,1.31,Italy_2018
+1419,1.42,Japan_2018
+1420,0.98,Korea_2018
+1421,1.6,Latvia_2018
+1422,1.63,Lithuania_2018
+1423,1.38,Luxembourg_2018
+1424,2.0,Mexico_2018
+1425,1.59,Netherlands_2018
+1426,1.71,New Zealand_2018
+1427,1.56,Norway_2018
+1428,1.44,Poland_2018
+1429,1.42,Portugal_2018
+1430,1.54,Slovak Republic_2018
+1431,1.6,Slovenia_2018
+1432,1.26,Spain_2018
+1433,1.75,Sweden_2018
+1434,1.52,Switzerland_2018
+1435,1.99,Türkiye_2018
+1436,1.68,United Kingdom_2018
+1437,1.73,United States_2018
+1438,2.04,Argentina_2018
+1439,1.75,Brazil_2018
+1440,1.56,Bulgaria_2018
+1441,1.55,China_2018
+1442,1.47,Croatia_2018
+1443,1.32,Cyprus_2018
+1444,2.18,India_2018
+1445,2.23,Indonesia_2018
+1446,1.23,Malta_2018
+1447,1.76,Romania_2018
+1448,1.58,Russia_2018
+1449,2.42,South Africa_2018
+1450,1.67,Australia_2019
+1451,1.46,Austria_2019
+1452,1.6,Belgium_2019
+1453,1.47,Canada_2019
+1454,1.55,Chile_2019
+1455,1.77,Colombia_2019
+1456,1.63,Costa Rica_2019
+1457,1.71,Czechia_2019
+1458,1.7,Denmark_2019
+1459,1.66,Estonia_2019
+1460,1.35,Finland_2019
+1461,1.83,France_2019
+1462,1.54,Germany_2019
+1463,1.34,Greece_2019
+1464,1.49,Hungary_2019
+1465,1.75,Iceland_2019
+1466,1.7,Ireland_2019
+1467,3.01,Israel_2019
+1468,1.27,Italy_2019
+1469,1.36,Japan_2019
+1470,0.92,Korea_2019
+1471,1.61,Latvia_2019
+1472,1.61,Lithuania_2019
+1473,1.34,Luxembourg_2019
+1474,1.92,Mexico_2019
+1475,1.57,Netherlands_2019
+1476,1.72,New Zealand_2019
+1477,1.53,Norway_2019
+1478,1.42,Poland_2019
+1479,1.43,Portugal_2019
+1480,1.57,Slovak Republic_2019
+1481,1.61,Slovenia_2019
+1482,1.23,Spain_2019
+1483,1.7,Sweden_2019
+1484,1.48,Switzerland_2019
+1485,1.88,Türkiye_2019
+1486,1.63,United Kingdom_2019
+1487,1.71,United States_2019
+1488,1.99,Argentina_2019
+1489,1.7,Brazil_2019
+1490,1.58,Bulgaria_2019
+1491,1.5,China_2019
+1492,1.47,Croatia_2019
+1493,1.33,Cyprus_2019
+1494,2.11,India_2019
+1495,2.22,Indonesia_2019
+1496,1.14,Malta_2019
+1497,1.77,Romania_2019
+1498,1.5,Russia_2019
+1499,2.48,South Africa_2019
+1500,1.59,Australia_2020
+1501,1.44,Austria_2020
+1502,1.55,Belgium_2020
+1503,1.41,Canada_2020
+1504,1.54,Chile_2020
+1505,1.74,Colombia_2020
+1506,1.56,Costa Rica_2020
+1507,1.71,Czechia_2020
+1508,1.67,Denmark_2020
+1509,1.58,Estonia_2020
+1510,1.37,Finland_2020
+1511,1.79,France_2020
+1512,1.53,Germany_2020
+1513,1.39,Greece_2020
+1514,1.56,Hungary_2020
+1515,1.72,Iceland_2020
+1516,1.63,Ireland_2020
+1517,2.9,Israel_2020
+1518,1.24,Italy_2020
+1519,1.33,Japan_2020
+1520,0.84,Korea_2020
+1521,1.55,Latvia_2020
+1522,1.48,Lithuania_2020
+1523,1.36,Luxembourg_2020
+1524,1.91,Mexico_2020
+1525,1.54,Netherlands_2020
+1526,1.61,New Zealand_2020
+1527,1.48,Norway_2020
+1528,1.39,Poland_2020
+1529,1.41,Portugal_2020
+1530,1.59,Slovak Republic_2020
+1531,1.59,Slovenia_2020
+1532,1.19,Spain_2020
+1533,1.66,Sweden_2020
+1534,1.46,Switzerland_2020
+1535,1.76,Türkiye_2020
+1536,1.56,United Kingdom_2020
+1537,1.64,United States_2020
+1538,1.91,Argentina_2020
+1539,1.65,Brazil_2020
+1540,1.56,Bulgaria_2020
+1541,1.28,China_2020
+1542,1.48,Croatia_2020
+1543,1.36,Cyprus_2020
+1544,2.05,India_2020
+1545,2.19,Indonesia_2020
+1546,1.13,Malta_2020
+1547,1.8,Romania_2020
+1548,1.51,Russia_2020
+1549,2.4,South Africa_2020
+1550,1.7,Australia_2021
+1551,1.48,Austria_2021
+1552,1.6,Belgium_2021
+1553,1.43,Canada_2021
+1554,1.54,Chile_2021
+1555,1.72,Colombia_2021
+1556,1.53,Costa Rica_2021
+1557,1.83,Czechia_2021
+1558,1.72,Denmark_2021
+1559,1.61,Estonia_2021
+1560,1.46,Finland_2021
+1561,1.8,France_2021
+1562,1.58,Germany_2021
+1563,1.43,Greece_2021
+1564,1.59,Hungary_2021
+1565,1.82,Iceland_2021
+1566,1.72,Ireland_2021
+1567,3.0,Israel_2021
+1568,1.25,Italy_2021
+1569,1.3,Japan_2021
+1570,0.81,Korea_2021
+1571,1.57,Latvia_2021
+1572,1.36,Lithuania_2021
+1573,1.38,Luxembourg_2021
+1574,1.82,Mexico_2021
+1575,1.62,Netherlands_2021
+1576,1.64,New Zealand_2021
+1577,1.55,Norway_2021
+1578,1.33,Poland_2021
+1579,1.35,Portugal_2021
+1580,1.63,Slovak Republic_2021
+1581,1.64,Slovenia_2021
+1582,1.19,Spain_2021
+1583,1.67,Sweden_2021
+1584,1.51,Switzerland_2021
+1585,1.7,Türkiye_2021
+1586,1.53,United Kingdom_2021
+1587,1.66,United States_2021
+1588,1.89,Argentina_2021
+1589,1.64,Brazil_2021
+1590,1.58,Bulgaria_2021
+1591,1.16,China_2021
+1592,1.58,Croatia_2021
+1593,1.39,Cyprus_2021
+1594,2.03,India_2021
+1595,2.17,Indonesia_2021
+1596,1.13,Malta_2021
+1597,1.81,Romania_2021
+1598,1.49,Russia_2021
+1599,2.37,South Africa_2021
+1600,..,Australia_2022
+1601,..,Austria_2022
+1602,..,Belgium_2022
+1603,..,Canada_2022
+1604,..,Chile_2022
+1605,..,Colombia_2022
+1606,..,Costa Rica_2022
+1607,..,Czechia_2022
+1608,1.55,Denmark_2022
+1609,..,Estonia_2022
+1610,..,Finland_2022
+1611,..,France_2022
+1612,..,Germany_2022
+1613,..,Greece_2022
+1614,1.52,Hungary_2022
+1615,..,Iceland_2022
+1616,..,Ireland_2022
+1617,..,Israel_2022
+1618,..,Italy_2022
+1619,..,Japan_2022
+1620,..,Korea_2022
+1621,..,Latvia_2022
+1622,..,Lithuania_2022
+1623,..,Luxembourg_2022
+1624,..,Mexico_2022
+1625,..,Netherlands_2022
+1626,..,New Zealand_2022
+1627,1.41,Norway_2022
+1628,..,Poland_2022
+1629,..,Portugal_2022
+1630,..,Slovak Republic_2022
+1631,..,Slovenia_2022
+1632,..,Spain_2022
+1633,..,Sweden_2022
+1634,..,Switzerland_2022
+1635,..,Türkiye_2022
+1636,..,United Kingdom_2022
+1637,..,United States_2022
+1638,..,Argentina_2022
+1639,..,Brazil_2022
+1640,..,Bulgaria_2022
+1641,..,China_2022
+1642,..,Croatia_2022
+1643,..,Cyprus_2022
+1644,..,India_2022
+1645,..,Indonesia_2022
+1646,..,Malta_2022
+1647,..,Romania_2022
+1648,..,Russia_2022
+1649,..,South Africa_2022

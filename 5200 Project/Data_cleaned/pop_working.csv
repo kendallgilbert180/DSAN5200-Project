@@ -1,0 +1,617 @@
+,population,Country_Year
+0,"11,814",Australia_2011
+1,"4,246",Austria_2011
+2,"4,856",Belgium_2011
+3,"18,670",Canada_2011
+4,"8,306",Chile_2011
+5,"21,735",Colombia_2011
+6,"2,041",Costa Rica_2011
+7,"5,223",Czechia_2011
+8,"2,884",Denmark_2011
+9,688,Estonia_2011
+10,"2,682",Finland_2011
+11,"28,248",France_2011
+12,"41,185",Germany_2011
+13,"4,936",Greece_2011
+14,"4,225",Hungary_2011
+15,179,Iceland_2011
+16,"2,231",Ireland_2011
+17,"B   3,204",Israel_2011
+18,"24,659",Italy_2011
+19,"B   65,955",Japan_2011
+20,"25,389",Korea_2011
+21,"1,028",Latvia_2011
+22,"1,482",Lithuania_2011
+23,236,Luxembourg_2011
+24,"49,722",Mexico_2011
+25,"8,726",Netherlands_2011
+26,"2,325",New Zealand_2011
+27,"2,620",Norway_2011
+28,"17,221",Poland_2011
+29,"5,426",Portugal_2011
+30,"2,680",Slovak Republic_2011
+31,"1,019",Slovenia_2011
+32,"23,434",Spain_2011
+33,"5,017",Sweden_2011
+34,"4,496",Switzerland_2011
+35,"26,423",Türkiye_2011
+36,"31,966",United Kingdom_2011
+37,"153,617",United States_2011
+38,"158,373",Euro area_2011
+39,"207,354",European Union_2011
+40,"B   620,793",OECD_2011
+41,"100,219",Brazil_2011
+42,"75,779",Russia_2011
+43,,
+45,"11,976",Australia_2012
+46,"4,293",Austria_2012
+47,"4,893",Belgium_2012
+48,"18,871",Canada_2012
+49,"8,428",Chile_2012
+50,"22,365",Colombia_2012
+51,"2,214",Costa Rica_2012
+52,"5,257",Czechia_2012
+53,"2,869",Denmark_2012
+54,683,Estonia_2012
+55,"2,690",Finland_2012
+56,"28,482",France_2012
+57,"41,350",Germany_2012
+58,"4,890",Greece_2012
+59,"4,300",Hungary_2012
+60,179,Iceland_2012
+61,"2,224",Ireland_2012
+62,"3,606",Israel_2012
+63,"25,256",Italy_2012
+64,"65,652",Japan_2012
+65,"25,781",Korea_2012
+66,"1,031",Latvia_2012
+67,"1,473",Lithuania_2012
+68,249,Luxembourg_2012
+69,"51,229",Mexico_2012
+70,"8,861",Netherlands_2012
+71,"2,331",New Zealand_2012
+72,"2,669",Norway_2012
+73,"17,340",Poland_2012
+74,"5,381",Portugal_2012
+75,"2,707",Slovak Republic_2012
+76,"1,013",Slovenia_2012
+77,"23,443",Spain_2012
+78,"5,061",Sweden_2012
+79,"4,555",Switzerland_2012
+80,"27,021",Türkiye_2012
+81,"32,264",United Kingdom_2012
+82,"154,975",United States_2012
+83,"159,541",Euro area_2012
+84,"208,807",European Union_2012
+85,"627,862",OECD_2012
+86,"B   96,456",Brazil_2012
+87,"75,676",Russia_2012
+88,,
+90,"12,144",Australia_2013
+91,"4,336",Austria_2013
+92,"4,947",Belgium_2013
+93,"19,075",Canada_2013
+94,"8,559",Chile_2013
+95,"22,567",Colombia_2013
+96,"2,236",Costa Rica_2013
+97,"5,306",Czechia_2013
+98,"2,846",Denmark_2013
+99,680,Estonia_2013
+100,"2,676",Finland_2013
+101,"B   28,625",France_2013
+102,"41,712",Germany_2013
+103,"4,843",Greece_2013
+104,"4,334",Hungary_2013
+105,183,Iceland_2013
+106,"2,246",Ireland_2013
+107,"3,678",Israel_2013
+108,"25,259",Italy_2013
+109,"65,928",Japan_2013
+110,"26,108",Korea_2013
+111,"1,014",Latvia_2013
+112,"1,465",Lithuania_2013
+113,254,Luxembourg_2013
+114,"51,787",Mexico_2013
+115,"8,932",Netherlands_2013
+116,"2,362",New Zealand_2013
+117,"2,694",Norway_2013
+118,"17,361",Poland_2013
+119,"5,283",Portugal_2013
+120,"2,715",Slovak Republic_2013
+121,"1,008",Slovenia_2013
+122,"23,190",Spain_2013
+123,"5,116",Sweden_2013
+124,"4,611",Switzerland_2013
+125,"B   27,960",Türkiye_2013
+126,"32,514",United Kingdom_2013
+127,"155,389",United States_2013
+128,"159,813",Euro area_2013
+129,"209,192",European Union_2013
+130,"B   631,943",OECD_2013
+131,"98,221",Brazil_2013
+132,"75,529",Russia_2013
+133,,
+135,"12,287",Australia_2014
+136,"4,358",Austria_2014
+137,"4,967",Belgium_2014
+138,"19,126",Canada_2014
+139,"8,720",Chile_2014
+140,"22,913",Colombia_2014
+141,"2,284",Costa Rica_2014
+142,"5,298",Czechia_2014
+143,"2,862",Denmark_2014
+144,674,Estonia_2014
+145,"2,679",Finland_2014
+146,"29,402",France_2014
+147,"41,959",Germany_2014
+148,"4,811",Greece_2014
+149,"4,444",Hungary_2014
+150,187,Iceland_2014
+151,"2,256",Ireland_2014
+152,"3,778",Israel_2014
+153,"25,514",Italy_2014
+154,"66,088",Japan_2014
+155,"26,836",Korea_2014
+156,992,Latvia_2014
+157,"1,477",Lithuania_2014
+158,B   261,Luxembourg_2014
+159,"51,924",Mexico_2014
+160,"8,895",Netherlands_2014
+161,"2,441",New Zealand_2014
+162,"2,721",Norway_2014
+163,"17,428",Poland_2014
+164,"5,224",Portugal_2014
+165,"2,722",Slovak Republic_2014
+166,"1,015",Slovenia_2014
+167,"22,954",Spain_2014
+168,"5,184",Sweden_2014
+169,"4,695",Switzerland_2014
+170,"28,772",Türkiye_2014
+171,"32,777",United Kingdom_2014
+172,"155,922",United States_2014
+173,"160,797",Euro area_2014
+174,"210,515",European Union_2014
+175,"B   636,850",OECD_2014
+176,"98,911",Brazil_2014
+177,"75,428",Russia_2014
+178,,
+180,"12,525",Australia_2015
+181,"4,400",Austria_2015
+182,"4,973",Belgium_2015
+183,"19,242",Canada_2015
+184,"8,855",Chile_2015
+185,"23,405",Colombia_2015
+186,"2,276",Costa Rica_2015
+187,"5,310",Czechia_2015
+188,"B   2,890",Denmark_2015
+189,683,Estonia_2015
+190,"2,689",Finland_2015
+191,"29,496",France_2015
+192,"42,158",Germany_2015
+193,"4,808",Greece_2015
+194,"4,518",Hungary_2015
+195,191,Iceland_2015
+196,"2,283",Ireland_2015
+197,"3,846",Israel_2015
+198,"25,497",Italy_2015
+199,"66,251",Japan_2015
+200,"27,153",Korea_2015
+201,994,Latvia_2015
+202,"1,469",Lithuania_2015
+203,276,Luxembourg_2015
+204,"52,905",Mexico_2015
+205,"8,932",Netherlands_2015
+206,"2,504",New Zealand_2015
+207,"2,760",Norway_2015
+208,"17,388",Poland_2015
+209,"5,194",Portugal_2015
+210,"2,738",Slovak Republic_2015
+211,"1,008",Slovenia_2015
+212,"22,922",Spain_2015
+213,"5,225",Sweden_2015
+214,"4,767",Switzerland_2015
+215,"29,652",Türkiye_2015
+216,"33,065",United Kingdom_2015
+217,"157,130",United States_2015
+218,"161,144",Euro area_2015
+219,"210,863",European Union_2015
+220,"B   642,378",OECD_2015
+221,"101,118",Brazil_2015
+222,"76,588",Russia_2015
+223,,
+225,"12,698",Australia_2016
+226,"4,490",Austria_2016
+227,"B   4,976",Belgium_2016
+228,"19,372",Canada_2016
+229,"8,996",Chile_2016
+230,"23,689",Colombia_2016
+231,"2,206",Costa Rica_2016
+232,"5,350",Czechia_2016
+233,"B   2,936",Denmark_2016
+234,691,Estonia_2016
+235,"2,685",Finland_2016
+236,"29,549",France_2016
+237,"43,039",Germany_2016
+238,"4,805",Greece_2016
+239,"4,586",Hungary_2016
+240,196,Iceland_2016
+241,"2,327",Ireland_2016
+242,"3,925",Israel_2016
+243,"25,769",Italy_2016
+244,"66,785",Japan_2016
+245,"27,418",Korea_2016
+246,989,Latvia_2016
+247,"1,478",Lithuania_2016
+248,278,Luxembourg_2016
+249,"53,680",Mexico_2016
+250,"8,965",Netherlands_2016
+251,"2,617",New Zealand_2016
+252,"2,768",Norway_2016
+253,"17,259",Poland_2016
+254,"5,177",Portugal_2016
+255,"2,759",Slovak Republic_2016
+256,995,Slovenia_2016
+257,"22,822",Spain_2016
+258,"5,279",Sweden_2016
+259,"4,842",Switzerland_2016
+260,"30,523",Türkiye_2016
+261,"33,379",United Kingdom_2016
+262,"159,187",United States_2016
+263,"162,424",Euro area_2016
+264,"211,907",European Union_2016
+265,"B   649,486",OECD_2016
+266,"102,525",Brazil_2016
+267,"76,636",Russia_2016
+268,,
+270,"12,975",Australia_2017
+271,"4,508",Austria_2017
+272,"4,992",Belgium_2017
+273,"19,658",Canada_2017
+274,"9,241",Chile_2017
+275,"24,062",Colombia_2017
+276,"2,256",Costa Rica_2017
+277,"5,377",Czechia_2017
+278,"2,961",Denmark_2017
+279,699,Estonia_2017
+280,"2,707",Finland_2017
+281,"29,587",France_2017
+282,"43,283",Germany_2017
+283,"4,780",Greece_2017
+284,"4,613",Hungary_2017
+285,199,Iceland_2017
+286,"B   2,352",Ireland_2017
+287,"3,993",Israel_2017
+288,"25,929",Italy_2017
+289,"67,323",Japan_2017
+290,"27,748",Korea_2017
+291,980,Latvia_2017
+292,"1,458",Lithuania_2017
+293,288,Luxembourg_2017
+294,"53,520",Mexico_2017
+295,"9,042",Netherlands_2017
+296,"2,715",New Zealand_2017
+297,"2,759",Norway_2017
+298,"17,266",Poland_2017
+299,"5,218",Portugal_2017
+300,"2,755",Slovak Republic_2017
+301,"1,026",Slovenia_2017
+302,"22,742",Spain_2017
+303,"5,383",Sweden_2017
+304,"4,870",Switzerland_2017
+305,"31,617",Türkiye_2017
+306,"33,537",United Kingdom_2017
+307,"160,320",United States_2017
+308,"162,993",Euro area_2017
+309,"212,900",European Union_2017
+310,"B   654,737",OECD_2017
+311,"104,154",Brazil_2017
+312,"76,169",Russia_2017
+313,,
+315,"13,281",Australia_2018
+316,"4,539",Austria_2018
+317,"5,056",Belgium_2018
+318,"19,884",Canada_2018
+319,"9,484",Chile_2018
+320,"24,419",Colombia_2018
+321,"2,360",Costa Rica_2018
+322,"5,415",Czechia_2018
+323,"2,985",Denmark_2018
+324,702,Estonia_2018
+325,"2,742",Finland_2018
+326,"29,700",France_2018
+327,"43,381",Germany_2018
+328,"4,743",Greece_2018
+329,"4,642",Hungary_2018
+330,204,Iceland_2018
+331,"2,395",Ireland_2018
+332,"4,068",Israel_2018
+333,"25,969",Italy_2018
+334,"68,492",Japan_2018
+335,"27,895",Korea_2018
+336,982,Latvia_2018
+337,"1,465",Lithuania_2018
+338,296,Luxembourg_2018
+339,"54,972",Mexico_2018
+340,"9,147",Netherlands_2018
+341,"2,772",New Zealand_2018
+342,"2,792",Norway_2018
+343,"17,143",Poland_2018
+344,"5,232",Portugal_2018
+345,"2,746",Slovak Republic_2018
+346,"1,033",Slovenia_2018
+347,"22,807",Spain_2018
+348,"B   5,444",Sweden_2018
+349,"4,906",Switzerland_2018
+350,"32,245",Türkiye_2018
+351,"33,823",United Kingdom_2018
+352,"162,075",United States_2018
+353,"163,612",Euro area_2018
+354,"213,443",European Union_2018
+355,"B   662,237",OECD_2018
+356,"105,404",Brazil_2018
+357,"76,077",Russia_2018
+358,,
+360,"13,564",Australia_2019
+361,"4,559",Austria_2019
+362,"5,106",Belgium_2019
+363,"20,275",Canada_2019
+364,"9,671",Chile_2019
+365,"24,809",Colombia_2019
+366,"2,465",Costa Rica_2019
+367,"5,412",Czechia_2019
+368,"3,030",Denmark_2019
+369,703,Estonia_2019
+370,"2,750",Finland_2019
+371,"29,625",France_2019
+372,"B   43,771",Germany_2019
+373,"4,730",Greece_2019
+374,"4,672",Hungary_2019
+375,208,Iceland_2019
+376,"2,443",Ireland_2019
+377,"4,124",Israel_2019
+378,"25,941",Italy_2019
+379,"69,122",Japan_2019
+380,"28,186",Korea_2019
+381,971,Latvia_2019
+382,"1,470",Lithuania_2019
+383,306,Luxembourg_2019
+384,"56,595",Mexico_2019
+385,"9,296",Netherlands_2019
+386,"2,811",New Zealand_2019
+387,"2,819",Norway_2019
+388,"17,018",Poland_2019
+389,"5,252",Portugal_2019
+390,"2,741",Slovak Republic_2019
+391,"1,028",Slovenia_2019
+392,"23,027",Spain_2019
+393,"5,508",Sweden_2019
+394,"4,922",Switzerland_2019
+395,"32,524",Türkiye_2019
+396,"34,102",United Kingdom_2019
+397,"163,539",United States_2019
+398,"164,423",Euro area_2019
+399,"214,271",European Union_2019
+400,"B   669,094",OECD_2019
+401,"107,434",Brazil_2019
+402,"75,287",Russia_2019
+403,,
+405,"13,532",Australia_2020
+406,"B   4,540",Austria_2020
+407,"B   5,085",Belgium_2020
+408,"19,973",Canada_2020
+409,"8,808",Chile_2020
+410,"23,731",Colombia_2020
+411,"2,407",Costa Rica_2020
+412,"5,372",Czechia_2020
+413,"3,023",Denmark_2020
+414,B   705,Estonia_2020
+415,"B   2,741",Finland_2020
+416,"B   29,346",France_2020
+417,"E   43,517",Germany_2020
+418,"B   4,630",Greece_2020
+419,"B   4,658",Hungary_2020
+420,B   206,Iceland_2020
+421,"B   2,431",Ireland_2020
+422,"4,090",Israel_2020
+423,"B   25,214",Italy_2020
+424,"69,023",Japan_2020
+425,"28,012",Korea_2020
+426,B   972,Latvia_2020
+427,"B   1,484",Lithuania_2020
+428,B   314,Luxembourg_2020
+429,"E   53,305",Mexico_2020
+430,"B   9,338",Netherlands_2020
+431,"2,861",New Zealand_2020
+432,"B   2,827",Norway_2020
+433,"B   16,978",Poland_2020
+434,"B   5,164",Portugal_2020
+435,"B   2,713",Slovak Republic_2020
+436,"B   1,029",Slovenia_2020
+437,"22,733",Spain_2020
+438,"B   5,522",Sweden_2020
+439,"B   4,934",Switzerland_2020
+440,"30,849",Türkiye_2020
+441,"34,061",United Kingdom_2020
+442,"160,742",United States_2020
+443,"B   162,669",Euro area_2020
+444,"B   212,277",European Union_2020
+445,"E   656,867",OECD_2020
+446,"100,373",Brazil_2020
+447,"74,833",Russia_2020
+448,,
+450,"13,749",Australia_2021
+451,"4,590",Austria_2021
+452,"5,178",Belgium_2021
+453,"20,484",Canada_2021
+454,"9,109",Chile_2021
+455,"23,655",Colombia_2021
+456,"2,441",Costa Rica_2021
+457,"B   5,364",Czechia_2021
+458,"3,063",Denmark_2021
+459,697,Estonia_2021
+460,"2,785",Finland_2021
+461,"30,093",France_2021
+462,"42,961",Germany_2021
+463,"4,606",Greece_2021
+464,"4,838",Hungary_2021
+465,210,Iceland_2021
+466,"2,547",Ireland_2021
+467,"4,163",Israel_2021
+468,"24,921",Italy_2021
+469,"69,073",Japan_2021
+470,"28,310",Korea_2021
+471,940,Latvia_2021
+472,"1,473",Lithuania_2021
+473,324,Luxembourg_2021
+474,"57,531",Mexico_2021
+475,"9,690",Netherlands_2021
+476,"2,900",New Zealand_2021
+477,"2,926",Norway_2021
+478,"17,236",Poland_2021
+479,"5,118",Portugal_2021
+480,"2,748",Slovak Republic_2021
+481,"1,020",Slovenia_2021
+482,"23,203",Spain_2021
+483,"5,610",Sweden_2021
+484,"4,936",Switzerland_2021
+485,"32,743",Türkiye_2021
+486,"33,932",United Kingdom_2021
+487,"161,204",United States_2021
+488,"165,453",Euro area_2021
+489,"213,025",European Union_2021
+490,"B   666,366",OECD_2021
+491,"103,935",Brazil_2021
+492,"75,277",Russia_2021
+493,,
+495,"14,149",Australia_2022
+496,"4,664",Austria_2022
+497,"5,284",Belgium_2022
+498,"20,791",Canada_2022
+499,"9,619",Chile_2022
+500,"24,814",Colombia_2022
+501,"2,454",Costa Rica_2022
+502,"5,293",Czechia_2022
+503,"3,133",Denmark_2022
+504,721,Estonia_2022
+505,"2,830",Finland_2022
+506,"30,576",France_2022
+507,"43,905",Germany_2022
+508,"4,729",Greece_2022
+509,"4,885",Hungary_2022
+510,219,Iceland_2022
+511,"2,667",Ireland_2022
+512,"4,350",Israel_2022
+513,"25,127",Italy_2022
+514,"69,019",Japan_2022
+515,"28,922",Korea_2022
+516,956,Latvia_2022
+517,"1,511",Lithuania_2022
+518,327,Luxembourg_2022
+519,"59,262",Mexico_2022
+520,"9,937",Netherlands_2022
+521,"2,933",New Zealand_2022
+522,"2,955",Norway_2022
+523,"17,240",Poland_2022
+524,"5,200",Portugal_2022
+525,"2,774",Slovak Republic_2022
+526,"1,027",Slovenia_2022
+527,"23,415",Spain_2022
+528,"5,675",Sweden_2022
+529,"4,924",Switzerland_2022
+530,"34,317",Türkiye_2022
+531,"34,133",United Kingdom_2022
+532,"164,287",United States_2022
+533,"168,263",Euro area_2022
+534,"215,827",European Union_2022
+535,"679,025",OECD_2022
+536,"107,087",Brazil_2022
+537,,Russia_2022
+538,,
+540,"14,610",Australia_2023
+541,"4,724",Austria_2023
+542,"5,323",Belgium_2023
+543,"21,326",Canada_2023
+544,"9,934",Chile_2023
+545,"25,365",Colombia_2023
+546,"2,300",Costa Rica_2023
+547,"5,195",Czechia_2023
+548,"3,179",Denmark_2023
+549,748,Estonia_2023
+550,"2,852",Finland_2023
+551,"30,852",France_2023
+552,"44,468",Germany_2023
+553,"4,715",Greece_2023
+554,"4,941",Hungary_2023
+555,228,Iceland_2023
+556,"2,773",Ireland_2023
+557,"4,477",Israel_2023
+558,"25,527",Italy_2023
+559,"69,252",Japan_2023
+560,"29,203",Korea_2023
+561,951,Latvia_2023
+562,"1,547",Lithuania_2023
+563,339,Luxembourg_2023
+564,"60,585",Mexico_2023
+565,"10,139",Netherlands_2023
+566,"3,038",New Zealand_2023
+567,"2,999",Norway_2023
+568,"17,467",Poland_2023
+569,"5,325",Portugal_2023
+570,"2,772",Slovak Republic_2023
+571,"1,027",Slovenia_2023
+572,"23,900",Spain_2023
+573,"5,773",Sweden_2023
+574,"5,047",Switzerland_2023
+575,"34,881",Türkiye_2023
+576,"34,551",United Kingdom_2023
+577,"167,116",United States_2023
+578,"170,489",Euro area_2023
+579,"218,260",European Union_2023
+580,"689,447",OECD_2023
+581,,Brazil_2023
+582,,Russia_2023
+583,,
+585,,Australia_Unnamed: 14
+586,,Austria_Unnamed: 14
+587,,Belgium_Unnamed: 14
+588,,Canada_Unnamed: 14
+589,,Chile_Unnamed: 14
+590,,Colombia_Unnamed: 14
+591,,Costa Rica_Unnamed: 14
+592,,Czechia_Unnamed: 14
+593,,Denmark_Unnamed: 14
+594,,Estonia_Unnamed: 14
+595,,Finland_Unnamed: 14
+596,,France_Unnamed: 14
+597,,Germany_Unnamed: 14
+598,,Greece_Unnamed: 14
+599,,Hungary_Unnamed: 14
+600,,Iceland_Unnamed: 14
+601,,Ireland_Unnamed: 14
+602,,Israel_Unnamed: 14
+603,,Italy_Unnamed: 14
+604,,Japan_Unnamed: 14
+605,,Korea_Unnamed: 14
+606,,Latvia_Unnamed: 14
+607,,Lithuania_Unnamed: 14
+608,,Luxembourg_Unnamed: 14
+609,,Mexico_Unnamed: 14
+610,,Netherlands_Unnamed: 14
+611,,New Zealand_Unnamed: 14
+612,,Norway_Unnamed: 14
+613,,Poland_Unnamed: 14
+614,,Portugal_Unnamed: 14
+615,,Slovak Republic_Unnamed: 14
+616,,Slovenia_Unnamed: 14
+617,,Spain_Unnamed: 14
+618,,Sweden_Unnamed: 14
+619,,Switzerland_Unnamed: 14
+620,,Türkiye_Unnamed: 14
+621,,United Kingdom_Unnamed: 14
+622,,United States_Unnamed: 14
+623,,Euro area_Unnamed: 14
+624,,European Union_Unnamed: 14
+625,,OECD_Unnamed: 14
+626,,Brazil_Unnamed: 14
+627,,Russia_Unnamed: 14
+628,,
