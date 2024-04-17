@@ -1,0 +1,170 @@
+---
+title: "birthrate"
+format: html
+editor: visual
+---
+
+```{r}
+library(reticulate)
+reticulate::use_condaenv("base", required = TRUE)
+```
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("Data_cleaned/fertility.csv")
+df = df.drop(columns = 'Unnamed: 0')
+df['Country'] = df['Country_Year'].str.split('_').str.get(0)
+df['Year'] = df['Country_Year'].str.split('_').str.get(1)
+df = df.drop(columns=['Country_Year'])
+df.head()
+```
+
+```{python}
+df['fertility_rate'] = pd.to_numeric(df['fertility_rate'], errors='coerce')
+df = df.dropna()
+
+pivot_df = df.pivot_table(index='Year', columns='Country', values='fertility_rate')
+pivot_df = pivot_df.reset_index()
+
+
+pivot_df.head()
+```
+
+```{python}
+nan_per_row = pivot_df.isna().sum(axis=1)
+nan_per_column = pivot_df.isna().sum()
+for country, nan_count in nan_per_column.items(): 
+    if nan_count > 0: 
+        print(f"NaN count for {country}: {nan_count}")
+```
+
+```{python}
+other_df = df.pivot(index='Country', columns='Year', values='fertility_rate')
+other_df = other_df.reset_index()
+
+melted_df = other_df.melt(id_vars='Country', var_name='Year', value_name='Fertility Rate')
+
+print(melted_df.head())
+```
+
+```{python}
+#Mapping
+country_to_continent = {
+    'Argentina': 'South America',
+    'Australia': 'Oceania',
+    'Austria': 'Europe',
+    'Belgium': 'Europe',
+    'Brazil': 'South America',
+    'Bulgaria': 'Europe',
+    'Canada': 'North America',
+    'Chile': 'South America',
+    'China': 'Asia',
+    'Colombia': 'South America',
+    'Costa Rica': 'North America',
+    'Croatia': 'Europe',
+    'Cyprus': 'Europe',
+    'Czechia': 'Europe',
+    'Denmark': 'Europe',
+    'Estonia': 'Europe',
+    'Finland': 'Europe',
+    'France': 'Europe',
+    'Germany': 'Europe',
+    'Greece': 'Europe',
+    'Hungary': 'Europe',
+    'Iceland': 'Europe',
+    'India': 'Asia',
+    'Indonesia': 'Asia',
+    'Ireland': 'Europe',
+    'Israel': 'Asia',
+    'Italy': 'Europe',
+    'Japan': 'Asia',
+    'Korea': 'Asia',
+    'Latvia': 'Europe',
+    'Lithuania': 'Europe',
+    'Luxembourg': 'Europe',
+    'Malta': 'Europe',
+    'Mexico': 'North America',
+    'Netherlands': 'Europe',
+    'New Zealand': 'Oceania',
+    'Norway': 'Europe',
+    'Poland': 'Europe',
+    'Portugal': 'Europe',
+    'Romania': 'Europe',
+    'Russia': 'Europe',
+    'Slovak Republic': 'Europe',
+    'Slovenia': 'Europe',
+    'South Africa': 'Africa',
+    'Spain': 'Europe',
+    'Sweden': 'Europe',
+    'Switzerland': 'Europe',
+    'Türkiye': 'Asia',
+    'United Kingdom': 'Europe',
+    'United States': 'North America'
+}
+
+```
+
+```{python}
+import plotly.graph_objects as go
+import pandas as pd
+
+melted_df['Continent'] = melted_df['Country'].map(country_to_continent)
+melted_df['Year'] = pd.to_datetime(melted_df['Year'])
+
+fig = go.Figure()
+for country in melted_df['Country'].unique():
+    df_country = melted_df[melted_df['Country'] == country]
+    fig.add_trace(
+        go.Scatter(x=df_country['Year'],
+                   y=df_country['Fertility Rate'],
+                   name=country));
+
+# List of Buttons
+dropdown_options = [
+    {'label': 'All Continents',
+     'method': 'update',
+     'args': [{'visible': [True] * len(melted_df)},
+              {'title': 'Fertility Rate Over Time in All Continents'}]}
+]
+for continent in melted_df['Continent'].unique():
+    dropdown_options.append(
+        {'label': continent,
+         'method': 'update',
+         'args': [{'visible': melted_df['Continent'] == continent},
+                  {'title': 'Fertility Rate Over Time in ' + continent}]})
+
+fig.update_layout(updatemenus=[
+    dict(buttons=dropdown_options,
+         direction="down",
+         pad={"r": 10, "t": 10},
+         showactive=True,
+         x=0.99, 
+         xanchor="right",
+         y=1.15,
+         yanchor="top")]);
+
+#Replacement line
+fig.add_shape(type="line",
+              x0=min(melted_df['Year']),
+              y0=2,
+              x1=max(melted_df['Year']),
+              y1=2,
+              line=dict(color="black", width=3, dash="dash"),
+              opacity=0.5);
+
+
+fig.add_annotation(text="Replacement",
+                   xref="paper", yref="y",
+                   x=-0.25, y=1.95,
+                   showarrow=False,
+                   font=dict(color="black"));
+
+fig.update_layout(title_text="Fertility Rate by Country Over Time", xaxis_title = "Year", yaxis_title = "Average Number of Children per Woman", yaxis_title_standoff=60);
+
+fig.show()
+
+
+```
