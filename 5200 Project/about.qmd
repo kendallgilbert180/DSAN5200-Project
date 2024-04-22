@@ -7,6 +7,8 @@ code-fold: true
 How can we quantify the wellbeing of the individual in various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis-equating metrics with reality, it is easy to oversimplify extremely complicated and nuanced situations. For example, it is often claimed that policing makes communities safer - but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries with billions of people be compared to ones with several hundred thousand? There are countless potential avenues of measurement; Yet it is all too easy to fall into the trap of measuring a countrie's prosperity with the classical metric: GDP. 
 In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country's wellbeing, ultimately suggesting that steps be taken to make this process more holistic
 
+This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution and population trends (life expectancy, birth rates) in an attempt to quantify a country's wellbeing. 
+
 
 a great reference: 
 Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn’t Add Up. The New Press.
