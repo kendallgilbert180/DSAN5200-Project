@@ -114,22 +114,47 @@ subplot(p2, p3, titleX=T, shareY=T) %>%
 ```
 
 ```{r}
+
+data.p2 <- data.p2 %>%
+  filter(Year.1 != 2022)
 shared_data_2 <- SharedData$new(data.p2, key=~Country)
 
-barchart <- shared_data_2 %>%
+shared_data_3 <- data.p2 %>%
+  SharedData$new(key=~Country)
+
+barchart1 <- data.p2 %>%
+  filter(Year.1==2021) %>%
+  SharedData$new(key=~Country) %>%
   plot_ly() %>%
-  group_by(Country) %>%
-  summarize(avg=mean(beds)) %>%
-  add_bars(x=~Country, y= ~avg) %>%
+  add_bars(x=~Country, y= ~beds) %>%
   layout(barmode="overlay")
 
-scatterplot1 <- shared_data_2 %>%
+barchart1
+
+barchart2 <- data.p2 %>%
+  filter(Year.1==2021) %>%
+  SharedData$new(key=~Country) %>%
+  plot_ly() %>%
+  group_by(Year.1) %>%
+  summarize(beds=sum(beds)) %>%
+  add_bars(x=~Year.1, y=beds) %>%
+  layout(barmode="overlay")
+
+scatterplot1 <- data.p2 %>%
+  SharedData$new(key=~Country) %>%
   plot_ly() %>%
   add_trace(x=~Year.1, y=~beds, mode='lines')
 
-subplot(barchart, scatterplot1) %>%
+scatterplot2 <- data.p2 %>%
+  SharedData$new(key=~Country) %>%
+  plot_ly() %>%
+  add_trace(x=~Year.1, y=~gdp, mode='lines')
+
+subplot(barchart1, scatterplot1, scatterplot2, nrows=2) %>%
   hide_legend()
           
+
+
 ```
 
 ```{r}
