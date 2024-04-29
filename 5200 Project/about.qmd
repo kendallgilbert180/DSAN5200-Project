@@ -2,28 +2,146 @@
 title: "Quantifying International Prosperity"
 code-fold: true
 ---
-## Introduction 
 
-How can we quantify the wellbeing of the individual in various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis-equating metrics with reality, it is easy to oversimplify extremely complicated and nuanced situations. For example, it is often claimed that policing makes communities safer - but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries with billions of people be compared to ones with several hundred thousand? There are countless potential avenues of measurement; Yet it is all too easy to fall into the trap of measuring a countrie's prosperity with the classical metric: GDP. 
-In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country's wellbeing, ultimately suggesting that steps be taken to make this process more holistic
+## Introduction
 
-This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution and population trends (life expectancy, birth rates) in an attempt to quantify a country's wellbeing. 
+How can we quantify the wellbeing of the individual in various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis-equating metrics with reality, it is easy to oversimplify extremely complicated and nuanced situations. For example, it is often claimed that policing makes communities safer - but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries with billions of people be compared to ones with several hundred thousand? There are countless potential avenues of measurement; Yet it is all too easy to fall into the trap of measuring a countrie's prosperity with the classical metric: GDP. In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country's wellbeing, ultimately suggesting that steps be taken to make this process more holistic
 
+This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution and population trends (life expectancy, birth rates) in an attempt to quantify a country's wellbeing.
 
-a great reference: 
-Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn’t Add Up. The New Press.
+a great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn't Add Up. The New Press.
 
-## GDP 
+## GDP
 
 ## Healthcare
 
-## Social Spending 
+```{r echo=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(lubridate)
+library(plotly)
+library(gridExtra)
+library(crosstalk)
+library(Ecdat)
+library(Ecfun)
 
-Another important factor that can determine the well-being of a country is social spending in regards to family benefits. OECD countries spend on average 2.29% of GDP on family benefits, with large variations across countries. These variations are evident as illustrated in the bubble chart below. 
+```
+
+```{r echo=FALSE}
+hospital_beds <- read.csv("Data_cleaned/hospital_beds.csv")
+hospital_beds <- hospital_beds %>%
+  filter(Year=='2021') %>%
+  subset(select=-X)
+
+gdp <- read.csv("Data_Uncleaned/GDP.csv")
+gdp <- gdp %>%
+  subset(select=c(Time, X2021)) %>%
+  rename(Country=Time, gdp=X2021)
+
+data.p1 <- left_join(gdp, hospital_beds, by="Country")
+data.p1$gdp<-as.numeric(data.p1$gdp)
+
+```
+
+```{r echo=FALSE}
+
+p1 <- ggplot() + geom_point(data=data.p1, aes(x=Value, y=gdp),color="#57d4ff") + theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"))+ labs(title="GDP Compared to Number of Hospital Beds Available in 2021", x="Hospital Beds per Capita", y="GDP") 
+
+ggplotly(p1)
+```
+
+```{r echo=FALSE}
+hospital_bed2 <- read.csv("Data_cleaned/hospital_beds.csv")
+gdp2 <- read.csv("Data_Uncleaned/GDP.csv")
+hospital_stay <- read.csv("Data_cleaned/hospital_stay.csv")
+
+hospital_bed2 <- hospital_bed2 %>%
+  subset(select=-X)
+gdp2<- gdp2 %>%
+  rename(Country=Time) %>%
+  pivot_longer(cols=starts_with("X"), names_to="Year.1", values_to="gdp")
+
+gdp2$Year.1<-substr(gdp2$Year.1, 2, 5)
+gdp2$key <- paste(gdp2$Country, gdp2$Year.1, sep="")
+hospital_bed2$key <- paste(hospital_bed2$Country, hospital_bed2$Year, sep="")
+hospital_stay$key <- paste(hospital_stay$Country, hospital_stay$Year, sep="")
+
+data.p2 <- left_join(gdp2, hospital_bed2, by="key") %>%
+  left_join(hospital_stay, by="key")
+
+
+data.p2 <- data.p2 %>%
+  subset(select=-c(Country.y, Year.x, key, X, Country.x, Year.y)) %>%
+  filter(Year.1 %in% c('2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022')) %>%
+  rename(beds=Value.x, stay=Value.y)
+
+data.p2$Year.1<-as.numeric(data.p2$Year.1)
+data.p2$gdp<-as.numeric(data.p2$gdp)
+data.p2$beds<-as.numeric(data.p2$beds)
+data.p2$stay<-as.numeric(data.p2$stay)
+```
+
+```{r echo=FALSE}
+
+shared_data <- SharedData$new(data.p2)
+
+p2 <- shared_data %>%
+  plot_ly(x=~gdp, y=~beds) %>%
+  add_markers(color=I("#ff6f69")) %>%
+  layout(plot_bgcolor="#faf0e6",
+         xaxis=list(title="GDP", titlefont=list(family="PT Sans Narrow")),
+         yaxis=list(title="Number of Beds", titlefont=list(family="PT Sans Narrow")))
+
+p3 <- shared_data %>%
+  plot_ly(x=~stay, y=~beds) %>%
+  add_markers(color=I("#57d4ff")) %>%
+  layout(plot_bgcolor="#faf0e6",
+         xaxis=list(title="Stay length", titlefont=list(family="PT Sans Narrow")))
+
+
+subplot(p2, p3, titleX=T, shareY=T) %>%
+  hide_legend() %>%
+  highlight(on='plotly_click') %>%
+  layout(
+    title="Beds per Capita based on Hospital Stay Length and GDP",
+    titlefont=list(family="PT Sans Narrow")
+  )
+```
+
+```{r echo=FALSE}
+
+barchart1 <- data.p2 %>%
+  filter(Year.1==2021) %>%
+  SharedData$new(key=~Country) %>%
+  plot_ly() %>%
+  add_bars(y=~Country, x= ~beds, color=I("gray"), orientation='h', name="Average Beds per Capita") %>%
+  layout(barmode="overlay", plot_bgcolor="#faf0e6",
+        xaxis=list(title="Beds per capita", titlefont=list(family="PT Sans Narrow")),
+        yaxis=list(title="Country", titlefont=list(family="PT Sans Narrow")))
+
+scatterplot1 <- data.p2 %>%
+  SharedData$new(key=~Country) %>%
+  plot_ly() %>%
+  add_trace(x=~Year.1, y=~beds, mode='lines', color=I("#57d4ff"), name="Hospital Stay")%>%
+  layout(plot_bgcolor="#faf0e6", xaxis=list(title="Year", titlefont=list(family="PT Sans Narrow")), yaxis=list(title="Average Length of Stay", titlefont=list(family="PT Sans Narrow")))
+
+scatterplot2 <- data.p2 %>%
+  SharedData$new(key=~Country) %>%
+  plot_ly() %>%
+  add_trace(x=~Year.1, y=~gdp, mode='lines', color=I("#ff6f69"), name="GDP") %>%
+  layout(plot_bgcolor="#faf0e6",xaxis=list(title="Year", titlefont=list(family="PT Sans Narrow")), yaxis=list(title="GDP", titlefont=list(family="PT Sans Narrow")))
+
+subplot(barchart1, scatterplot1, scatterplot2, nrows=1, titleX=T)
+          
+```
+
+## Social Spending
+
+Another important factor that can determine the well-being of a country is social spending in regards to family benefits. OECD countries spend on average 2.29% of GDP on family benefits, with large variations across countries. These variations are evident as illustrated in the bubble chart below.
 
 This spending is beneficial for numerous reasons. First, family benefits help families meet their basic needs. These benefits provide financial assistance that can help with the costs of having a family. By helping families meet their basic needs, social spending on family benefits can improve over wellbeing. Furthermore, spending money on family benefits can directly impact child well-being, healthier work-life balance for parents and economic growth. By supporting families and enabling parents to remain in or return to the workforce, these policies contribute to overall economic stability and prosperity.
 
-Based on the chart below you can see countries like Iceland, Estonia and Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working. 
+Based on the chart below you can see countries like Iceland, Estonia and Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working.
 
 ```{python}
 import pandas as pd
@@ -143,14 +261,13 @@ fig.update_layout(title_font_family='PT Sans Narrow')
 
 ```
 
-There is a drastic difference between countries like Iceland and the United States. 
- **Add table here **
+There is a drastic difference between countries like Iceland and the United States. **Add table here**
 
- ** Add takeaways
+\*\* Add takeaways
 
 ## Education
 
-Education plays a large role in the overall well-being of a Country. Specifically, the quantity of people with the education uquivalent of a Bachelors and Masters can help improve a country in regard to economic development, workforce skills and global competitiveness. Within the chart below, the OECD countries have been separated by their specific regions. The bar chart illustrates the total number of people with Bachelor Degrees and Masters Degrees by Region. 
+Education plays a large role in the overall well-being of a Country. Specifically, the quantity of people with the education uquivalent of a Bachelors and Masters can help improve a country in regard to economic development, workforce skills and global competitiveness. Within the chart below, the OECD countries have been separated by their specific regions. The bar chart illustrates the total number of people with Bachelor Degrees and Masters Degrees by Region.
 
 ```{python}
 import pandas as pd
@@ -299,7 +416,7 @@ fig.update_layout(
 fig.show()
 ```
 
-## Life Expectancy 
+## Life Expectancy
 
 ```{python}
 import pandas as pd
@@ -476,7 +593,7 @@ fig.show()
 
 ## Population
 
-## Wealth 
+## Wealth
 
 ## Innovative Chart
 

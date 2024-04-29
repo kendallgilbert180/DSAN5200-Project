@@ -70,13 +70,6 @@ data.p2$Year.1<-as.numeric(data.p2$Year.1)
 data.p2$gdp<-as.numeric(data.p2$gdp)
 data.p2$beds<-as.numeric(data.p2$beds)
 data.p2$stay<-as.numeric(data.p2$stay)
-
-
-
-
-
-
-
 ```
 
 ```{r echo=FALSE}
@@ -131,6 +124,4 @@ scatterplot2 <- data.p2 %>%
 
 subplot(barchart1, scatterplot1, scatterplot2, nrows=1, titleX=T)
           
-
-
 ```
