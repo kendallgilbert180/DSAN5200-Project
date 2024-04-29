@@ -13,39 +13,43 @@ reticulate::use_condaenv("base", required = TRUE)
 import pandas as pd
 import plotly.graph_objects as go
 
-# Assuming you have already read and processed your data
+#Import datasets for merging
 df1 = pd.read_csv("Data_cleaned/overall.csv")
 df2 = pd.read_csv("Data_cleaned/male.csv")
 df3 = pd.read_csv("Data_cleaned/female.csv")
 df4 = pd.read_csv("Data_cleaned/gdppc.csv")
 
+#Merge on Country and Year columns
 df5 = pd.merge(df1, df2, on=['Country', 'Year'], how='left')
 df5 = pd.merge(df5, df3, on=['Country', 'Year'], how='left')
 df5 = pd.merge(df5, df4, on=['Country', 'Year'], how='left')
 df5 = df5.drop_duplicates(['Country', 'Year'])
 df5 = df5.rename(columns={'Overall': 'Life Expectancy'})
+#Round GDP Per Capita
 df5["GDP Per Capita (USD)"] = df5["GDP Per Capita (USD)"].round(2)
+#Save merged data
 df5.to_csv("Data_cleaned/lifeexpectancy.csv", index=False)
+#Sort by GDP per capita highest to lowest
 df5 = df5.sort_values(by='GDP Per Capita (USD)', ascending=False)
 
-# Filter out rows where 'GDP Per Capita (USD)' is NaN
+# Filter out null values for GDP per capita
 df5 = df5.dropna(subset=['GDP Per Capita (USD)'])
 
-# Function to update plot based on selected year
+# Create a function that will allow me to change plot based on year
 def update_plot(year):
     year_df = df5[df5['Year'] == year].copy()
     window_size = 5
     year_df['Moving Average'] = year_df['Life Expectancy'].rolling(window=window_size).mean()
 
-    # Create the plotly figure
     fig = go.Figure()
 
-    # Add bar plot for 'Life Expectancy'
+    # Add barplot
     fig.add_trace(go.Bar(
         x=year_df['Country'],
         y=year_df['Life Expectancy'],
         name='Life Expectancy',
         marker=dict(color='#96ceb4'),
+        #tooltip
         hovertemplate='<b>Country:</b> %{x}<br>' +
                       '<b>Life Expectancy:</b> %{y}<br>' +
                       '<b>Male Life Expectancy:</b> %{customdata[1]}<br>' +
@@ -54,7 +58,7 @@ def update_plot(year):
         customdata=year_df[['Year', 'Male', 'Female', 'GDP Per Capita (USD)']]
     ))
 
-    # Add line plot for 'Moving Average'
+    # Add moving average line for life expectancy trend across gdp per capita
     fig.add_trace(go.Scatter(
         x=year_df['Country'],
         y=year_df['Moving Average'],
@@ -62,17 +66,18 @@ def update_plot(year):
         name='Moving Average',
         line=dict(color='red', width=2),
         hovertemplate='<b>Country:</b> %{x}<br>' +
+                      '<b>5 Country Moving Average LE:</b> %{y}<br>' +
                       '<b>GDP Per Capita (USD):</b> $%{customdata[1]:,.2f}<extra></extra>',
         customdata=year_df[['Year', 'GDP Per Capita (USD)']]
     ))
 
-    # Update layout
+    # Layout settings
     fig.update_layout(
         title=f'Life Expectancy in {year} (Sorted by GDP Per Capita)',
         xaxis_title='Country',
         yaxis_title='Life Expectancy',
         xaxis_tickangle=-45,
-        yaxis=dict(range=[60, 85]),
+        yaxis=dict(range=[60, 90]),
         barmode='group',
         legend=dict(x=0, y=1.0, bgcolor='#faf0e6'),
         hovermode='closest',
@@ -84,10 +89,10 @@ def update_plot(year):
     fig.show()
 
 
-# Get unique years for dropdown
+# All years to be displayed (1990-2022)
 years = df5['Year'].unique().tolist()
 
-# Create dropdown using Plotly's updatemenu
+# Create Plotly button
 buttons = []
 for year in years:
     button = dict(
@@ -99,7 +104,7 @@ for year in years:
 
 fig = go.Figure()
 
-# Add bar traces for all years
+# Add barplot for each of the years
 for year in years:
     year_df = df5[df5['Year'] == year]
     fig.add_trace(go.Bar(
@@ -114,10 +119,10 @@ for year in years:
                       '<b>Female Life Expectancy:</b> %{customdata[2]}<br>' +
                       '<b>GDP Per Capita (USD):</b> $%{customdata[3]:,.2f}<extra></extra>',
         customdata=year_df[['Year', 'Male', 'Female', 'GDP Per Capita (USD)']],
-        visible=(year == years[0])  # First year is visible by default
+        visible=(year == years[0])  # Have it so most recent year (2022) is default
     ));
 
-# Add line traces for moving averages
+# Add moving average line for each year
 for year in years:
     year_df = df5[df5['Year'] == year].copy()
     window_size = 5
@@ -126,22 +131,23 @@ for year in years:
         x=year_df['Country'],
         y=year_df['Moving Average'],
         mode='lines',
-        name=f'{year} Moving Average',
+        name=f'{year} Life Expectancy Moving Average',
         line=dict(color='red', width=2),
         hovertemplate='<b>Country:</b> %{x}<br>' +
                       '<b>Year:</b> %{customdata[0]}<br>' +
+                      '<b>5 Country Moving Average LE:</b> %{y}<br>' +
                       '<b>GDP Per Capita (USD):</b> $%{customdata[1]:,.2f}<extra></extra>',
         customdata=year_df[['Year', 'GDP Per Capita (USD)']],
-        visible=(year == years[0])  # First year is visible by default
+        visible=(year == years[0])
     ));
 
-# Set the minimum life expectancy for y-axis range
+# Find the minimum life expectancy across years
 min_life_expectancy = df5['Life Expectancy'].min()
 
-# Set the y-axis range
-y_axis_range = [min_life_expectancy - 3, 85]
+# Edit range of plot so bars fit nicely
+y_axis_range = [min_life_expectancy - 3, 90]
 
-# Update layout
+# Update the layout
 fig.update_layout(
     updatemenus=[
         dict(
@@ -149,8 +155,8 @@ fig.update_layout(
             direction="down",
             pad={"r": 10, "t": 10},
             showactive=True,
-            x=1.05,  # Adjust the x position to move the button to the right
-            xanchor="right",  # Anchor the x position to the right
+            x=1.05,  # Moves button to top right of plot
+            xanchor="right",
             y=1.0,
             yanchor="top"
         ),
@@ -158,7 +164,7 @@ fig.update_layout(
     xaxis_title='Country',
     yaxis_title='Life Expectancy',
     xaxis_tickangle=-45,
-    yaxis=dict(range=y_axis_range),  # Set the y-axis range
+    yaxis=dict(range=y_axis_range), 
     barmode='group',
     legend=dict(x=0, y=1.0, bgcolor='#faf0e6'),
     bargap=0.15,
@@ -167,6 +173,7 @@ fig.update_layout(
     bargroupgap=0.1,
     hovermode='closest',
     plot_bgcolor='#faf0e6',
+    font_family = 'PT Sans Narrow',
     title=f"Life Expectancy in {years[0]} (Sorted by GDP Per Capita)"
 );
 
