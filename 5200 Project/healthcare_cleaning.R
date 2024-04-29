@@ -24,6 +24,7 @@ write.csv(hospital_beds, "Data_cleaned/hospital_beds.csv")
 #hospital stay
 hospital_stay <- read.csv("Data_Uncleaned/hospital_stay.csv")
 hospital_stay <- hospital_stay %>%
+  filter(Variable=="All causes") %>%
   subset(select=c(Country, Year, Value))
 write.csv(hospital_stay, "Data_cleaned/hospital_stay.csv")
 

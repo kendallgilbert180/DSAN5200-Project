@@ -9,6 +9,8 @@ library(tidyverse)
 library(ggplot2)
 library(plotly)
 library(gridExtra)
+library(crosstalk)
+library(Ecdat)
 ```
 
 ```{r}
@@ -36,6 +38,7 @@ ggplotly(p1)
 ```{r}
 hospital_bed2 <- read.csv("Data_cleaned/hospital_beds.csv")
 gdp2 <- read.csv("Data_Uncleaned/GDP.csv")
+hospital_stay <- read.csv("Data_cleaned/hospital_stay.csv")
 
 hospital_bed2 <- hospital_bed2 %>%
   subset(select=-X)
@@ -46,37 +49,44 @@ gdp2<- gdp2 %>%
 gdp2$Year.1<-substr(gdp2$Year.1, 2, 5)
 gdp2$key <- paste(gdp2$Country, gdp2$Year.1, sep="")
 hospital_bed2$key <- paste(hospital_bed2$Country, hospital_bed2$Year, sep="")
+hospital_stay$key <- paste(hospital_stay$Country, hospital_stay$Year, sep="")
 
-data.p2 <- left_join(gdp2, hospital_bed2, by="key")
+data.p2 <- left_join(gdp2, hospital_bed2, by="key") %>%
+  left_join(hospital_stay, by="key")
+
 
 data.p2 <- data.p2 %>%
-  subset(select=-c(Country.y, Year, key)) %>%
-  filter(Year.1 %in% c('2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022'))
+  subset(select=-c(Country.y, Year.x, key, X, Country.x, Year.y)) %>%
+  filter(Year.1 %in% c('2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022')) %>%
+  rename(beds=Value.x, stay=Value.y)
 
 data.p2$Year.1<-as.numeric(data.p2$Year.1)
 data.p2$gdp<-as.numeric(data.p2$gdp)
-data.p2$Value<-as.numeric(data.p2$Value)
+data.p2$beds<-as.numeric(data.p2$beds)
+data.p2$stay<-as.numeric(data.p2$stay)
+
+
 
 
 ```
 
 ```{r}
-p2a <- ggplot(data.p2, aes(x=Year.1)) +
-  geom_line(aes(y=gdp, color=Country.x)) +
-  theme_minimal()+
-  theme(legend.position='None')
-
-p2b <- ggplot(data.p2, aes(x=Year.1)) +
-  geom_line(aes(y=Value, color=Country.x)) +
-  theme_minimal() +
-  theme(legend.position='None')
-
-p2a_plotly<-ggplotly(p2a) %>%
-  layout(showlegend=FALSE,
-         title="GDP")
-p2b_plotly <- ggplotly(p2b) %>%
-  layout(showlegend=FALSE,
-         title="Hospital beds per 1000 population")
+# p2a <- ggplot(data.p2, aes(x=Year.1)) +
+#   geom_line(aes(y=gdp, color=Country.x)) +
+#   theme_minimal()+
+#   theme(legend.position='None')
+# 
+# p2b <- ggplot(data.p2, aes(x=Year.1)) +
+#   geom_line(aes(y=Value, color=Country.x)) +
+#   theme_minimal() +
+#   theme(legend.position='None')
+# 
+# p2a_plotly<-ggplotly(p2a) %>%
+#   layout(showlegend=FALSE,
+#          title="GDP")
+# p2b_plotly <- ggplotly(p2b) %>%
+#   layout(showlegend=FALSE,
+#          title="Hospital beds per 1000 population")
 
 # highlight_country <- function(plotly_object, country) {
 #   plotly_object %>%
@@ -87,5 +97,41 @@ p2b_plotly <- ggplotly(p2b) %>%
 #p2a_highlight <- highlight_country(p2a_plotly, "Country A")
 #p2b_highlight <- highlight_country(p2b_plotly, "Country A")
 
-subplot(p2a_plotly, p2b_plotly, nrows=1)
+shared_data <- SharedData$new(data.p2)
+
+p2 <- shared_data %>%
+  plot_ly(x=~gdp, y=~beds) %>%
+    add_markers()
+
+p3 <- shared_data %>%
+  plot_ly(x=~stay, y=~beds) %>%
+    add_markers()
+
+
+subplot(p2, p3, titleX=T, shareY=T) %>%
+  hide_legend() %>%
+  highlight(on='plotly_click')
+```
+
+```{r}
+shared_data_2 <- SharedData$new(data.p2, key=~Country)
+
+barchart <- shared_data_2 %>%
+  plot_ly() %>%
+  group_by(Country) %>%
+  summarize(avg=mean(beds)) %>%
+  add_bars(x=~Country, y= ~avg) %>%
+  layout(barmode="overlay")
+
+scatterplot1 <- shared_data_2 %>%
+  plot_ly() %>%
+  add_trace(x=~Year.1, y=~beds, mode='lines')
+
+subplot(barchart, scatterplot1) %>%
+  hide_legend()
+          
+```
+
+```{r}
+
 ```
