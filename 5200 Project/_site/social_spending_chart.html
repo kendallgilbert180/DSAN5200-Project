@@ -277,6 +277,135 @@ Average GDP: 13.97578947368421
 Ratio of Average Social Spending to GDP: 0.23135246416108057</code></pre>
 </div>
 </div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>title: <span class="st">"Quantifying International Prosperity"</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>code<span class="op">-</span>fold: true</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="op">---</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">## Introduction </span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>How can we quantify the wellbeing of the individual <span class="kw">in</span> various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis<span class="op">-</span>equating metrics <span class="cf">with</span> reality, it <span class="kw">is</span> easy to oversimplify extremely complicated <span class="kw">and</span> nuanced situations. For example, it <span class="kw">is</span> often claimed that policing makes communities safer <span class="op">-</span> but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries <span class="cf">with</span> billions of people be compared to ones <span class="cf">with</span> several hundred thousand? There are countless potential avenues of measurement<span class="op">;</span> Yet it <span class="kw">is</span> <span class="bu">all</span> too easy to fall into the trap of measuring a countrie<span class="st">'s prosperity with the classical metric: GDP. </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="er">In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country's wellbeing, ultimately suggesting that steps be taken to make this process more holistic</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution <span class="kw">and</span> population trends (life expectancy, birth rates) <span class="kw">in</span> an attempt to quantify a country<span class="st">'s wellbeing. </span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="er">a great reference: </span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>Stiglitz, Joseph E., Amartya Sen, <span class="kw">and</span> Jean<span class="op">-</span>Paul Fitoussi. <span class="fl">2010.</span> Mismeasuring Our Lives: Why GDP Doesn’t Add Up. The New Press.</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">## GDP </span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">## Healthcare</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">## Social Spending </span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>Another important factor that can determine the well<span class="op">-</span>being of a country <span class="kw">is</span> social spending <span class="kw">in</span> regards to family benefits. OECD countries spend on average <span class="fl">2.29</span><span class="op">%</span> of GDP on family benefits, <span class="cf">with</span> large variations across countries. These variations are evident <span class="im">as</span> illustrated <span class="kw">in</span> the bubble chart below. </span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>This spending <span class="kw">is</span> beneficial <span class="cf">for</span> numerous reasons. First, family benefits <span class="bu">help</span> families meet their basic needs. These benefits provide financial assistance that can <span class="bu">help</span> <span class="cf">with</span> the costs of having a family. By helping families meet their basic needs, social spending on family benefits can improve over wellbeing. Furthermore, spending money on family benefits can directly impact child well<span class="op">-</span>being, healthier work<span class="op">-</span>life balance <span class="cf">for</span> parents <span class="kw">and</span> economic growth. By supporting families <span class="kw">and</span> enabling parents to remain <span class="kw">in</span> <span class="kw">or</span> <span class="cf">return</span> to the workforce, these policies contribute to overall economic stability <span class="kw">and</span> prosperity.</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>Based on the chart below you can see countries like Iceland, Estonia <span class="kw">and</span> Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious <span class="cf">for</span> prioritizing well<span class="op">-</span>being <span class="kw">and</span> it <span class="kw">is</span> proven to be working. </span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="op">**</span> Will change colors  <span class="op">/</span> labels <span class="op">/</span> axises just wanted to put <span class="kw">in</span> <span class="cf">for</span> now</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>```{python}</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Read / Cleaning the data</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/social_spending.csv"</span>, header<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/gdp.csv"</span>)</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].replace(<span class="st">'..'</span>, np.nan)</span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">''</span>)</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> social_spending.rename(columns<span class="op">=</span>{<span class="st">'Year'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> social_spending.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> pd.melt(social_spending, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'s_s'</span>)</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>social_spending[<span class="st">'Country_Year'</span>] <span class="op">=</span> social_spending[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> social_spending[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>merged_data <span class="op">=</span> pd.merge(gdp, social_spending, on<span class="op">=</span>[<span class="st">'Country_Year'</span>])</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>merged_data[<span class="st">'gdp'</span>] <span class="op">=</span> pd.to_numeric(merged_data[<span class="st">'gdp'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>merged_data[<span class="st">'s_s'</span>] <span class="op">=</span> pd.to_numeric(merged_data[<span class="st">'s_s'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="co">#merged_data['gdp'] = merged_data['gdp'].fillna(merged_data['gdp'].mean())</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="co">#merged_data['s_s'] = merged_data['s_s'].fillna(merged_data['s_s'].mean())</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>average_social_spending <span class="op">=</span> merged_data.groupby(<span class="st">'Country'</span>)[<span class="st">'s_s'</span>].mean().reset_index()</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a>average_gdp <span class="op">=</span> merged_data.groupby(<span class="st">'Country'</span>)[<span class="st">'gdp'</span>].mean().reset_index()</span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>average_data <span class="op">=</span> pd.merge(average_social_spending, average_gdp, on<span class="op">=</span><span class="st">'Country'</span>, suffixes<span class="op">=</span>(<span class="st">'_s_s'</span>, <span class="st">'_gdp'</span>))</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>average_data[<span class="st">'s_s_gdp_ratio'</span>] <span class="op">=</span> average_data[<span class="st">'s_s'</span>] <span class="op">/</span> average_data[<span class="st">'gdp'</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> {</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Australia'</span>: <span class="st">'rgb(255, 0, 0)'</span>,        <span class="co"># Red</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Austria'</span>: <span class="st">'rgb(0, 255, 0)'</span>,          <span class="co"># Green</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Belgium'</span>: <span class="st">'rgb(0, 0, 255)'</span>,          <span class="co"># Blue</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Canada'</span>: <span class="st">'rgb(255, 255, 0)'</span>,         <span class="co"># Yellow</span></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Chile'</span>: <span class="st">'rgb(255, 0, 255)'</span>,          <span class="co"># Magenta</span></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Colombia'</span>: <span class="st">'rgb(0, 255, 255)'</span>,       <span class="co"># Cyan</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Costa Rica'</span>: <span class="st">'rgb(255, 127, 0)'</span>,     <span class="co"># Orange</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Czechia'</span>: <span class="st">'rgb(255, 0, 127)'</span>,        <span class="co"># Reddish-Pink</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Denmark'</span>: <span class="st">'rgb(0, 127, 255)'</span>,        <span class="co"># Bluish</span></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Estonia'</span>: <span class="st">'rgb(127, 255, 0)'</span>,        <span class="co"># Greenish-Yellow</span></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Finland'</span>: <span class="st">'rgb(0, 255, 127)'</span>,        <span class="co"># Greenish</span></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">'France'</span>: <span class="st">'rgb(127, 0, 255)'</span>,         <span class="co"># Purplish-Blue</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Germany'</span>: <span class="st">'rgb(255, 255, 127)'</span>,      <span class="co"># Light Yellow</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Greece'</span>: <span class="st">'rgb(127, 255, 255)'</span>,       <span class="co"># Light Cyan</span></span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Hungary'</span>: <span class="st">'rgb(255, 127, 255)'</span>,      <span class="co"># Light Magenta</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Iceland'</span>: <span class="st">'rgb(255, 0, 0)'</span>,          <span class="co"># Red</span></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ireland'</span>: <span class="st">'rgb(0, 255, 0)'</span>,          <span class="co"># Green</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Israel'</span>: <span class="st">'rgb(0, 0, 255)'</span>,           <span class="co"># Blue</span></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Italy'</span>: <span class="st">'rgb(255, 255, 0)'</span>,          <span class="co"># Yellow</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Japan'</span>: <span class="st">'rgb(255, 0, 255)'</span>,          <span class="co"># Magenta</span></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Korea'</span>: <span class="st">'rgb(0, 255, 255)'</span>,          <span class="co"># Cyan</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Latvia'</span>: <span class="st">'rgb(255, 127, 0)'</span>,         <span class="co"># Orange</span></span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Lithuania'</span>: <span class="st">'rgb(255, 0, 127)'</span>,      <span class="co"># Reddish-Pink</span></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Luxembourg'</span>: <span class="st">'rgb(0, 127, 255)'</span>,     <span class="co"># Bluish</span></span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Mexico'</span>: <span class="st">'rgb(127, 255, 0)'</span>,         <span class="co"># Greenish-Yellow</span></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Netherlands'</span>: <span class="st">'rgb(0, 255, 127)'</span>,    <span class="co"># Greenish</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>    <span class="st">'New Zealand'</span>: <span class="st">'rgb(127, 0, 255)'</span>,    <span class="co"># Purplish-Blue</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Norway'</span>: <span class="st">'rgb(255, 255, 127)'</span>,      <span class="co"># Light Yellow</span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Poland'</span>: <span class="st">'rgb(127, 255, 255)'</span>,       <span class="co"># Light Cyan</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Portugal'</span>: <span class="st">'rgb(255, 127, 255)'</span>,     <span class="co"># Light Magenta</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Slovak Republic'</span>: <span class="st">'rgb(255, 0, 0)'</span>,  <span class="co"># Red</span></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Slovenia'</span>: <span class="st">'rgb(0, 255, 0)'</span>,         <span class="co"># Green</span></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Spain'</span>: <span class="st">'rgb(0, 0, 255)'</span>,            <span class="co"># Blue</span></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sweden'</span>: <span class="st">'rgb(255, 255, 0)'</span>,         <span class="co"># Yellow</span></span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Switzerland'</span>: <span class="st">'rgb(255, 0, 255)'</span>,    <span class="co"># Magenta</span></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Türkiye'</span>: <span class="st">'rgb(0, 255, 255)'</span>,        <span class="co"># Cyan</span></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>    <span class="st">'United Kingdom'</span>: <span class="st">'rgb(255, 127, 0)'</span>, <span class="co"># Orange</span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>    <span class="st">'United States'</span>: <span class="st">'rgb(255, 0, 127)'</span>,  <span class="co"># Reddish-Pink</span></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>average_data[<span class="st">'color'</span>] <span class="op">=</span> average_data[<span class="st">'Country'</span>].<span class="bu">map</span>(color_map)</span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a>bubble_sizes <span class="op">=</span> average_data[<span class="st">'s_s_gdp_ratio'</span>] <span class="op">*</span> <span class="dv">1000</span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>go.Scatter(</span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>average_data[<span class="st">'s_s_gdp_ratio'</span>],</span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>average_data[<span class="st">'gdp'</span>],</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'markers'</span>,</span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>        size<span class="op">=</span>bubble_sizes,</span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>        sizemode<span class="op">=</span><span class="st">'area'</span>,</span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>        sizeref<span class="op">=</span><span class="fl">2.</span><span class="op">*</span><span class="bu">max</span>(bubble_sizes)<span class="op">/</span>(<span class="dv">100</span><span class="op">**</span><span class="dv">2</span>),</span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>        sizemin<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>average_data[<span class="st">'color'</span>]</span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span>average_data.<span class="bu">apply</span>(<span class="kw">lambda</span> row: <span class="ss">f"Country: </span><span class="sc">{</span>row[<span class="st">'Country'</span>]<span class="sc">}</span><span class="ss">&lt;br&gt;Avg Social Spending: </span><span class="sc">{</span>row[<span class="st">'s_s'</span>]<span class="sc">:,}</span><span class="ss">&lt;br&gt;Avg GDP: </span><span class="sc">{</span>row[<span class="st">'gdp'</span>]<span class="sc">:,}</span><span class="ss">&lt;br&gt;Ratio: </span><span class="sc">{</span>row[<span class="st">'s_s_gdp_ratio'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>, axis<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Figure 3: Ratio of GDP Spent on Family Benefits'</span>,</span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Average Percentage of GDP spent on Family Benefits'</span>),  </span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Average GDP (Billions) Over 20 Years'</span>),</span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">False</span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a>fig.update_layout(plot_bgcolor<span class="op">=</span><span class="st">'#faf0e6'</span>)</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 

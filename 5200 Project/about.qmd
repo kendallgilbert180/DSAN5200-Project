@@ -2,42 +2,38 @@
 title: "Quantifying International Prosperity"
 code-fold: true
 ---
-## Introduction 
 
-How can we quantify the wellbeing of the individual in various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis-equating metrics with reality, it is easy to oversimplify extremely complicated and nuanced situations. For example, it is often claimed that policing makes communities safer - but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries with billions of people be compared to ones with several hundred thousand? There are countless potential avenues of measurement; Yet it is all too easy to fall into the trap of measuring a countrie's prosperity with the classical metric: GDP. 
-In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country's wellbeing, ultimately suggesting that steps be taken to make this process more holistic
+## Introduction
 
-This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution and population trends (life expectancy, birth rates) in an attempt to quantify a country's wellbeing. 
+How can we quantify the wellbeing of the individual in various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis-equating metrics with reality, it is easy to oversimplify extremely complicated and nuanced situations. For example, it is often claimed that policing makes communities safer - but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries with billions of people be compared to ones with several hundred thousand? There are countless potential avenues of measurement; Yet it is all too easy to fall into the trap of measuring a countrie's prosperity with the classical metric: GDP. In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country's wellbeing, ultimately suggesting that steps be taken to make this process more holistic
 
+This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution and population trends (life expectancy, birth rates) in an attempt to quantify a country's wellbeing.
 
-a great reference: 
-Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn’t Add Up. The New Press.
+a great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn’t Add Up. The New Press.
 
-## GDP 
+## GDP
 
 ## Healthcare
 
-## Social Spending 
+## Social Spending
 
-Another important factor that can determine the well-being of a country is social spending in regards to family benefits. OECD countries spend on average 2.29% of GDP on family benefits, with large variations across countries. These variations are evident as illustrated in the bubble chart below. 
+Another important factor that can determine the well-being of a country is social spending in regards to family benefits. OECD countries spend on average 2.29% of GDP on family benefits, with large variations across countries. These variations are evident as illustrated in the bubble chart below.
 
 This spending is beneficial for numerous reasons. First, family benefits help families meet their basic needs. These benefits provide financial assistance that can help with the costs of having a family. By helping families meet their basic needs, social spending on family benefits can improve over wellbeing. Furthermore, spending money on family benefits can directly impact child well-being, healthier work-life balance for parents and economic growth. By supporting families and enabling parents to remain in or return to the workforce, these policies contribute to overall economic stability and prosperity.
 
-Based on the chart below you can see countries like Iceland, Estonia and Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working. 
+Based on the chart below you can see countries like Iceland, Estonia and Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working.
 
-There is a drastic difference between countries like Iceland and the United States. 
- **Add table here **
+There is a drastic difference between countries like Iceland and the United States. **Add table here**
 
- ** Add takeaways
+\*\* Add takeaways
 
 ## Education
 
-Education plays a large role in the overall well-being of a Country. Specifically, the quantity of people with the education uquivalent of a Bachelors and Masters can help improve a country in regard to economic development, workforce skills and global competitiveness. Within the chart below, the OECD countries have been separated by their specific regions. The bar chart illustrates the total number of people with Bachelor Degrees and Masters Degrees by Region. 
-
+Education plays a large role in the overall well-being of a Country. Specifically, the quantity of people with the education uquivalent of a Bachelors and Masters can help improve a country in regard to economic development, workforce skills and global competitiveness. Within the chart below, the OECD countries have been separated by their specific regions. The bar chart illustrates the total number of people with Bachelor Degrees and Masters Degrees by Region.
 
 ## Population
 
-## Wealth 
+## Wealth
 
 ## Innovative Chart
 
