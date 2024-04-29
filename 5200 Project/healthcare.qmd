@@ -12,6 +12,8 @@ library(plotly)
 library(gridExtra)
 library(crosstalk)
 library(Ecdat)
+library(Ecfun)
+
 ```
 
 ```{r echo=FALSE}
