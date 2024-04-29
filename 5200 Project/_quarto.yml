@@ -5,19 +5,19 @@ website:
   title: "5200 Project"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - href: authors.qmd
+        text: About Us
+      - href: data.ipynb
+        text: The Data
       - about.qmd
-      - href: data.ipynb 
-        text: Data Gathering 
-      - href: cleaning.ipynb 
-        text: Data Cleaning
+    background: "#e1ccb7" #nav bar colors
 
 format:
   html:
-    theme: cosmo
+    theme: simplex
     css: styles.css
     toc: true
+    linkcolor: "#e1ccb7"
 
 
 

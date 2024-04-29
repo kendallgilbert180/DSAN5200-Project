@@ -119,16 +119,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./authors.html" rel="" target="">
- <span class="menu-text">About Us</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./data.html" rel="" target="">
- <span class="menu-text">The Data</span></a>
+    <a class="nav-link" href="./index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">Quantifying International Prosperity</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./data.html" rel="" target="">
+ <span class="menu-text">Data Gathering</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./cleaning.html" rel="" target="">
+ <span class="menu-text">Data Cleaning</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -173,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="cleaning-and-tidying-datasets" class="level2">
 <h2 class="anchored" data-anchor-id="cleaning-and-tidying-datasets">Cleaning and Tidying Datasets</h2>
 <p>Fertility Data set</p>
-<div class="cell" data-execution_count="7">
+<div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fertility </span></span>
@@ -185,15 +189,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Joining country and year to make easy when merging</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fertility[<span class="st">'Country_Year'</span>] <span class="op">=</span> fertility[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> fertility[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fertility <span class="op">=</span> fertility.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Writing to a csv</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>fertility.to_csv(<span class="st">'Data_cleaned/fertility.csv'</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>fertility</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>fertility</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/3871854153.py:5: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/2892379672.py:5: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   fertility = fertility.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -269,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>GDP Dataset</p>
-<div class="cell" data-execution_count="8">
+<div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Importing Data into Python Environment</span></span>
@@ -279,15 +281,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> pd.melt(gdp, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'gdp'</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'Country_Year'</span>] <span class="op">=</span> gdp[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> gdp[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> gdp.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>gdp.to_csv(<span class="st">'Data_cleaned/gdp.csv'</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>gdp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>gdp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/342258130.py:4: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/262549689.py:4: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   gdp = gdp.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -363,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Immigration Inflow Dataset</p>
-<div class="cell" data-execution_count="9">
+<div class="cell" data-execution_count="3">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Importing Data into Python Environment</span></span>
@@ -380,15 +380,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>immigration[<span class="st">'Country_Year'</span>] <span class="op">=</span> immigration[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> immigration[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>immigration <span class="op">=</span> immigration.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>immigration.to_csv(<span class="st">'Data_cleaned/immigration.csv'</span>)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>immigration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>immigration</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/1953399705.py:10: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/31041099.py:10: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   immigration = immigration.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -464,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Infant Mortality</p>
-<div class="cell" data-execution_count="10">
+<div class="cell" data-execution_count="4">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -475,15 +473,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>i_m[<span class="st">'Country_Year'</span>] <span class="op">=</span> i_m[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> i_m[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>i_m <span class="op">=</span> i_m.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>i_m.to_csv(<span class="st">'Data_cleaned/i_m.csv'</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>i_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>i_m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/2840789272.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/2863281320.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   i_m = i_m.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
 
@@ -559,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>NEt National Income Dataset</p>
-<div class="cell" data-execution_count="11">
+<div class="cell" data-execution_count="5">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a></span>
@@ -569,15 +565,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> pd.melt(nni, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'nni'</span>)</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>nni[<span class="st">'Country_Year'</span>] <span class="op">=</span> nni[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> nni[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> nni.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>nni.to_csv(<span class="st">'Data_cleaned/nni.csv'</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>nni</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>nni</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/1868564537.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/3140687827.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   nni = nni.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -653,7 +647,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Population Dataset</p>
-<div class="cell" data-execution_count="12">
+<div class="cell" data-execution_count="6">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/population.csv"</span>)</span>
@@ -662,15 +656,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pd.melt(pop, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'population'</span>)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>pop[<span class="st">'Country_Year'</span>] <span class="op">=</span> pop[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> pop[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> pop.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>pop.to_csv(<span class="st">'Data_cleaned/pop.csv'</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>pop</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/251758898.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/2836068908.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   pop = pop.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="12">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -746,7 +738,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Working Population Dataset</p>
-<div class="cell" data-execution_count="13">
+<div class="cell" data-execution_count="7">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/population_working.csv"</span>)</span>
@@ -757,15 +749,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pop_working[pop_working.Country <span class="op">!=</span> <span class="st">'Unnamed: 14'</span>]</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>pop_working[<span class="st">'Country_Year'</span>] <span class="op">=</span> pop_working[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> pop_working[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>pop_working <span class="op">=</span> pop_working.drop(columns<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>pop_working.to_csv(<span class="st">'Data_cleaned/pop_working.csv'</span>)</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>pop_working</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>pop_working</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/3675620941.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/707146143.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   pop_working = pop_working.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -840,22 +830,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="14">
+<div class="cell" data-execution_count="8">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>l_e <span class="op">=</span> pd.read_csv(<span class="st">"Data_Uncleaned/life_expectancy.csv"</span>, header <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>l_e <span class="op">=</span> l_e.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>l_e <span class="op">=</span> l_e.rename(columns<span class="op">=</span>{<span class="st">'Year'</span>: <span class="st">'Country'</span>})</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>l_e <span class="op">=</span> pd.melt(l_e, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'age'</span>)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>l_e.to_csv(<span class="st">'Data_cleaned/l_e.csv'</span>)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>l_e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>l_e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/zl/mwx636ts1pbc006v4wqp6fwr0000gn/T/ipykernel_2530/1175965265.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_48627/2264265670.py:2: FutureWarning: DataFrame.applymap has been deprecated. Use DataFrame.map instead.
   l_e = l_e.applymap(lambda x: x.strip() if isinstance(x, str) else x)</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -940,6 +928,126 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>637 rows × 3 columns</p>
 </div>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample merged DataFrame</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>gdp[[<span class="st">'Country'</span>, <span class="st">'Year'</span>]] <span class="op">=</span> gdp[<span class="st">'Country_Year'</span>].<span class="bu">str</span>.split(<span class="st">'_'</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>gdp.drop(columns<span class="op">=</span>[<span class="st">'Country_Year'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> pd.to_numeric(gdp[<span class="st">'gdp'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">''</span>), errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>gdp.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>heatmap_data <span class="op">=</span> gdp.pivot(index<span class="op">=</span><span class="st">'Year'</span>, columns<span class="op">=</span><span class="st">'Country'</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>data_to_plot <span class="op">=</span> heatmap_data[<span class="st">'gdp'</span>]</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>data_to_plot.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>data_to_plot_melted <span class="op">=</span> pd.melt(data_to_plot, id_vars<span class="op">=</span>[<span class="st">'Year'</span>], var_name<span class="op">=</span><span class="st">'Country'</span>, value_name<span class="op">=</span><span class="st">'GDP'</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create choropleth map</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.choropleth(data_to_plot_melted, </span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>                    locations<span class="op">=</span><span class="st">'Country'</span>,</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>                    locationmode<span class="op">=</span><span class="st">'country names'</span>,</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span><span class="st">'GDP'</span>,</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>                    hover_name<span class="op">=</span><span class="st">'Country'</span>,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>                    animation_frame<span class="op">=</span><span class="st">'Year'</span>,</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>                    color_continuous_scale<span class="op">=</span><span class="st">'YlGnBu'</span>,</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>                    title<span class="op">=</span><span class="st">'GDP Choropleth Map by Country and Year'</span>)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Sample merged DataFrame</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>nni[[<span class="st">'Country'</span>, <span class="st">'Year'</span>]] <span class="op">=</span> nni[<span class="st">'Country_Year'</span>].<span class="bu">str</span>.split(<span class="st">'_'</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>nni.drop(columns<span class="op">=</span>[<span class="st">'Country_Year'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>nni[<span class="st">'nni'</span>] <span class="op">=</span> pd.to_numeric(nni[<span class="st">'nni'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">''</span>), errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>nni.dropna(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>heatmap_data <span class="op">=</span> nni.pivot(index<span class="op">=</span><span class="st">'Year'</span>, columns<span class="op">=</span><span class="st">'Country'</span>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>data_to_plot <span class="op">=</span> heatmap_data[<span class="st">'nni'</span>]  <span class="co"># or heatmap_data['nni']</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>data_to_plot.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>data_to_plot_melted <span class="op">=</span> pd.melt(data_to_plot, id_vars<span class="op">=</span>[<span class="st">'Year'</span>], var_name<span class="op">=</span><span class="st">'Country'</span>, value_name<span class="op">=</span><span class="st">'nni'</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create choropleth map</span></span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.choropleth(data_to_plot_melted, </span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>                    locations<span class="op">=</span><span class="st">'Country'</span>,</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>                    locationmode<span class="op">=</span><span class="st">'country names'</span>,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>                    color<span class="op">=</span><span class="st">'nni'</span>,</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>                    hover_name<span class="op">=</span><span class="st">'Country'</span>,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>                    animation_frame<span class="op">=</span><span class="st">'Year'</span>,</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>                    color_continuous_scale<span class="op">=</span><span class="st">'YlGnBu'</span>,</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>                    title<span class="op">=</span><span class="st">'NNI Choropleth Map by Country and Year'</span>)</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>average_data <span class="op">=</span> merged_data.groupby(<span class="st">'Year'</span>).agg({<span class="st">'gdp'</span>: <span class="st">'mean'</span>, <span class="st">'nni'</span>: <span class="st">'mean'</span>}).reset_index()</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(average_data, x<span class="op">=</span><span class="st">'gdp'</span>, y<span class="op">=</span><span class="st">'nni'</span>, </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                 title<span class="op">=</span><span class="st">'Scatterplot of Average GDP vs Average NNI'</span>, </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                 labels<span class="op">=</span>{<span class="st">'gdp'</span>: <span class="st">'Average GDP'</span>, <span class="st">'nni'</span>: <span class="st">'Average NNI'</span>})</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'merged_data' is not defined</code></pre>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>merged_data <span class="op">=</span> pd.merge(gdp, nni, on<span class="op">=</span>[<span class="st">'Country'</span>, <span class="st">'Year'</span>])</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>merged_data <span class="op">=</span> merged_data[merged_data[<span class="st">'Country'</span>] <span class="op">!=</span> <span class="st">'Euro_area'</span>]</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>merged_data.dropna(subset<span class="op">=</span>[<span class="st">'gdp'</span>, <span class="st">'nni'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter(merged_data, x<span class="op">=</span><span class="st">'gdp'</span>, y<span class="op">=</span><span class="st">'nni'</span>, color<span class="op">=</span><span class="st">'Country'</span>, animation_frame<span class="op">=</span><span class="st">'Year'</span>,</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>                 title<span class="op">=</span><span class="st">'Scatterplot of GDP vs NNI by Country and Year'</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'gdp' and 'age' columns to numeric data types</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>merged_data[<span class="st">'gdp'</span>] <span class="op">=</span> pd.to_numeric(merged_data[<span class="st">'gdp'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>merged_data[<span class="st">'age'</span>] <span class="op">=</span> pd.to_numeric(merged_data[<span class="st">'age'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>average_data <span class="op">=</span> merged_data.groupby([<span class="st">'Country'</span>, <span class="st">'Year'</span>]).agg({<span class="st">'gdp'</span>: <span class="st">'mean'</span>, <span class="st">'age'</span>: <span class="st">'mean'</span>}).reset_index()</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>traces <span class="op">=</span> []</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> country <span class="kw">in</span> average_data[<span class="st">'Country'</span>].unique():</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    country_data <span class="op">=</span> average_data[average_data[<span class="st">'Country'</span>] <span class="op">==</span> country]</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    trace <span class="op">=</span> go.Scatter(x<span class="op">=</span>country_data[<span class="st">'Year'</span>], y<span class="op">=</span>country_data[<span class="st">'age'</span>], mode<span class="op">=</span><span class="st">'lines'</span>, name<span class="op">=</span>country)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    traces.append(trace)</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>layout <span class="op">=</span> go.Layout(</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Average Life Expectancy Over Time by Country'</span>,</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Year'</span>),</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Life Expectancy'</span>)</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>traces, layout<span class="op">=</span>layout)</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
 

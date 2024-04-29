@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5200 Project - Quantifying International Prosperity</title>
+<title>5200 Project – social_spending_chart</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,25 +93,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-<script type="text/javascript">
-window.PlotlyConfig = {MathJaxConfig: 'local'};
-if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-if (typeof require !== 'undefined') {
-require.undef("plotly");
-requirejs.config({
-    paths: {
-        'plotly': ['https://cdn.plot.ly/plotly-2.12.1.min']
-    }
-});
-require(['plotly'], function(Plotly) {
-    window._Plotly = Plotly;
-});
-}
-</script>
-
 
 
 <link rel="stylesheet" href="styles.css">
@@ -143,7 +124,7 @@ require(['plotly'], function(Plotly) {
  <span class="menu-text">The Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">Quantifying International Prosperity</span></a>
   </li>  
 </ul>
@@ -158,63 +139,14 @@ require(['plotly'], function(Plotly) {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#gdp" id="toc-gdp" class="nav-link" data-scroll-target="#gdp">GDP</a></li>
-  <li><a href="#healthcare" id="toc-healthcare" class="nav-link" data-scroll-target="#healthcare">Healthcare</a></li>
-  <li><a href="#social-spending" id="toc-social-spending" class="nav-link" data-scroll-target="#social-spending">Social Spending</a></li>
-  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
-  <li><a href="#population" id="toc-population" class="nav-link" data-scroll-target="#population">Population</a></li>
-  <li><a href="#wealth" id="toc-wealth" class="nav-link" data-scroll-target="#wealth">Wealth</a></li>
-  <li><a href="#innovative-chart" id="toc-innovative-chart" class="nav-link" data-scroll-target="#innovative-chart">Innovative Chart</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Quantifying International Prosperity</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>How can we quantify the wellbeing of the individual in various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis-equating metrics with reality, it is easy to oversimplify extremely complicated and nuanced situations. For example, it is often claimed that policing makes communities safer - but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries with billions of people be compared to ones with several hundred thousand? There are countless potential avenues of measurement; Yet it is all too easy to fall into the trap of measuring a countrie’s prosperity with the classical metric: GDP. In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country’s wellbeing, ultimately suggesting that steps be taken to make this process more holistic</p>
-<p>This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution and population trends (life expectancy, birth rates) in an attempt to quantify a country’s wellbeing.</p>
-<p>a great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn’t Add Up. The New Press.</p>
-</section>
-<section id="gdp" class="level2">
-<h2 class="anchored" data-anchor-id="gdp">GDP</h2>
-</section>
-<section id="healthcare" class="level2">
-<h2 class="anchored" data-anchor-id="healthcare">Healthcare</h2>
-</section>
-<section id="social-spending" class="level2">
-<h2 class="anchored" data-anchor-id="social-spending">Social Spending</h2>
-<p>Another important factor that can determine the well-being of a country is social spending in regards to family benefits. OECD countries spend on average 2.29% of GDP on family benefits, with large variations across countries. These variations are evident as illustrated in the bubble chart below.</p>
-<p>This spending is beneficial for numerous reasons. First, family benefits help families meet their basic needs. These benefits provide financial assistance that can help with the costs of having a family. By helping families meet their basic needs, social spending on family benefits can improve over wellbeing. Furthermore, spending money on family benefits can directly impact child well-being, healthier work-life balance for parents and economic growth. By supporting families and enabling parents to remain in or return to the workforce, these policies contribute to overall economic stability and prosperity.</p>
-<p>Based on the chart below you can see countries like Iceland, Estonia and Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working.</p>
-<p>** Will change colors / labels / axises just wanted to put in for now</p>
-<div class="cell" data-execution_count="1">
-<details>
-<summary>Code</summary>
+<div class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -241,7 +173,7 @@ require(['plotly'], function(Plotly) {
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>average_social_spending <span class="op">=</span> merged_data.groupby(<span class="st">'Country'</span>)[<span class="st">'s_s'</span>].mean().reset_index()</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>average_gdp <span class="op">=</span> merged_data.groupby(<span class="st">'Country'</span>)[<span class="st">'gdp'</span>].mean().reset_index()</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>average_data <span class="op">=</span> pd.merge(average_social_spending, average_gdp, on<span class="op">=</span><span class="st">'Country'</span>, suffixes<span class="op">=</span>(<span class="st">'_s_s'</span>, <span class="st">'_gdp'</span>))</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>average_data[<span class="st">'s_s_gdp_ratio'</span>] <span class="op">=</span> average_data[<span class="st">'s_s'</span>] <span class="op">/</span> average_data[<span class="st">'gdp'</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>average_data[<span class="st">'s_s_gdp_ratio'</span>] <span class="op">=</span> average_data[<span class="st">'s_s'</span>] <span class="op">/</span> average_data[<span class="st">'gdp'</span>]</span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> {</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Australia'</span>: <span class="st">'rgb(255, 0, 0)'</span>,        <span class="co"># Red</span></span>
@@ -309,63 +241,44 @@ require(['plotly'], function(Plotly) {
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_65792/585390732.py:13: FutureWarning:
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_58663/36842028.py:22: FutureWarning:
 
 DataFrame.applymap has been deprecated. Use DataFrame.map instead.
 </code></pre>
 </div>
 <div class="cell-output cell-output-display">
-
-<div>                            <div id="54cd0764-8ba1-426f-9557-0ac7c4246c4a" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("54cd0764-8ba1-426f-9557-0ac7c4246c4a")) {                    Plotly.newPlot(                        "54cd0764-8ba1-426f-9557-0ac7c4246c4a",                        [{"marker":{"color":["rgb(255, 0, 0)","rgb(0, 255, 0)","rgb(0, 0, 255)","rgb(255, 255, 0)","rgb(255, 0, 255)","rgb(0, 255, 255)","rgb(255, 127, 0)","rgb(255, 0, 127)","rgb(0, 127, 255)","rgb(127, 255, 0)","rgb(0, 255, 127)","rgb(127, 0, 255)","rgb(255, 255, 127)","rgb(127, 255, 255)","rgb(255, 127, 255)","rgb(255, 0, 0)","rgb(0, 255, 0)","rgb(0, 0, 255)","rgb(255, 255, 0)","rgb(255, 0, 255)","rgb(0, 255, 255)","rgb(255, 127, 0)","rgb(255, 0, 127)","rgb(0, 127, 255)","rgb(127, 255, 0)","rgb(0, 255, 127)","rgb(127, 0, 255)","rgb(255, 255, 127)","rgb(127, 255, 255)","rgb(255, 127, 255)","rgb(255, 0, 0)","rgb(0, 255, 0)","rgb(0, 0, 255)","rgb(255, 255, 0)","rgb(255, 0, 255)","rgb(0, 255, 255)","rgb(255, 127, 0)","rgb(255, 0, 127)"],"size":[278.65319842874266,750.3906495944684,716.6520181191265,108.05689008612481,450.97708020768135,330.5175418465179,1347.002501234686,684.453152144988,1511.062274590149,8873.469660072726,1424.7181570386883,152.23632341360968,90.8464771958393,458.8364096658727,1504.942184059573,23135.246416108057,1112.9103532545025,903.8541539214486,90.38048399938398,31.518125278914468,61.71171020857179,5135.994439224066,3235.970365324023,7176.084128838818,47.47374073808263,241.08548914515467,2065.5189936352767,1116.664297418018,222.02006825643514,520.7710401467128,1568.108097733249,3234.6265882731395,90.07163027138834,818.4006557581164,412.6816342192715,24.118851671323362,138.59243055813025,7.444862668124607],"sizemin":4,"sizemode":"area","sizeref":4.627049283221611},"mode":"markers","text":["Country: Australia<br>Avg Social Spending: 2.64<br>Avg GDP: 947.4142105263157<br>Ratio: 0.2787","Country: Austria<br>Avg Social Spending: 2.76<br>Avg GDP: 367.80842105263156<br>Ratio: 0.7504","Country: Belgium<br>Avg Social Spending: 3.18<br>Avg GDP: 443.73<br>Ratio: 0.7167","Country: Canada<br>Avg Social Spending: 1.5133333333333332<br>Avg GDP: 1,400.496842105263<br>Ratio: 0.1081","Country: Chile<br>Avg Social Spending: 1.4333333333333333<br>Avg GDP: 317.82842105263154<br>Ratio: 0.4510","Country: Colombia<br>Avg Social Spending: 1.6600000000000001<br>Avg GDP: 502.2426315789474<br>Ratio: 0.3305","Country: Costa Rica<br>Avg Social Spending: 0.89<br>Avg GDP: 66.07263157894737<br>Ratio: 1.3470","Country: Czechia<br>Avg Social Spending: 2.066666666666667<br>Avg GDP: 301.94421052631577<br>Ratio: 0.6845","Country: Denmark<br>Avg Social Spending: 3.6333333333333333<br>Avg GDP: 240.44894736842105<br>Ratio: 1.5111","Country: Estonia<br>Avg Social Spending: 2.8000000000000003<br>Avg GDP: 31.55473684210526<br>Ratio: 8.8735","Country: Finland<br>Avg Social Spending: 2.9866666666666664<br>Avg GDP: 209.63210526315788<br>Ratio: 1.4247","Country: France<br>Avg Social Spending: 3.6357142857142857<br>Avg GDP: 2,388.204210526316<br>Ratio: 0.1522","Country: Germany<br>Avg Social Spending: 3.046666666666667<br>Avg GDP: 3,353.6431578947368<br>Ratio: 0.0908","Country: Greece<br>Avg Social Spending: 1.3545454545454545<br>Avg GDP: 295.21315789473687<br>Ratio: 0.4588","Country: Hungary<br>Avg Social Spending: 3.3466666666666667<br>Avg GDP: 222.37842105263155<br>Ratio: 1.5049","Country: Iceland<br>Avg Social Spending: 3.2333333333333334<br>Avg GDP: 13.97578947368421<br>Ratio: 23.1352","Country: Ireland<br>Avg Social Spending: 2.6333333333333333<br>Avg GDP: 236.61684210526317<br>Ratio: 1.1129","Country: Israel<br>Avg Social Spending: 2.209090909090909<br>Avg GDP: 244.4078947368421<br>Ratio: 0.9039","Country: Italy<br>Avg Social Spending: 1.8909090909090909<br>Avg GDP: 2,092.1652631578945<br>Ratio: 0.0904","Country: Japan<br>Avg Social Spending: 1.4428571428571428<br>Avg GDP: 4,577.864736842105<br>Ratio: 0.0315","Country: Korea<br>Avg Social Spending: 0.9733333333333333<br>Avg GDP: 1,577.2263157894736<br>Ratio: 0.0617","Country: Latvia<br>Avg Social Spending: 2.1<br>Avg GDP: 40.88789473684211<br>Ratio: 5.1360","Country: Lithuania<br>Avg Social Spending: 2.2<br>Avg GDP: 67.9857894736842<br>Ratio: 3.2360","Country: Luxembourg<br>Avg Social Spending: 3.426315789473684<br>Avg GDP: 47.74631578947369<br>Ratio: 7.1761","Country: Mexico<br>Avg Social Spending: 0.8947368421052632<br>Avg GDP: 1,884.6984210526314<br>Ratio: 0.0475","Country: Netherlands<br>Avg Social Spending: 1.8333333333333333<br>Avg GDP: 760.4494736842106<br>Ratio: 0.2411","Country: New Zealand<br>Avg Social Spending: 2.973684210526316<br>Avg GDP: 143.9678947368421<br>Ratio: 2.0655","Country: Norway<br>Avg Social Spending: 3.142105263157895<br>Avg GDP: 281.3831578947368<br>Ratio: 1.1167","Country: Poland<br>Avg Social Spending: 1.7842105263157895<br>Avg GDP: 803.6257894736842<br>Ratio: 0.2220","Country: Portugal<br>Avg Social Spending: 1.4666666666666666<br>Avg GDP: 281.6336842105263<br>Ratio: 0.5208","Country: Slovak Republic<br>Avg Social Spending: 2.006666666666667<br>Avg GDP: 127.96736842105264<br>Ratio: 1.5681","Country: Slovenia<br>Avg Social Spending: 1.905263157894737<br>Avg GDP: 58.902105263157885<br>Ratio: 3.2346","Country: Spain<br>Avg Social Spending: 1.3210526315789475<br>Avg GDP: 1,466.668947368421<br>Ratio: 0.0901","Country: Sweden<br>Avg Social Spending: 3.3210526315789473<br>Avg GDP: 405.7978947368421<br>Ratio: 0.8184","Country: Switzerland<br>Avg Social Spending: 1.8<br>Avg GDP: 436.17157894736846<br>Ratio: 0.4127","Country: Türkiye<br>Avg Social Spending: 0.3368421052631579<br>Avg GDP: 1,396.5926315789475<br>Ratio: 0.0241","Country: United Kingdom<br>Avg Social Spending: 3.305263157894737<br>Avg GDP: 2,384.88<br>Ratio: 0.1386","Country: United States<br>Avg Social Spending: 1.16<br>Avg GDP: 15,581.214210526316<br>Ratio: 0.0074"],"x":[0.27865319842874264,0.7503906495944684,0.7166520181191265,0.1080568900861248,0.45097708020768135,0.3305175418465179,1.347002501234686,0.684453152144988,1.511062274590149,8.873469660072725,1.4247181570386884,0.15223632341360968,0.0908464771958393,0.4588364096658727,1.5049421840595731,23.135246416108057,1.1129103532545026,0.9038541539214486,0.09038048399938399,0.03151812527891447,0.06171171020857179,5.135994439224066,3.235970365324023,7.176084128838818,0.04747374073808263,0.24108548914515468,2.0655189936352767,1.1166642974180179,0.22202006825643514,0.5207710401467128,1.5681080977332489,3.2346265882731395,0.09007163027138834,0.8184006557581164,0.41268163421927145,0.02411885167132336,0.13859243055813025,0.007444862668124607],"y":[947.4142105263157,367.80842105263156,443.73,1400.496842105263,317.82842105263154,502.2426315789474,66.07263157894737,301.94421052631577,240.44894736842105,31.55473684210526,209.63210526315788,2388.204210526316,3353.6431578947368,295.21315789473687,222.37842105263155,13.97578947368421,236.61684210526317,244.4078947368421,2092.1652631578945,4577.864736842105,1577.2263157894736,40.88789473684211,67.9857894736842,47.74631578947369,1884.6984210526314,760.4494736842106,143.9678947368421,281.3831578947368,803.6257894736842,281.6336842105263,127.96736842105264,58.902105263157885,1466.668947368421,405.7978947368421,436.17157894736846,1396.5926315789475,2384.88,15581.214210526316],"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Figure 3: Ratio of GDP Spent on Family Benefits"},"xaxis":{"title":{"text":"Average Percentage of GDP spent on Family Benefits"}},"yaxis":{"title":{"text":"Average GDP (Billions) Over 20 Years"}},"showlegend":false},                        {"responsive": true}                    ).then(function(){
-                            
-var gd = document.getElementById('54cd0764-8ba1-426f-9557-0ac7c4246c4a');
-var x = new MutationObserver(function (mutations, observer) {{
-        var display = window.getComputedStyle(gd).display;
-        if (!display || display === 'none') {{
-            console.log([gd, 'removed!']);
-            Plotly.purge(gd);
-            observer.disconnect();
-        }}
-}});
-
-// Listen for the removal of the full notebook cells
-var notebookContainer = gd.closest('#notebook-container');
-if (notebookContainer) {{
-    x.observe(notebookContainer, {childList: true});
-}}
-
-// Listen for the clearing of the current output cell
-var outputEl = gd.closest('.output');
-if (outputEl) {{
-    x.observe(outputEl, {childList: true});
-}}
-
-                        })                };                });            </script>        </div>
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
-<p>There is a drastic difference between countries like Iceland and the United States. <strong>Add table here </strong></p>
-<p>** Add takeaways</p>
-</section>
-<section id="education" class="level2">
-<h2 class="anchored" data-anchor-id="education">Education</h2>
-<p>Education plays a large role in the overall well-being of a Country. Specifically, the quantity of people with the education uquivalent of a Bachelors and Masters can help improve a country in regard to economic development, workforce skills and global competitiveness. Within the chart below, the OECD countries have been separated by their specific regions. The bar chart illustrates the total number of people with Bachelor Degrees and Masters Degrees by Region.</p>
-</section>
-<section id="population" class="level2">
-<h2 class="anchored" data-anchor-id="population">Population</h2>
-</section>
-<section id="wealth" class="level2">
-<h2 class="anchored" data-anchor-id="wealth">Wealth</h2>
-</section>
-<section id="innovative-chart" class="level2">
-<h2 class="anchored" data-anchor-id="innovative-chart">Innovative Chart</h2>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>us_data <span class="op">=</span> average_data[average_data[<span class="st">'Country'</span>] <span class="op">==</span> <span class="st">'United States'</span>]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"United States Results:"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average Percentage Social Spending:"</span>, us_data[<span class="st">'s_s'</span>].values[<span class="dv">0</span>])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average GDP:"</span>, us_data[<span class="st">'gdp'</span>].values[<span class="dv">0</span>])</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ratio of Average Social Spending to GDP:"</span>, us_data[<span class="st">'s_s_gdp_ratio'</span>].values[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>United States Results:
+Average Percentage Social Spending: 1.16
+Average GDP: 15581.214210526316
+Ratio of Average Social Spending to GDP: 7.444862668124607e-05</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>iceland_data <span class="op">=</span> average_data[average_data[<span class="st">'Country'</span>] <span class="op">==</span> <span class="st">'Iceland'</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iceland Results:"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average Percentage Social Spending:"</span>, iceland_data[<span class="st">'s_s'</span>].values[<span class="dv">0</span>])</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average GDP:"</span>, iceland_data[<span class="st">'gdp'</span>].values[<span class="dv">0</span>])</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ratio of Average Social Spending to GDP:"</span>, iceland_data[<span class="st">'s_s_gdp_ratio'</span>].values[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Iceland Results:
+Average Percentage Social Spending: 3.2333333333333334
+Average GDP: 13.97578947368421
+Ratio of Average Social Spending to GDP: 0.23135246416108057</code></pre>
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
