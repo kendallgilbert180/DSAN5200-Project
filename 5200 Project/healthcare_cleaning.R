@@ -33,3 +33,4 @@ immunization <- read.csv("Data_Uncleaned/immunization.csv")
 immunization <- immunization %>%
   subset(select=c(Country, Year, Value))
 write.csv(immunization, "Data_cleaned/immunization.csv")
+

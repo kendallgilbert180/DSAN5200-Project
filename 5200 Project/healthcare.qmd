@@ -4,16 +4,17 @@ format: html
 editor: visual
 ---
 
-```{r}
+```{r echo=FALSE}
 library(tidyverse)
 library(ggplot2)
+library(lubridate)
 library(plotly)
 library(gridExtra)
 library(crosstalk)
 library(Ecdat)
 ```
 
-```{r}
+```{r echo=FALSE}
 hospital_beds <- read.csv("Data_cleaned/hospital_beds.csv")
 hospital_beds <- hospital_beds %>%
   filter(Year=='2021') %>%
@@ -25,17 +26,20 @@ gdp <- gdp %>%
   rename(Country=Time, gdp=X2021)
 
 data.p1 <- left_join(gdp, hospital_beds, by="Country")
+data.p1$gdp<-as.numeric(data.p1$gdp)
 
 ```
 
-```{r}
+### Healthcare Indicators: Number of Hospital Beds, Length of Hospital Stays, and GDP
 
-p1 <- ggplot(data.p1, aes(x=Value, y=gdp)) + geom_point()
+```{r echo=FALSE}
+
+p1 <- ggplot() + geom_point(data=data.p1, aes(x=Value, y=gdp),color="#57d4ff") + theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"))+ labs(title="GDP Compared to Number of Hospital Beds Available in 2021", x="Hospital Beds per Capita", y="GDP") 
 
 ggplotly(p1)
 ```
 
-```{r}
+```{r echo=FALSE}
 hospital_bed2 <- read.csv("Data_cleaned/hospital_beds.csv")
 gdp2 <- read.csv("Data_Uncleaned/GDP.csv")
 hospital_stay <- read.csv("Data_cleaned/hospital_stay.csv")
@@ -68,95 +72,63 @@ data.p2$stay<-as.numeric(data.p2$stay)
 
 
 
+
+
+
 ```
 
-```{r}
-# p2a <- ggplot(data.p2, aes(x=Year.1)) +
-#   geom_line(aes(y=gdp, color=Country.x)) +
-#   theme_minimal()+
-#   theme(legend.position='None')
-# 
-# p2b <- ggplot(data.p2, aes(x=Year.1)) +
-#   geom_line(aes(y=Value, color=Country.x)) +
-#   theme_minimal() +
-#   theme(legend.position='None')
-# 
-# p2a_plotly<-ggplotly(p2a) %>%
-#   layout(showlegend=FALSE,
-#          title="GDP")
-# p2b_plotly <- ggplotly(p2b) %>%
-#   layout(showlegend=FALSE,
-#          title="Hospital beds per 1000 population")
-
-# highlight_country <- function(plotly_object, country) {
-#   plotly_object %>%
-#     highlight("plotly_click", dynamic=TRUE) %>%
-#     highlight_key(~Country.x==country)
-# }
-
-#p2a_highlight <- highlight_country(p2a_plotly, "Country A")
-#p2b_highlight <- highlight_country(p2b_plotly, "Country A")
+```{r echo=FALSE}
 
 shared_data <- SharedData$new(data.p2)
 
 p2 <- shared_data %>%
   plot_ly(x=~gdp, y=~beds) %>%
-    add_markers()
+  add_markers(color=I("#ff6f69")) %>%
+  layout(plot_bgcolor="#faf0e6",
+         xaxis=list(title="GDP", titlefont=list(family="PT Sans Narrow")),
+         yaxis=list(title="Number of Beds", titlefont=list(family="PT Sans Narrow")))
 
 p3 <- shared_data %>%
   plot_ly(x=~stay, y=~beds) %>%
-    add_markers()
+  add_markers(color=I("#57d4ff")) %>%
+  layout(plot_bgcolor="#faf0e6",
+         xaxis=list(title="Stay length", titlefont=list(family="PT Sans Narrow")))
 
 
 subplot(p2, p3, titleX=T, shareY=T) %>%
   hide_legend() %>%
-  highlight(on='plotly_click')
+  highlight(on='plotly_click') %>%
+  layout(
+    title="Beds per Capita based on Hospital Stay Length and GDP",
+    titlefont=list(family="PT Sans Narrow")
+  )
 ```
 
-```{r}
-
-data.p2 <- data.p2 %>%
-  filter(Year.1 != 2022)
-shared_data_2 <- SharedData$new(data.p2, key=~Country)
-
-shared_data_3 <- data.p2 %>%
-  SharedData$new(key=~Country)
+```{r echo=FALSE}
 
 barchart1 <- data.p2 %>%
   filter(Year.1==2021) %>%
   SharedData$new(key=~Country) %>%
   plot_ly() %>%
-  add_bars(x=~Country, y= ~beds) %>%
-  layout(barmode="overlay")
-
-barchart1
-
-barchart2 <- data.p2 %>%
-  filter(Year.1==2021) %>%
-  SharedData$new(key=~Country) %>%
-  plot_ly() %>%
-  group_by(Year.1) %>%
-  summarize(beds=sum(beds)) %>%
-  add_bars(x=~Year.1, y=beds) %>%
-  layout(barmode="overlay")
+  add_bars(y=~Country, x= ~beds, color=I("gray"), orientation='h', name="Average Beds per Capita") %>%
+  layout(barmode="overlay", plot_bgcolor="#faf0e6",
+        xaxis=list(title="Beds per capita", titlefont=list(family="PT Sans Narrow")),
+        yaxis=list(title="Country", titlefont=list(family="PT Sans Narrow")))
 
 scatterplot1 <- data.p2 %>%
   SharedData$new(key=~Country) %>%
   plot_ly() %>%
-  add_trace(x=~Year.1, y=~beds, mode='lines')
+  add_trace(x=~Year.1, y=~beds, mode='lines', color=I("#57d4ff"), name="Hospital Stay")%>%
+  layout(plot_bgcolor="#faf0e6", xaxis=list(title="Year", titlefont=list(family="PT Sans Narrow")), yaxis=list(title="Average Length of Stay", titlefont=list(family="PT Sans Narrow")))
 
 scatterplot2 <- data.p2 %>%
   SharedData$new(key=~Country) %>%
   plot_ly() %>%
-  add_trace(x=~Year.1, y=~gdp, mode='lines')
+  add_trace(x=~Year.1, y=~gdp, mode='lines', color=I("#ff6f69"), name="GDP") %>%
+  layout(plot_bgcolor="#faf0e6",xaxis=list(title="Year", titlefont=list(family="PT Sans Narrow")), yaxis=list(title="GDP", titlefont=list(family="PT Sans Narrow")))
 
-subplot(barchart1, scatterplot1, scatterplot2, nrows=2) %>%
-  hide_legend()
+subplot(barchart1, scatterplot1, scatterplot2, nrows=1, titleX=T)
           
 
-
-```
-
-```{r}
 
 ```
