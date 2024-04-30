@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5200 Project - Data Gathering / Information</title>
+<title>5200 Project – linked_view</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -86,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About Us</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./data.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./data.html" rel="" target="">
  <span class="menu-text">The Data</span></a>
   </li>  
   <li class="nav-item">
@@ -110,105 +144,25 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Data Gathering / Information</h1>
+
+
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nni <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/nni.csv"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>nni</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/gdp.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>gdp</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>pd.merge(nni, gdp, on<span class="op">=</span><span class="st">'Country_Year'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge the DataFrames on 'Country' and 'Year' columns</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>merged_data <span class="op">=</span> pd.merge(nni, gdp, on<span class="op">=</span>[<span class="st">'country'</span>, <span class="st">'year'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>KeyError: 'country'</code></pre>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<center>
-<img src="images/oecd.jpeg" class="img-fluid" style="width:50.0%">
-</center>
-<p>The data that we have chosen to use for this project comes from the OECD. OECD stands for Organization for Economic Co-operation and Development. This organization was founded in 1961, has 38 member countries and was created in attempt to stimulate economic progress and world trade.</p>
-<p>The datasets that we will be working with include:</p>
-<p><strong>GDP Data</strong></p>
-<ul>
-<li>Date Range: 2000 - 2023</li>
-<li>Unit: GDP, Current PPPs, billions US dollars</li>
-<li><a href="https://stats.oecd.org/viewhtml.aspx?datasetcode=NAAG&amp;lang=en#">Source</a></li>
-</ul>
-<p><strong>Population Data</strong></p>
-<ul>
-<li>Date Range: 2000 - 2014</li>
-<li><a href="https://data.oecd.org/pop/population.htm">Source</a></li>
-</ul>
-<p><strong>Net National Income</strong></p>
-<ul>
-<li>Date Range: 2003 - 2022</li>
-<li>Unit:</li>
-<li><a href="https://data.oecd.org/natincome/net-national-income.htm">Source</a></li>
-</ul>
-<p><strong>Infant Mortality</strong></p>
-<ul>
-<li>Date Range: 1990 - 2019</li>
-<li>Unit: Deaths per 1000 births</li>
-<li><a href="https://stats.oecd.org/viewhtml.aspx?datasetcode=FAMILY&amp;lang=en">Source</a></li>
-</ul>
-<p><strong>Fertility</strong></p>
-<ul>
-<li>Date Range: 1990 - 2023</li>
-<li>Unit: Children</li>
-<li><a href="https://stats.oecd.org/viewhtml.aspx?datasetcode=FAMILY&amp;lang=en">Source</a></li>
-</ul>
-<p><strong>Immigrant Inflow</strong></p>
-<ul>
-<li>Date Range: 2000 - 2022</li>
-<li>Unit: Inflow of foreign population by nationality</li>
-<li><a href="https://stats.oecd.org/viewhtml.aspx?datasetcode=MIG&amp;lang=en">Source</a></li>
-</ul>
-<p><strong>Paid Maternal Leave</strong></p>
-<ul>
-<li>Date Range: 1990 - 2022</li>
-<li>Unit: Weeks</li>
-<li><a href="https://stats.oecd.org/viewhtml.aspx?datasetcode=FAMILY&amp;lang=en">Source</a></li>
-</ul>
-<p><strong>Working Population</strong></p>
-<ul>
-<li>Date Range: 2011 - 2023</li>
-<li>Unit: persons in thousands</li>
-<li><a href="https://data-explorer.oecd.org/vis?lc=en&amp;fs%5B0%5D=Topic%2C1%7CJobs%23JOB%23%7CUnemployment%23JOB_UNEMP%23&amp;pg=0&amp;fc=Topic&amp;bp=true&amp;snb=12&amp;vw=tb&amp;df%5Bds%5D=dsDisseminateFinalDMZ&amp;df%5Bid%5D=DSD_ALFS%40DF_SUMTAB&amp;df%5Bag%5D=OECD.SDD.TPS&amp;df%5Bvs%5D=1.0&amp;pd=%2C&amp;dq=.LF.PS._Z._T....A&amp;ly%5Brw%5D=REF_AREA&amp;ly%5Bcl%5D=TIME_PERIOD&amp;to%5BTIME_PERIOD%5D=false&amp;lo=13&amp;lom=LASTNPERIODS">Source</a></li>
-</ul>
-<p><strong>Life Expectancy</strong></p>
-<ul>
-<li>Date Range: 2010 - 2023</li>
-<li>Unit: Years</li>
-<li><a href="https://stats.oecd.org/BrandedView.aspx?oecd_bv_id=health-data-en&amp;doi=data-00540-en">Source</a></li>
-</ul>
-<p><strong>Social Spending</strong></p>
-<ul>
-<li>Date Range: 2000 - 2022</li>
-<li>Unit: Percentage</li>
-<li><a href="https://stats.oecd.org/viewhtml.aspx?datasetcode=FAMILY&amp;lang=en">Source</a></li>
-</ul>
-<p><strong>Education</strong></p>
-<ul>
-<li>Date Range: 2021</li>
-<li>Unit: Count</li>
-<li><a href="https://data.oecd.org/education.htm">Source</a></li>
-</ul>
-<p><strong>Hospital Beds</strong></p>
-<ul>
-<li>Date Range: 2021</li>
-<li>Unit: Count</li>
-<li><a href="https://data.oecd.org/healtheqt/hospital-beds.htm">Source</a></li>
-</ul>
-<p><strong>Wealth Distribution</strong></p>
-<ul>
-<li>Date Range: 2021</li>
-<li>Unit: Percentage</li>
-<li><a href="https://www.oecd.org/social/income-distribution-database.htm">Source</a></li>
-</ul>
+</div>
 
 
 

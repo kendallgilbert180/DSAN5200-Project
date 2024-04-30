@@ -146,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="cell" data-execution_count="39">
+<div class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -230,19 +230,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>        sizemin<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>average_data[<span class="st">'color'</span>]</span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span>average_data.<span class="bu">apply</span>(<span class="kw">lambda</span> row: <span class="ss">f"Country: </span><span class="sc">{</span>row[<span class="st">'Country'</span>]<span class="sc">}</span><span class="ss">&lt;br&gt;Avg Social Spending: </span><span class="sc">{</span>row[<span class="st">'s_s'</span>]<span class="sc">:,}</span><span class="ss">&lt;br&gt;Avg GDP: </span><span class="sc">{</span>row[<span class="st">'gdp'</span>]<span class="sc">:,}</span><span class="ss">&lt;br&gt;Ratio: </span><span class="sc">{</span>row[<span class="st">'s_s_gdp_ratio'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>, axis<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>text <span class="op">=</span> average_data.<span class="bu">apply</span>(<span class="kw">lambda</span> row: <span class="ss">f"Country: </span><span class="sc">{</span>row[<span class="st">'Country'</span>]<span class="sc">}</span><span class="ss">&lt;br&gt;Avg Social Spending: </span><span class="sc">{</span>row[<span class="st">'s_s'</span>]<span class="sc">:.4f}</span><span class="ss">&lt;br&gt;Avg GDP: </span><span class="sc">{</span>row[<span class="st">'gdp'</span>]<span class="sc">:.4f}</span><span class="ss">&lt;br&gt;Ratio: </span><span class="sc">{</span>row[<span class="st">'s_s_gdp_ratio'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>))</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Figure 3: Ratio of GDP Spent on Family Benefits'</span>,</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Percentage of GDP Spent on Family Benefits'</span>,</span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Average Percentage of GDP spent on Family Benefits'</span>),  </span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Average GDP (Billions) Over 20 Years'</span>),</span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">False</span></span>
 <span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>fig.update_layout(plot_bgcolor<span class="op">=</span><span class="st">'#faf0e6'</span>, font_color<span class="op">=</span><span class="st">'black'</span>)</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Average Percentage of GDP spent on Family Benefits'</span>,</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        title_font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">'PT Sans Narrow'</span>),</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        tickfont<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">'PT Sans Narrow'</span>)</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Average GDP Over 20 Years (Billions)'</span>,</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>        title_font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">'PT Sans Narrow'</span>),</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        tickfont<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">'PT Sans Narrow'</span>)</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">False</span>,</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    plot_bgcolor<span class="op">=</span><span class="st">'#faf0e6'</span>,</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    font_color<span class="op">=</span><span class="st">'black'</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>fig.update_layout(title_font_family<span class="op">=</span><span class="st">'PT Sans Narrow'</span>)</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_58663/36842028.py:22: FutureWarning:
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_91665/447603605.py:13: FutureWarning:
 
 DataFrame.applymap has been deprecated. Use DataFrame.map instead.
 </code></pre>
@@ -251,7 +271,7 @@ DataFrame.applymap has been deprecated. Use DataFrame.map instead.
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="35">
+<div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>us_data <span class="op">=</span> average_data[average_data[<span class="st">'Country'</span>] <span class="op">==</span> <span class="st">'United States'</span>]</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"United States Results:"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average Percentage Social Spending:"</span>, us_data[<span class="st">'s_s'</span>].values[<span class="dv">0</span>])</span>
@@ -264,17 +284,176 @@ Average GDP: 15581.214210526316
 Ratio of Average Social Spending to GDP: 7.444862668124607e-05</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>iceland_data <span class="op">=</span> average_data[average_data[<span class="st">'Country'</span>] <span class="op">==</span> <span class="st">'Iceland'</span>]</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iceland Results:"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average Percentage Social Spending:"</span>, iceland_data[<span class="st">'s_s'</span>].values[<span class="dv">0</span>])</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average GDP:"</span>, iceland_data[<span class="st">'gdp'</span>].values[<span class="dv">0</span>])</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ratio of Average Social Spending to GDP:"</span>, iceland_data[<span class="st">'s_s_gdp_ratio'</span>].values[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Formatting function to round to three decimal places</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_decimal(value):</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f'</span><span class="sc">{</span>value<span class="sc">:.3f}</span><span class="ss">'</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Table(</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    header<span class="op">=</span><span class="bu">dict</span>(values<span class="op">=</span>[<span class="st">'&lt;b&gt;Country&lt;/b&gt;'</span>, <span class="st">'&lt;b&gt;Average Percentage Spent&lt;/b&gt;'</span>, <span class="st">'&lt;b&gt;Average GDP (Billions)&lt;/b&gt;'</span>, <span class="st">'&lt;b&gt;Percentage of Average Social Spending out of GDP (%)&lt;/b&gt;'</span>],</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                line_color<span class="op">=</span><span class="st">'black'</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                fill_color<span class="op">=</span><span class="st">'#f7ebdb'</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                align<span class="op">=</span><span class="st">'left'</span>),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    cells<span class="op">=</span><span class="bu">dict</span>(values<span class="op">=</span>[average_data[<span class="st">'Country'</span>],</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>                       average_data[<span class="st">'s_s'</span>].<span class="bu">apply</span>(format_decimal),</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>                       average_data[<span class="st">'gdp'</span>].<span class="bu">apply</span>(format_decimal),</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                       average_data[<span class="st">'s_s_gdp_ratio'</span>].<span class="bu">apply</span>(format_decimal)],</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>               line_color<span class="op">=</span><span class="st">'black'</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>               fill_color<span class="op">=</span><span class="st">'white'</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>               align<span class="op">=</span><span class="st">'left'</span>))</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>fig.update_layout(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">500</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Table(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    header<span class="op">=</span><span class="bu">dict</span>(values<span class="op">=</span>[<span class="st">'&lt;b&gt;Country&lt;/b&gt;'</span>, <span class="st">'&lt;b&gt;Average Percentage Spent&lt;/b&gt;'</span>, <span class="st">'&lt;b&gt;Average GDP (Billions)&lt;/b&gt;'</span>, <span class="st">'&lt;b&gt;Percentage of Average Social Spending out of GDP (%)&lt;/b&gt;'</span>],</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>                line_color<span class="op">=</span><span class="st">'black'</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                fill_color<span class="op">=</span><span class="st">'#f7ebdb'</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                align<span class="op">=</span><span class="st">'left'</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    cells<span class="op">=</span><span class="bu">dict</span>(values<span class="op">=</span>[average_data[<span class="st">'Country'</span>],</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                       average_data[<span class="st">'s_s'</span>],</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                       average_data[<span class="st">'gdp'</span>],</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>                       average_data[<span class="st">'s_s_gdp_ratio'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: <span class="ss">f'</span><span class="sc">{</span>x<span class="sc">:.2e}</span><span class="ss">'</span>)],</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>               line_color<span class="op">=</span><span class="st">'black'</span>,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>               fill_color<span class="op">=</span><span class="st">'white'</span>,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>               align<span class="op">=</span><span class="st">'left'</span>))</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>])</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>fig.update_layout(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">500</span>)</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>iceland_data <span class="op">=</span> average_data[average_data[<span class="st">'Country'</span>] <span class="op">==</span> <span class="st">'Iceland'</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Iceland Results:"</span>)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average Percentage Social Spending:"</span>, iceland_data[<span class="st">'s_s'</span>].values[<span class="dv">0</span>])</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Average GDP:"</span>, iceland_data[<span class="st">'gdp'</span>].values[<span class="dv">0</span>])</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Ratio of Average Social Spending to GDP:"</span>, iceland_data[<span class="st">'s_s_gdp_ratio'</span>].values[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Iceland Results:
 Average Percentage Social Spending: 3.2333333333333334
 Average GDP: 13.97578947368421
 Ratio of Average Social Spending to GDP: 0.23135246416108057</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Read / Cleaning the data</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/social_spending.csv"</span>, header<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/gdp.csv"</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].replace(<span class="st">'..'</span>, np.nan)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">''</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> social_spending.rename(columns<span class="op">=</span>{<span class="st">'Year'</span>: <span class="st">'Country'</span>})</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> social_spending.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>social_spending <span class="op">=</span> pd.melt(social_spending, id_vars<span class="op">=</span>[<span class="st">'Country'</span>], var_name<span class="op">=</span><span class="st">'Year'</span>, value_name<span class="op">=</span><span class="st">'s_s'</span>)</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>social_spending[<span class="st">'Country_Year'</span>] <span class="op">=</span> social_spending[<span class="st">'Country'</span>] <span class="op">+</span> <span class="st">'_'</span> <span class="op">+</span> social_spending[<span class="st">'Year'</span>].astype(<span class="bu">str</span>)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>merged_data <span class="op">=</span> pd.merge(gdp, social_spending, on<span class="op">=</span>[<span class="st">'Country_Year'</span>])</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>merged_data[<span class="st">'gdp'</span>] <span class="op">=</span> pd.to_numeric(merged_data[<span class="st">'gdp'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>merged_data[<span class="st">'s_s'</span>] <span class="op">=</span> pd.to_numeric(merged_data[<span class="st">'s_s'</span>], errors<span class="op">=</span><span class="st">'coerce'</span>)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">#merged_data['gdp'] = merged_data['gdp'].fillna(merged_data['gdp'].mean())</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">#merged_data['s_s'] = merged_data['s_s'].fillna(merged_data['s_s'].mean())</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>average_social_spending <span class="op">=</span> merged_data.groupby(<span class="st">'Country'</span>)[<span class="st">'s_s'</span>].mean().reset_index()</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>average_gdp <span class="op">=</span> merged_data.groupby(<span class="st">'Country'</span>)[<span class="st">'gdp'</span>].mean().reset_index()</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>average_data <span class="op">=</span> pd.merge(average_social_spending, average_gdp, on<span class="op">=</span><span class="st">'Country'</span>, suffixes<span class="op">=</span>(<span class="st">'_s_s'</span>, <span class="st">'_gdp'</span>))</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>average_data[<span class="st">'s_s_gdp_ratio'</span>] <span class="op">=</span> average_data[<span class="st">'s_s'</span>] <span class="op">/</span> average_data[<span class="st">'gdp'</span>] <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a>color_map <span class="op">=</span> {</span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Australia'</span>: <span class="st">'rgb(255, 0, 0)'</span>,        <span class="co"># Red</span></span>
+<span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Austria'</span>: <span class="st">'rgb(0, 255, 0)'</span>,          <span class="co"># Green</span></span>
+<span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Belgium'</span>: <span class="st">'rgb(0, 0, 255)'</span>,          <span class="co"># Blue</span></span>
+<span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Canada'</span>: <span class="st">'rgb(255, 255, 0)'</span>,         <span class="co"># Yellow</span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Chile'</span>: <span class="st">'rgb(255, 0, 255)'</span>,          <span class="co"># Magenta</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Colombia'</span>: <span class="st">'rgb(0, 255, 255)'</span>,       <span class="co"># Cyan</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Costa Rica'</span>: <span class="st">'rgb(255, 127, 0)'</span>,     <span class="co"># Orange</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Czechia'</span>: <span class="st">'rgb(255, 0, 127)'</span>,        <span class="co"># Reddish-Pink</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Denmark'</span>: <span class="st">'rgb(0, 127, 255)'</span>,        <span class="co"># Bluish</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Estonia'</span>: <span class="st">'rgb(127, 255, 0)'</span>,        <span class="co"># Greenish-Yellow</span></span>
+<span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Finland'</span>: <span class="st">'rgb(0, 255, 127)'</span>,        <span class="co"># Greenish</span></span>
+<span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">'France'</span>: <span class="st">'rgb(127, 0, 255)'</span>,         <span class="co"># Purplish-Blue</span></span>
+<span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Germany'</span>: <span class="st">'rgb(255, 255, 127)'</span>,      <span class="co"># Light Yellow</span></span>
+<span id="cb12-44"><a href="#cb12-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Greece'</span>: <span class="st">'rgb(127, 255, 255)'</span>,       <span class="co"># Light Cyan</span></span>
+<span id="cb12-45"><a href="#cb12-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Hungary'</span>: <span class="st">'rgb(255, 127, 255)'</span>,      <span class="co"># Light Magenta</span></span>
+<span id="cb12-46"><a href="#cb12-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Iceland'</span>: <span class="st">'rgb(255, 0, 0)'</span>,          <span class="co"># Red</span></span>
+<span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ireland'</span>: <span class="st">'rgb(0, 255, 0)'</span>,          <span class="co"># Green</span></span>
+<span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Israel'</span>: <span class="st">'rgb(0, 0, 255)'</span>,           <span class="co"># Blue</span></span>
+<span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Italy'</span>: <span class="st">'rgb(255, 255, 0)'</span>,          <span class="co"># Yellow</span></span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Japan'</span>: <span class="st">'rgb(255, 0, 255)'</span>,          <span class="co"># Magenta</span></span>
+<span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Korea'</span>: <span class="st">'rgb(0, 255, 255)'</span>,          <span class="co"># Cyan</span></span>
+<span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Latvia'</span>: <span class="st">'rgb(255, 127, 0)'</span>,         <span class="co"># Orange</span></span>
+<span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Lithuania'</span>: <span class="st">'rgb(255, 0, 127)'</span>,      <span class="co"># Reddish-Pink</span></span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Luxembourg'</span>: <span class="st">'rgb(0, 127, 255)'</span>,     <span class="co"># Bluish</span></span>
+<span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Mexico'</span>: <span class="st">'rgb(127, 255, 0)'</span>,         <span class="co"># Greenish-Yellow</span></span>
+<span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Netherlands'</span>: <span class="st">'rgb(0, 255, 127)'</span>,    <span class="co"># Greenish</span></span>
+<span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">'New Zealand'</span>: <span class="st">'rgb(127, 0, 255)'</span>,    <span class="co"># Purplish-Blue</span></span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Norway'</span>: <span class="st">'rgb(255, 255, 127)'</span>,      <span class="co"># Light Yellow</span></span>
+<span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Poland'</span>: <span class="st">'rgb(127, 255, 255)'</span>,       <span class="co"># Light Cyan</span></span>
+<span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Portugal'</span>: <span class="st">'rgb(255, 127, 255)'</span>,     <span class="co"># Light Magenta</span></span>
+<span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Slovak Republic'</span>: <span class="st">'rgb(255, 0, 0)'</span>,  <span class="co"># Red</span></span>
+<span id="cb12-62"><a href="#cb12-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Slovenia'</span>: <span class="st">'rgb(0, 255, 0)'</span>,         <span class="co"># Green</span></span>
+<span id="cb12-63"><a href="#cb12-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Spain'</span>: <span class="st">'rgb(0, 0, 255)'</span>,            <span class="co"># Blue</span></span>
+<span id="cb12-64"><a href="#cb12-64" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sweden'</span>: <span class="st">'rgb(255, 255, 0)'</span>,         <span class="co"># Yellow</span></span>
+<span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Switzerland'</span>: <span class="st">'rgb(255, 0, 255)'</span>,    <span class="co"># Magenta</span></span>
+<span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Türkiye'</span>: <span class="st">'rgb(0, 255, 255)'</span>,        <span class="co"># Cyan</span></span>
+<span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">'United Kingdom'</span>: <span class="st">'rgb(255, 127, 0)'</span>, <span class="co"># Orange</span></span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">'United States'</span>: <span class="st">'rgb(255, 0, 127)'</span>,  <span class="co"># Reddish-Pink</span></span>
+<span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a>average_data[<span class="st">'color'</span>] <span class="op">=</span> average_data[<span class="st">'Country'</span>].<span class="bu">map</span>(color_map)</span>
+<span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a>bubble_sizes <span class="op">=</span> average_data[<span class="st">'s_s_gdp_ratio'</span>] <span class="op">*</span> <span class="dv">1000</span></span>
+<span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>go.Scatter(</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>average_data[<span class="st">'s_s_gdp_ratio'</span>],</span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>average_data[<span class="st">'gdp'</span>],</span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'markers'</span>,</span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a>        size<span class="op">=</span>bubble_sizes,</span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a>        sizemode<span class="op">=</span><span class="st">'area'</span>,</span>
+<span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a>        sizeref<span class="op">=</span><span class="fl">2.</span><span class="op">*</span><span class="bu">max</span>(bubble_sizes)<span class="op">/</span>(<span class="dv">100</span><span class="op">**</span><span class="dv">2</span>),</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>        sizemin<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a>        color<span class="op">=</span>average_data[<span class="st">'color'</span>]</span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span>average_data.<span class="bu">apply</span>(<span class="kw">lambda</span> row: <span class="ss">f"Country: </span><span class="sc">{</span>row[<span class="st">'Country'</span>]<span class="sc">}</span><span class="ss">&lt;br&gt;Avg Social Spending: </span><span class="sc">{</span>row[<span class="st">'s_s'</span>]<span class="sc">:,}</span><span class="ss">&lt;br&gt;Avg GDP: </span><span class="sc">{</span>row[<span class="st">'gdp'</span>]<span class="sc">:,}</span><span class="ss">&lt;br&gt;Ratio: </span><span class="sc">{</span>row[<span class="st">'s_s_gdp_ratio'</span>]<span class="sc">:.4f}</span><span class="ss">"</span>, axis<span class="op">=</span><span class="dv">1</span>),</span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>fig.update_layout(</span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Figure 3: Ratio of GDP Spent on Family Benefits'</span>,</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a>    xaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Ratio of GDP spent on Family Benefits'</span>),  </span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span><span class="bu">dict</span>(title<span class="op">=</span><span class="st">'Ratio GDP (Billions) Over 20 Years'</span>),</span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a>    showlegend<span class="op">=</span><span class="va">False</span></span>
+<span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a>fig.update_layout(plot_bgcolor<span class="op">=</span><span class="st">'#faf0e6'</span>)</span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_91665/1528611557.py:13: FutureWarning:
+
+DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
 </div>
 
