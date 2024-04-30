@@ -13,6 +13,89 @@ a great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 201
 
 ## GDP
 
+```{python echo=FALSE}
+#| warning: false
+
+import pandas as pd
+import plotly.graph_objects as go
+import numpy as np
+
+# Read / Cleaning the data
+education = pd.read_csv("Data_cleaned/education.csv", header=1)
+
+education = education.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+
+gdp = pd.read_csv("Data_cleaned/gdp.csv")
+gdp['gdp'] = gdp['gdp'].replace('..', np.nan)
+gdp['gdp'] = gdp['gdp'].str.replace(',', '')
+gdp['gdp'] = gdp['gdp'].astype(float)
+gdp[['Country', 'Year']] = gdp['Country_Year'].str.split('_', expand=True)
+gdp_2001 = gdp[gdp['Year'] == '2021']
+
+education_gdp = pd.merge(gdp_2001, education, on=['Country'])
+
+
+
+education_gdp = education_gdp[['Country', 'Bachelor’s or equivalent level', 'Master’s or equivalent level', 'gdp']]
+
+country_to_region = {
+    'USA': 'North America',
+    'Canada': 'North America',
+    'Germany': 'Europe',
+    'France': 'Europe',
+    'Australia': 'Oceania',
+    'Austria': 'Europe',
+    'Belgium': 'Europe',
+    'Chile': 'South America',
+    'Colombia': 'South America',
+    'Costa Rica': 'North America',
+    'Czechia': 'Europe',
+    'Denmark': 'Europe',
+    'Estonia': 'Europe',
+    'Finland': 'Europe',
+    'Greece': 'Europe',
+    'Hungary': 'Europe',
+    'Iceland': 'Europe',
+    'Ireland': 'Europe',
+    'Israel': 'Middle East',
+    'Italy': 'Europe',
+    'Japan': 'Asia',
+    'Korea': 'Asia',
+    'Latvia': 'Europe',
+    'Lithuania': 'Europe',
+    'Luxembourg': 'Europe',
+    'Mexico': 'North America',
+    'Netherlands': 'Europe',
+    'New Zealand': 'Oceania',
+    'Norway': 'Europe',
+    'Poland': 'Europe',
+    'Portugal': 'Europe',
+    'Slovak Republic': 'Europe',
+    'Slovenia': 'Europe',
+    'Spain': 'Europe',
+    'Sweden': 'Europe',
+    'Switzerland': 'Europe',
+    'Turkey': 'Europe',
+    'United Kingdom': 'Europe',
+    'United States': 'North America',
+    'Türkiye': 'Middle East'
+    
+}
+
+
+education_gdp['Region'] = education_gdp['Country'].map(country_to_region)
+unique_regions = education_gdp['Region'].unique()
+
+# plot a nested pie chart using plotly
+import plotly.express as px
+fig = px.sunburst(education_gdp, path=['Region','Country'], values='gdp', names = 'Country', title='GDP',color_discrete_sequence=px.colors.qualitative.Set3, hover_data=['gdp'])
+# change the plot size
+fig.update_layout(width=1000, height=800, plot_bgcolor='#f7ebdb', font_color='black', 
+                  font=dict(family="Montserrat, sans-serif"))
+
+```
+
+
 ## Healthcare
 
 ```{r echo=FALSE}
@@ -434,7 +517,9 @@ fig.show()
 
 ## Life Expectancy
 
-```{python}
+```{python echo=FALSE}
+#| warning: false
+
 import pandas as pd
 import plotly.graph_objects as go
 
