@@ -97,7 +97,6 @@ fig.update_layout(width=500, height=500, plot_bgcolor='#f5f5dc', font_color='bla
 
 ```
 
-
 ## Healthcare
 
 ```{r echo=FALSE}
@@ -130,14 +129,22 @@ gdp <- gdp %>%
 data.p1 <- left_join(gdp, hospital_beds, by="Country")
 data.p1$gdp<-as.numeric(data.p1$gdp)
 
+data.p1 <- left_join(gdp, hospital_beds, by="Country")
+data.p1$gdp<-as.numeric(data.p1$gdp)
+data.p1 <- data.p1 %>%
+  rename(GDP=gdp, Beds=beds)
+
 ```
 
 ```{r echo=FALSE}
 #| warning: false
 
-p1 <- ggplot() + geom_point(data=data.p1, aes(x=Value, y=gdp),color="#57d4ff") + theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"))+ labs(title="GDP Compared to Number of Hospital Beds Available in 2021", x="Hospital Beds per Capita", y="GDP") 
+p1 <- ggplot() + geom_point(data=data.p1, aes(x=Beds, y=GDP),color="#57d4ff") + theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"))+ labs(title="GDP Compared to Number of Hospital Beds Available in 2021", x="Hospital Beds per Capita", y="GDP") 
 
-ggplotly(p1)
+ggplotly(p1)%>%
+  add_markers(hovertemplate = paste('<br><i>Beds</i>: $%{Beds:.2f}',
+                        '<br><b>GDP</b>: %{gdp}<br>',
+                        '<b>%{Country}</b>'))
 ```
 
 ```{r echo=FALSE}
@@ -146,8 +153,19 @@ ggplotly(p1)
 hospital_bed2 <- read.csv("Data_cleaned/hospital_beds.csv")
 gdp2 <- read.csv("Data_Uncleaned/GDP.csv")
 hospital_stay <- read.csv("Data_cleaned/hospital_stay.csv")
+doctors<-read.csv("Data_cleaned/doctors.csv")
+immunization <- read.csv("Data_cleaned/immunization.csv")
+cancer_screening <- read.csv("Data_cleaned/cancer_screening.csv")
 
 hospital_bed2 <- hospital_bed2 %>%
+  subset(select=-X)
+hospital_stay <- hospital_stay %>%
+  subset(select=-X)
+doctors <- doctors %>%
+  subset(select=-X)
+immunization <- immunization %>%
+  subset(select=-X)
+cancer_screening <- cancer_screening %>%
   subset(select=-X)
 gdp2<- gdp2 %>%
   rename(Country=Time) %>%
@@ -157,20 +175,49 @@ gdp2$Year.1<-substr(gdp2$Year.1, 2, 5)
 gdp2$key <- paste(gdp2$Country, gdp2$Year.1, sep="")
 hospital_bed2$key <- paste(hospital_bed2$Country, hospital_bed2$Year, sep="")
 hospital_stay$key <- paste(hospital_stay$Country, hospital_stay$Year, sep="")
+doctors$key <- paste(doctors$Country, doctors$Year, sep="")
+immunization$key <- paste(immunization$Country, immunization$Year, sep="")
+cancer_screening$key <- paste(cancer_screening$Country, cancer_screening$Year, sep="")
 
-data.p2 <- left_join(gdp2, hospital_bed2, by="key") %>%
-  left_join(hospital_stay, by="key")
+
+data.p2 <- inner_join(gdp2, hospital_bed2, by="key") %>%
+  inner_join(hospital_stay, by="key") %>%
+  inner_join(doctors, by="key") %>%
+  inner_join(immunization, by="key") %>%
+  inner_join(cancer_screening, by="key")
 
 
 data.p2 <- data.p2 %>%
-  subset(select=-c(Country.y, Year.x, key, X, Country.x, Year.y)) %>%
-  filter(Year.1 %in% c('2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022')) %>%
-  rename(beds=Value.x, stay=Value.y)
+  subset(select=c(Country.x, Year.1, gdp, beds, length_of_stay, practicing_physicians, measles_vaccination, breast_cancer_screening))  %>%
+  rename(Country=Country.x, Year=Year.1)
 
-data.p2$Year.1<-as.numeric(data.p2$Year.1)
+
+
+data.p2$Year<-as.numeric(data.p2$Year)
 data.p2$gdp<-as.numeric(data.p2$gdp)
 data.p2$beds<-as.numeric(data.p2$beds)
-data.p2$stay<-as.numeric(data.p2$stay)
+data.p2$length_of_stay<-as.numeric(data.p2$length_of_stay)
+data.p2$practicing_physicians<-as.numeric(data.p2$practicing_physicians)
+data.p2$measles_vaccination<-as.numeric(data.p2$measles_vaccination)
+data.p2$breast_cancer_screening<-as.numeric(data.p2$breast_cancer_screening)
+```
+
+```{r echo=FALSE}
+#| warning: false
+
+correlation_mat<-data.p2 %>%
+  na.omit() %>%
+  subset(select=-c(Country, Year)) %>%
+  cor()
+
+melted<- melt(correlation_mat)
+
+cor_plot<-melted %>% ggplot() +
+  geom_tile(aes(x=Var1, y=Var2, fill=value)) +
+  theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"), axis.text.x = element_text(angle = 45, vjust = 1, size = 12, hjust = 1))+ labs(title="Correlation of Healthcare System Indicators and GDP")+ scale_fill_gradient2(low="white", high="#57d4ff", name="Correlation")
+
+ggplotly(cor_plot)
+
 ```
 
 ```{r echo=FALSE}
@@ -182,14 +229,14 @@ library(Ecfun)
 shared_data <- SharedData$new(data.p2)
 
 p2 <- shared_data %>%
-  plot_ly(x=~gdp, y=~beds) %>%
+  plot_ly(x=~gdp, y=~beds, name="GDP") %>%
   add_markers(color=I("#ff6f69")) %>%
   layout(plot_bgcolor="#faf0e6",
          xaxis=list(title="GDP", titlefont=list(family="PT Sans Narrow")),
          yaxis=list(title="Number of Beds", titlefont=list(family="PT Sans Narrow")))
 
 p3 <- shared_data %>%
-  plot_ly(x=~stay, y=~beds) %>%
+  plot_ly(x=~length_of_stay, y=~beds, name="Stay Length") %>%
   add_markers(color=I("#57d4ff")) %>%
   layout(plot_bgcolor="#faf0e6",
          xaxis=list(title="Stay length", titlefont=list(family="PT Sans Narrow")))
@@ -202,34 +249,6 @@ subplot(p2, p3, titleX=T, shareY=T) %>%
     title="Beds per Capita based on Hospital Stay Length and GDP",
     titlefont=list(family="PT Sans Narrow")
   )
-```
-
-```{r echo=FALSE}
-#| warning: false
-
-barchart1 <- data.p2 %>%
-  filter(Year.1==2021) %>%
-  SharedData$new(key=~Country) %>%
-  plot_ly() %>%
-  add_bars(y=~Country, x= ~beds, color=I("gray"), orientation='h', name="Average Beds per Capita") %>%
-  layout(barmode="overlay", plot_bgcolor="#faf0e6",
-        xaxis=list(title="Beds per capita", titlefont=list(family="PT Sans Narrow")),
-        yaxis=list(title="Country", titlefont=list(family="PT Sans Narrow")))
-
-scatterplot1 <- data.p2 %>%
-  SharedData$new(key=~Country) %>%
-  plot_ly() %>%
-  add_trace(x=~Year.1, y=~beds, mode='lines', color=I("#57d4ff"), name="Hospital Stay")%>%
-  layout(plot_bgcolor="#faf0e6", xaxis=list(title="Year", titlefont=list(family="PT Sans Narrow")), yaxis=list(title="Average Length of Stay", titlefont=list(family="PT Sans Narrow")))
-
-scatterplot2 <- data.p2 %>%
-  SharedData$new(key=~Country) %>%
-  plot_ly() %>%
-  add_trace(x=~Year.1, y=~gdp, mode='lines', color=I("#ff6f69"), name="GDP") %>%
-  layout(plot_bgcolor="#faf0e6",xaxis=list(title="Year", titlefont=list(family="PT Sans Narrow")), yaxis=list(title="GDP", titlefont=list(family="PT Sans Narrow")))
-
-subplot(barchart1, scatterplot1, scatterplot2, nrows=1, titleX=T)
-          
 ```
 
 ## Social Spending
@@ -371,7 +390,6 @@ fig = go.Figure(data=[go.Table(
 
 fig.update_layout(width=800, height=500)
 ```
-
 
 ## Education
 
