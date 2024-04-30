@@ -550,6 +550,16 @@ fig.show()
 
 ## Life Expectancy
 
+Analyzing a country's life expectancy is another way in which prosperity can begin to be quantified. Living longer allows for greater opportunity to experience all that life has to offer, and the country one lives in displays a remarkable difference in expected lifespan.
+
+The world's average life expectancy in 1900 was just [32 years](https://ourworldindata.org/life-expectancy). As of 2024, that average sits at 73. This rapid increase in life expectancy is due to advances in medical care, public health, and living standards.
+
+In a sense, life expectancy can serve as a potential proxy for a country's overall wellbeing. Medical advances, proper nutrition and diet, education, and economic development all have an observed impact on life expectancy. Further, countries with higher life expectancies can reasonably be inferred as safer from both crime and natural disaster.
+
+This visualization seeks to compare life expectancy and GDP Per Capita as two metrics of overall wellbeing. A bar graph is displayed that ranks the countries left to right from highest to lowest in terms of GDP Per Capita. Each bar displays the country's average life expectancy for a given year (1990-2022). The dropdown allows users to toggle between years to show changes in both GDP Per Capita and life expectancy year over year. The tooltip shows the information about life expectancy, GDP Per Capita, and additional breakdown of male and female life expectancies for each year. The red line represents a moving average of the five previous countries' (from the left) life expectancies.
+
+As can be seen from the plot, there seems to be a consistent correlation between GDP Per Capita and average life expectancy. Countries with the highest GDP Per Capita tend to have higher life expectancies, likely due to increased resources available to promote healthcare, nutrition, and safe lifestyle choices. European countries by and large rank highest in GDP Per Capita and have high life expectancies to back up this presumed relationship. While not a linear decrease, we can also clearly see that the moving average line of life expectancy decreases as GDP Per Capita decreases. In 2022 for example, the 5 countries with the highest GDP Per Capita have an average life expectancy of 82.42 years. The 5 countries with the lowest GDP Per Capita have an average life expectancy of 68.46 years. In this sense, life expectancy can serve as an effective metric for overall wellbeing of a country.
+
 ```{python echo=FALSE}
 #| warning: false
 
