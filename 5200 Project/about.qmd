@@ -99,6 +99,8 @@ fig.update_layout(width=500, height=500, plot_bgcolor='#f5f5dc', font_color='bla
 
 ## Healthcare
 
+One of the major factors that tends to be considered when people are evaluating the success of a country is the state of the healthcare system. Are people able to access care? Can people afford care? How healthy are citizens on average? Given the importance of healthcare for quality of life, we should definitely consider how GDP and indicators of strong healthcare are related.
+
 ```{r echo=FALSE}
 #| warning: false
 
@@ -110,7 +112,7 @@ library(gridExtra)
 library(crosstalk)
 library(Ecdat)
 library(Ecfun)
-
+library(reshape2)
 ```
 
 ```{r echo=FALSE}
@@ -139,13 +141,17 @@ data.p1 <- data.p1 %>%
 ```{r echo=FALSE}
 #| warning: false
 
-p1 <- ggplot() + geom_point(data=data.p1, aes(x=Beds, y=GDP),color="#57d4ff") + theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"))+ labs(title="GDP Compared to Number of Hospital Beds Available in 2021", x="Hospital Beds per Capita", y="GDP") 
+p1 <- ggplot() + geom_point(data=data.p1, aes(x=Beds, y=GDP, text=Country),color="#57d4ff") + theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"))+ labs(title="GDP Compared to Number of Hospital Beds Available in 2021", x="Hospital Beds (per 1000 inhabitants)", y="GDP (In thousand millions)") 
 
 ggplotly(p1)%>%
   add_markers(hovertemplate = paste('<br><i>Beds</i>: $%{Beds:.2f}',
                         '<br><b>GDP</b>: %{gdp}<br>',
                         '<b>%{Country}</b>'))
 ```
+
+When looking at the comparison of a country's GDP to its number of hospital beds per 1000 inhabitants we do not see much of an association. The ratio of available hospital beds to the inhabitants of an area is a very important indicator of the strength and health of a healthcare system. The amount of hospital beds can be a huge limiting factor for the accessibility and quality of healthcare received. If the ratio of beds to inhabitants is really low, then hospitals can reach capacity and not be able to continue to offer care or they may be very focused on having a quick turnover at the expense of providing the best care.
+
+The highest beds ratio is in Austria where they have 6.91 beds per 1000 inhabitants. Austria's GDP is also on the higher end, however we can also see that some countries such as Lithuania and Slovakia have similarly high bed ratios (above 6 per 1000 inhabitants), but they are towards the bottom of the pack when it comes to GDP. Additionally, Sweden had one of the highest GDPs in 2021 but they only had 2 beds per 1000 inhabitants. Overall, we can conclude that GDP and number of hospital beds are not necessarily correlated--- but how might these two factors relate to other indicators of the healthcare system?
 
 ```{r echo=FALSE}
 #| warning: false
@@ -166,7 +172,8 @@ doctors <- doctors %>%
 immunization <- immunization %>%
   subset(select=-X)
 cancer_screening <- cancer_screening %>%
-  subset(select=-X)
+  subset(select=-X) %>%
+  rename(cervical_cancer_screening=breast_cancer_screening)
 gdp2<- gdp2 %>%
   rename(Country=Time) %>%
   pivot_longer(cols=starts_with("X"), names_to="Year.1", values_to="gdp")
@@ -188,7 +195,7 @@ data.p2 <- inner_join(gdp2, hospital_bed2, by="key") %>%
 
 
 data.p2 <- data.p2 %>%
-  subset(select=c(Country.x, Year.1, gdp, beds, length_of_stay, practicing_physicians, measles_vaccination, breast_cancer_screening))  %>%
+  subset(select=c(Country.x, Year.1, gdp, beds, length_of_stay, practicing_physicians, measles_vaccination, cervical_cancer_screening))  %>%
   rename(Country=Country.x, Year=Year.1)
 
 
@@ -199,7 +206,7 @@ data.p2$beds<-as.numeric(data.p2$beds)
 data.p2$length_of_stay<-as.numeric(data.p2$length_of_stay)
 data.p2$practicing_physicians<-as.numeric(data.p2$practicing_physicians)
 data.p2$measles_vaccination<-as.numeric(data.p2$measles_vaccination)
-data.p2$breast_cancer_screening<-as.numeric(data.p2$breast_cancer_screening)
+data.p2$cervical_cancer_screening<-as.numeric(data.p2$cervical_cancer_screening)
 ```
 
 ```{r echo=FALSE}
@@ -220,6 +227,10 @@ ggplotly(cor_plot)
 
 ```
 
+From the heatmap of correlation between GDP and several healthcare indicators we see that GDP has pretty weak associations with all of the healthcare indicators. We looked at ratio of hospital beds, average length of hospital stays, per capita number of practicing physicians, percent of children who receive the measles vaccine, and percent of women aged 20-65 who have been screened for cervical cancer. Some of these healthcare indicators have a mild associations with each other, but the association with GDP is minimal.
+
+The strongest correlation between healthcare indicators was between ratio of hospital beds and the average length of stay in the hospital.
+
 ```{r echo=FALSE}
 #| warning: false
 
@@ -229,14 +240,14 @@ library(Ecfun)
 shared_data <- SharedData$new(data.p2)
 
 p2 <- shared_data %>%
-  plot_ly(x=~gdp, y=~beds, name="GDP") %>%
+  plot_ly(x=~gdp, y=~beds, text=~Country, name="GDP") %>%
   add_markers(color=I("#ff6f69")) %>%
   layout(plot_bgcolor="#faf0e6",
          xaxis=list(title="GDP", titlefont=list(family="PT Sans Narrow")),
          yaxis=list(title="Number of Beds", titlefont=list(family="PT Sans Narrow")))
 
 p3 <- shared_data %>%
-  plot_ly(x=~length_of_stay, y=~beds, name="Stay Length") %>%
+  plot_ly(x=~length_of_stay, y=~beds, text=~Country, name="Stay Length") %>%
   add_markers(color=I("#57d4ff")) %>%
   layout(plot_bgcolor="#faf0e6",
          xaxis=list(title="Stay length", titlefont=list(family="PT Sans Narrow")))
@@ -250,6 +261,8 @@ subplot(p2, p3, titleX=T, shareY=T) %>%
     titlefont=list(family="PT Sans Narrow")
   )
 ```
+
+The side by side comparison of number of hospital beds as it relates to both GDP and average stay length shows that number of beds, while not associated with GDP, is associated with other characteristics of the healthcare system. GDP not being strongly associated with indicators of strong health care systems does mean that GDP might not be a great holistic measure of a country's success. But number of hospital beds could be used as one factor in a more holistic approach to evaluating countries.
 
 ## Social Spending
 
