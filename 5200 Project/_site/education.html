@@ -861,15 +861,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell" data-execution_count="5">
+<div class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot a nested pie chart using plotly</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.sunburst(education_gdp, path<span class="op">=</span>[<span class="st">'Region'</span>,<span class="st">'Country'</span>], values<span class="op">=</span><span class="st">'gdp'</span>, names <span class="op">=</span> <span class="st">'Country'</span>, title<span class="op">=</span><span class="st">'GDP'</span>,color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Set3, hover_data<span class="op">=</span>[<span class="st">'Master’s or equivalent level'</span>, <span class="st">'Bachelor’s or equivalent level'</span>])</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.sunburst(education_gdp, path<span class="op">=</span>[<span class="st">'Region'</span>,<span class="st">'Country'</span>], values<span class="op">=</span><span class="st">'gdp'</span>, names <span class="op">=</span> <span class="st">'Country'</span>, title<span class="op">=</span><span class="st">'GDP'</span>,color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Set3, hover_data<span class="op">=</span>[<span class="st">'gdp'</span>])</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># change the plot size</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>fig.update_layout(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">800</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>fig.update_layout(plot_bgcolor<span class="op">=</span><span class="st">'#f7ebdb'</span>, font_color<span class="op">=</span><span class="st">'black'</span>, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                  font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Montserrat, sans-serif"</span>))</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>fig.update_layout(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">800</span>, plot_bgcolor<span class="op">=</span><span class="st">'#f7ebdb'</span>, font_color<span class="op">=</span><span class="st">'black'</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                  font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Montserrat, sans-serif"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
 </div>
@@ -1099,6 +1097,97 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_91582/3100080380.py:9: FutureWarning:
+
+DataFrame.applymap has been deprecated. Use DataFrame.map instead.
+</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Read / Cleaning the data</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>education <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/education.csv"</span>, header<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>education <span class="op">=</span> education.applymap(<span class="kw">lambda</span> x: x.strip() <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">str</span>) <span class="cf">else</span> x)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>gdp <span class="op">=</span> pd.read_csv(<span class="st">"Data_cleaned/gdp.csv"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].replace(<span class="st">'..'</span>, np.nan)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].<span class="bu">str</span>.replace(<span class="st">','</span>, <span class="st">''</span>)</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>gdp[<span class="st">'gdp'</span>] <span class="op">=</span> gdp[<span class="st">'gdp'</span>].astype(<span class="bu">float</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>gdp[[<span class="st">'Country'</span>, <span class="st">'Year'</span>]] <span class="op">=</span> gdp[<span class="st">'Country_Year'</span>].<span class="bu">str</span>.split(<span class="st">'_'</span>, expand<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>gdp_2001 <span class="op">=</span> gdp[gdp[<span class="st">'Year'</span>] <span class="op">==</span> <span class="st">'2021'</span>]</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>education_gdp <span class="op">=</span> pd.merge(gdp_2001, education, on<span class="op">=</span>[<span class="st">'Country'</span>])</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>education_gdp <span class="op">=</span> education_gdp[[<span class="st">'Country'</span>, <span class="st">'Bachelor’s or equivalent level'</span>, <span class="st">'Master’s or equivalent level'</span>, <span class="st">'gdp'</span>]]</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>country_to_region <span class="op">=</span> {</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'USA'</span>: <span class="st">'North America'</span>,</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Canada'</span>: <span class="st">'North America'</span>,</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Germany'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">'France'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Australia'</span>: <span class="st">'Oceania'</span>,</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Austria'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Belgium'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Chile'</span>: <span class="st">'South America'</span>,</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Colombia'</span>: <span class="st">'South America'</span>,</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Costa Rica'</span>: <span class="st">'North America'</span>,</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Czechia'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Denmark'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Estonia'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Finland'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Greece'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Hungary'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Iceland'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ireland'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Israel'</span>: <span class="st">'Middle East'</span>,</span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Italy'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Japan'</span>: <span class="st">'Asia'</span>,</span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Korea'</span>: <span class="st">'Asia'</span>,</span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Latvia'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Lithuania'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Luxembourg'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Mexico'</span>: <span class="st">'North America'</span>,</span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Netherlands'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">'New Zealand'</span>: <span class="st">'Oceania'</span>,</span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Norway'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Poland'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Portugal'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Slovak Republic'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Slovenia'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Spain'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sweden'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Switzerland'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Turkey'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>    <span class="st">'United Kingdom'</span>: <span class="st">'Europe'</span>,</span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">'United States'</span>: <span class="st">'North America'</span>,</span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Türkiye'</span>: <span class="st">'Middle East'</span></span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a>education_gdp[<span class="st">'Region'</span>] <span class="op">=</span> education_gdp[<span class="st">'Country'</span>].<span class="bu">map</span>(country_to_region)</span>
+<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a>unique_regions <span class="op">=</span> education_gdp[<span class="st">'Region'</span>].unique()</span>
+<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(unique_regions)</span>
+<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a><span class="co"># plot a nested pie chart using plotly</span></span>
+<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.sunburst(education_gdp, path<span class="op">=</span>[<span class="st">'Region'</span>,<span class="st">'Country'</span>], values<span class="op">=</span><span class="st">'gdp'</span>, names <span class="op">=</span> <span class="st">'Country'</span>, title<span class="op">=</span><span class="st">'GDP'</span>,color_discrete_sequence<span class="op">=</span>px.colors.qualitative.Set3, hover_data<span class="op">=</span>[<span class="st">'gdp'</span>])</span>
+<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a><span class="co"># change the plot size</span></span>
+<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>fig.update_layout(width<span class="op">=</span><span class="dv">800</span>, height<span class="op">=</span><span class="dv">800</span>, plot_bgcolor<span class="op">=</span><span class="st">'#f7ebdb'</span>, font_color<span class="op">=</span><span class="st">'black'</span>, </span>
+<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>                  font<span class="op">=</span><span class="bu">dict</span>(family<span class="op">=</span><span class="st">"Montserrat, sans-serif"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['Oceania' 'Europe' 'North America' 'South America' 'Middle East' 'Asia']</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>/var/folders/x3/1m329lgj7sl4y1pqkx_p_f_80000gn/T/ipykernel_91582/1934199500.py:9: FutureWarning:
 
 DataFrame.applymap has been deprecated. Use DataFrame.map instead.
 </code></pre>
