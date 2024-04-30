@@ -16,6 +16,8 @@ a great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 201
 ## Healthcare
 
 ```{r echo=FALSE}
+#| warning: false
+
 library(tidyverse)
 library(ggplot2)
 library(lubridate)
@@ -28,6 +30,8 @@ library(Ecfun)
 ```
 
 ```{r echo=FALSE}
+#| warning: false
+
 hospital_beds <- read.csv("Data_cleaned/hospital_beds.csv")
 hospital_beds <- hospital_beds %>%
   filter(Year=='2021') %>%
@@ -44,6 +48,7 @@ data.p1$gdp<-as.numeric(data.p1$gdp)
 ```
 
 ```{r echo=FALSE}
+#| warning: false
 
 p1 <- ggplot() + geom_point(data=data.p1, aes(x=Value, y=gdp),color="#57d4ff") + theme_minimal() + theme(panel.background = element_rect(fill="#faf0e6"), plot.background=element_rect(fill="#faf0e6"), plot.title = element_text(family = "PT Sans Narrow"), axis.title = element_text(family = "PT Sans Narrow"), axis.text = element_text(family = "PT Sans Narrow"))+ labs(title="GDP Compared to Number of Hospital Beds Available in 2021", x="Hospital Beds per Capita", y="GDP") 
 
@@ -51,6 +56,8 @@ ggplotly(p1)
 ```
 
 ```{r echo=FALSE}
+#| warning: false
+
 hospital_bed2 <- read.csv("Data_cleaned/hospital_beds.csv")
 gdp2 <- read.csv("Data_Uncleaned/GDP.csv")
 hospital_stay <- read.csv("Data_cleaned/hospital_stay.csv")
@@ -82,6 +89,10 @@ data.p2$stay<-as.numeric(data.p2$stay)
 ```
 
 ```{r echo=FALSE}
+#| warning: false
+
+library(Ecdat)
+library(Ecfun)
 
 shared_data <- SharedData$new(data.p2)
 
@@ -109,6 +120,7 @@ subplot(p2, p3, titleX=T, shareY=T) %>%
 ```
 
 ```{r echo=FALSE}
+#| warning: false
 
 barchart1 <- data.p2 %>%
   filter(Year.1==2021) %>%
@@ -143,7 +155,9 @@ This spending is beneficial for numerous reasons. First, family benefits help fa
 
 Based on the chart below you can see countries like Iceland, Estonia and Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working.
 
-```{python}
+```{python echo=FALSE }
+#| warning: false
+
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
@@ -227,56 +241,66 @@ fig = go.Figure(data=go.Scatter(
         sizemin=4,
         color=average_data['color']
     ),
-text = average_data.apply(lambda row: f"Country: {row['Country']}<br>Avg Social Spending: {row['s_s']:.4f}<br>Avg GDP: {row['gdp']:.4f}<br>Ratio: {row['s_s_gdp_ratio']:.4f}", axis=1)
+    text = average_data.apply(lambda row: f"Country: {row['Country']}<br>Avg Social Spending: {row['s_s']:.4f}<br>Avg GDP: {row['gdp']:.4f}<br>Ratio: {row['s_s_gdp_ratio']:.4f}", axis=1)
 ))
 
 fig.update_layout(
     title='Percentage of GDP Spent on Family Benefits',
     xaxis=dict(title='Average Percentage of GDP spent on Family Benefits'),  
     yaxis=dict(title='Average GDP (Billions) Over 20 Years'),
+    plot_bgcolor='#faf0e6', 
+    font_color='black',
+    xaxis_title_font=dict(family='PT Sans Narrow'),
+    xaxis_tickfont=dict(family='PT Sans Narrow'),
+    yaxis_title_font=dict(family='PT Sans Narrow'),
+    yaxis_tickfont=dict(family='PT Sans Narrow'),
     showlegend=False
 )
 
-fig.update_layout(plot_bgcolor='#faf0e6', font_color='black')
-
-fig.update_layout(
-    xaxis=dict(
-        title='Average Percentage of GDP spent on Family Benefits',
-        title_font=dict(family='PT Sans Narrow'),
-        tickfont=dict(family='PT Sans Narrow')
-    ),
-    yaxis=dict(
-        title='Average GDP Over 20 Years (Billions)',
-        title_font=dict(family='PT Sans Narrow'),
-        tickfont=dict(family='PT Sans Narrow')
-    ),
-    showlegend=False,
-    plot_bgcolor='#faf0e6',
-    font_color='black'
-)
-
-fig.update_layout(title_font_family='PT Sans Narrow')
-
-
-
 ```
 
-There is a drastic difference between countries like Iceland and the United States. **Add table here**
+There is a drastic difference between countries like Iceland and the United States.
 
-\*\* Add takeaways
+```{python echo=FALSE}
+#| warning: false
+
+import plotly.graph_objects as go
+
+# Formatting function to round to three decimal places
+def format_decimal(value):
+    return f'{value:.3f}'
+
+fig = go.Figure(data=[go.Table(
+    header=dict(values=['<b>Country</b>', '<b>Average Percentage Spent</b>', '<b>Average GDP (Billions)</b>', '<b>Percentage of Average Social Spending out of GDP (%)</b>'],
+                line_color='black',
+                fill_color='#f7ebdb',
+                align='left'),
+    cells=dict(values=[average_data['Country'],
+                       average_data['s_s'].apply(format_decimal),
+                       average_data['gdp'].apply(format_decimal),
+                       average_data['s_s_gdp_ratio'].apply(format_decimal)],
+               line_color='black',
+               fill_color='white',
+               align='left'))
+])
+
+fig.update_layout(width=800, height=500)
+```
+
 
 ## Education
 
 Education plays a large role in the overall well-being of a Country. Specifically, the quantity of people with the education uquivalent of a Bachelors and Masters can help improve a country in regard to economic development, workforce skills and global competitiveness. Within the chart below, the OECD countries have been separated by their specific regions. The bar chart illustrates the total number of people with Bachelor Degrees and Masters Degrees by Region.
 
-```{python}
+```{python echo=FALSE}
+#| warning: false
+
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
 
 # Read / Cleaning the data
 education = pd.read_csv("Data_cleaned/education.csv", header=1)
-education
 
 education = education.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
@@ -292,7 +316,6 @@ education_gdp = pd.merge(gdp_2001, education, on=['Country'])
 
 
 education_gdp = education_gdp[['Country', 'Bachelor’s or equivalent level', 'Master’s or equivalent level', 'gdp']]
-education_gdp
 
 country_to_region = {
     'USA': 'North America',
@@ -346,11 +369,9 @@ import pandas as pd
 import plotly.express as px
 average_gdp_by_region = education_gdp.groupby('Region')['gdp'].mean().reset_index()
 sum_by_region = education_gdp.groupby('Region')[['Bachelor’s or equivalent level', 'Master’s or equivalent level']].sum()
-sum_by_region
+
 test  = pd.merge(average_gdp_by_region,sum_by_region, on='Region' )
 
-import pandas as pd
-import plotly.express as px
 
 melted_test = test.melt(id_vars=['Region', 'gdp'], value_vars=['Bachelor’s or equivalent level', 'Master’s or equivalent level'],
                         var_name='Education Level', value_name='Total Count')
@@ -363,7 +384,7 @@ fig = px.bar(melted_test, x='Region', y='Total Count', color='Education Level',
              base='gdp',
              color_discrete_map={'Bachelor’s or equivalent level': '#84cf63', 
                                  'Master’s or equivalent level': '#3d682b'}
-                                 )
+             )
 
 fig.update_traces(customdata=melted_test[['Education Level', 'gdp']], 
                   width=[0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
@@ -372,9 +393,7 @@ fig.update_traces(customdata=melted_test[['Education Level', 'gdp']],
                       'Education Level: %{customdata[0]}',
                       'Total Count: %{y:,.0f}',
                       'Average GDP: $%{customdata[1]:,.2f} (Billions)'
-                  ]))
-
-fig.update_layout(plot_bgcolor='#faf0e6', font_color='black')
+                  ]));
 
 fig.add_annotation(
     x="North America",
@@ -382,8 +401,7 @@ fig.add_annotation(
     text="Highest Average GDP",
     xanchor="center",
     arrowhead=2
-)
-
+);
 
 fig.add_annotation(
     x="South America",
@@ -391,11 +409,12 @@ fig.add_annotation(
     text="Lowest Average GDP",
     xanchor="center",
     arrowhead=2
-)
-
-fig.update_layout(title_font_family='PT Sans Narrow')
+);
 
 fig.update_layout(
+    plot_bgcolor='#faf0e6',
+    font_color='black',
+    title_font_family='PT Sans Narrow',
     xaxis=dict(
         title_font=dict(family='PT Sans Narrow'),
         tickfont=dict(family='PT Sans Narrow')
@@ -403,17 +422,14 @@ fig.update_layout(
     yaxis=dict(
         title_font=dict(family='PT Sans Narrow'),
         tickfont=dict(family='PT Sans Narrow')
-    )
-)
-
-fig.update_layout(
+    ),
     legend=dict(
         font=dict(family='PT Sans Narrow')
     )
-)
-
+);
 
 fig.show()
+
 ```
 
 ## Life Expectancy
