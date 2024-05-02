@@ -420,18 +420,23 @@ education = pd.read_csv("Data_cleaned/education.csv", header=1)
 
 education = education.applymap(lambda x: x.strip() if isinstance(x, str) else x)
 
-gdp = pd.read_csv("Data_cleaned/gdp.csv")
-gdp['gdp'] = gdp['gdp'].replace('..', np.nan)
-gdp['gdp'] = gdp['gdp'].str.replace(',', '')
-gdp['gdp'] = gdp['gdp'].astype(float)
-gdp[['Country', 'Year']] = gdp['Country_Year'].str.split('_', expand=True)
-gdp_2001 = gdp[gdp['Year'] == '2021']
+#gdp = pd.read_csv("Data_cleaned/gdp.csv")
+#dp['gdp'] = gdp['gdp'].str.replace(',', '')
+#gdp['gdp'] = gdp['gdp'].astype(float)
+#gdp[['Country', 'Year']] = gdp['Country_Year'].str.split('_', expand=True)
+#gdp_2001 = gdp[gdp['Year'] == '2021']
 
-education_gdp = pd.merge(gdp_2001, education, on=['Country'])
+#education_gdp = pd.merge(gdp_2001, education, on=['Country'])
+
+gdp_new = pd.read_csv("/Users/kendallgilbert/DSAN5200-Project/5200 Project/Data_cleaned/gdppc.csv", header=0)
+
+gdp_new = gdp_new[gdp_new['Year'] == 2021]
+
+education_gdp = pd.merge(gdp_new, education, on=['Country'])
+education_gdp.rename(columns = {'GDP Per Capita (USD)':'gdp'}, inplace = True) 
 
 
-
-education_gdp = education_gdp[['Country', 'Bachelor’s or equivalent level', 'Master’s or equivalent level', 'gdp']]
+#education_gdp = education_gdp[['Country', 'Bachelor’s or equivalent level', 'Master’s or equivalent level', 'gdp']]
 
 country_to_region = {
     'USA': 'North America',
@@ -483,6 +488,7 @@ unique_regions = education_gdp['Region'].unique()
 
 import pandas as pd
 import plotly.express as px
+
 average_gdp_by_region = education_gdp.groupby('Region')['gdp'].mean().reset_index()
 sum_by_region = education_gdp.groupby('Region')[['Bachelor’s or equivalent level', 'Master’s or equivalent level']].sum()
 
@@ -508,7 +514,7 @@ fig.update_traces(customdata=melted_test[['Education Level', 'gdp']],
                       'Region: %{x}',
                       'Education Level: %{customdata[0]}',
                       'Total Count: %{y:,.0f}',
-                      'Average GDP: $%{customdata[1]:,.2f} (Billions)'
+                      'Average GDP Per Capita: $%{customdata[1]:,.2f}'
                   ]));
 
 fig.add_annotation(
