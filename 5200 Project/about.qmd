@@ -703,65 +703,62 @@ GDP is often used as a measurement not only of a country’s well being, but mor
 
 ```{python echo=FALSE}
 #| warning: false
+#| warning: false
 import pandas as pd 
-import numpy as np
-import seaborn as sns
-import plotly.express as px
 import seaborn as sns
 import matplotlib.pyplot as plt
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 from matplotlib import font_manager
 
+# Load data
 gdp = pd.read_csv('Data_cleaned/gdp.csv')
 gdp = gdp.drop(columns=['Unnamed: 0'])
-
 gdp[['Country', 'Year']] = gdp['Country_Year'].str.split('_', expand=True)
-gdp = gdp.drop(columns = ['Country_Year'])
+gdp = gdp.drop(columns=['Country_Year'])
 
 wealth = pd.read_csv('Data_Uncleaned/wealth.csv')
-wealth = wealth.drop(columns = ['POPULATION', 'Population', 'Flag Codes', 'Flags'])
+wealth = wealth.drop(columns=['POPULATION', 'Population', 'Flag Codes', 'Flags'])
 
+# Extract poverty data
 poverty = wealth[wealth['VAR'] == 'T6AC6'].reset_index()
-poverty  =poverty.drop(columns =['index', 'VAR', 'Variable', 'TIME'])
-poverty.rename(columns = {'Value' : 'Share of Individuals with net Wealth less than 25% of the poverty line', 'Time' : 'Year'}, inplace = True)
+poverty = poverty.drop(columns=['index', 'VAR', 'Variable', 'TIME'])
+poverty.rename(columns={'Value': 'Share of Individuals with net Wealth less than 25% of the poverty line', 'Time': 'Year'}, inplace=True)
 
+# Convert data types
 poverty['Year'] = poverty['Year'].astype(int)
 gdp['Year'] = gdp['Year'].astype(int)
-merged = pd.merge(poverty, gdp, on = ['Country', 'Year'], how = 'inner')
-merged = merged.sort_values(by = 'Year', ascending= True)
 
+# Merge datasets
+merged = pd.merge(poverty, gdp, on=['Country', 'Year'], how='inner')
+merged = merged.sort_values(by='Year', ascending=True)
+
+# Convert GDP to numeric and clean formatting
 merged['gdp'] = merged['gdp'].str.replace(',', '')
-
-# Convert the 'gdp' column to numeric data type
 merged['gdp'] = pd.to_numeric(merged['gdp'])
 
-dp_counts = merged['Year'].value_counts()
+# Filter data for visualization
 vis = merged[merged['Year'] == 2014]
-
 vis.to_csv('Data_cleaned/wealth_dist.csv')
-
 
 # Load the font
 font_path = "/Users/kendallgilbert/DSAN5200-Project/5200 Project/PT_Sans_Narrow/PTSansNarrow-Regular.ttf"  # Update with the path to your font file
 font_prop = font_manager.FontProperties(fname=font_path)
 
+# Plot
 plt.figure(figsize=(10, 6))
 ax1 = sns.barplot(data=vis, x="Country", y="Share of Individuals with net Wealth less than 25% of the poverty line", color='#ffcc5c')
 
 ax2 = ax1.twinx()
 ax2.plot(vis['Country'], vis['gdp'], color='#ff6f69', marker='o', linestyle='-')  
 
-ax1.set_xlabel('Country', fontproperties=font_prop)  # Setting font for x-label
-ax1.set_ylabel('Share of Individuals with net Wealth < 25% of Poverty Line', fontproperties=font_prop)  # Setting font for y-label
+# Setting font properties
+for ax in [ax1, ax2]:
+    ax.set_xlabel('Country', fontproperties=font_prop)
+    ax.set_ylabel('Share of Individuals with net Wealth < 25% of Poverty Line', fontproperties=font_prop)
+    ax.set_facecolor('#faf0e6')
+    ax.set_xticklabels(vis['Country'], rotation=45, ha='right', fontproperties=font_prop)
+ax2.set_ylabel('GDP (Billion USD)', color='#ff6f69', fontproperties=font_prop)
 
-ax2.set_ylabel('GDP (Billion USD)', color='#ff6f69', fontproperties=font_prop)  # Setting font for y-label of ax2
-
-ax1.set_facecolor('#faf0e6')
-
-ax1.set_xticklabels(vis['Country'], rotation=45, ha='right', fontproperties=font_prop)  # Setting font for x-tick labels
-
-plt.title('Share of Individuals with net Wealth less than 25% of the poverty line and GDP by Country in 2014', fontproperties=font_prop)  # Setting font for title
+plt.title('Share of Individuals with net Wealth less than 25% of the poverty line and GDP by Country in 2014', fontproperties=font_prop)
 plt.tight_layout()
 plt.show()
 ```
