@@ -526,9 +526,7 @@ As can be seen from the plot, there seems to be a consistent correlation between
 
 ```{python echo=FALSE}
 #| warning: false
-
-{python echo=FALSE}
-#| warning: false
+#| fig-cap: "Figure 5: Life Expectancy by Country"
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -708,6 +706,8 @@ GDP is often used as a measurement not only of a country’s well being, but mor
 
 ```{python echo=FALSE}
 #| warning: false
+#| fig-cap: "Figure 6: Share of Individuals with net Wealth less than 25% of the poverty line"
+
 import pandas as pd 
 import numpy as np
 import seaborn as sns
