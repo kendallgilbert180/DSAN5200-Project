@@ -525,6 +525,9 @@ As can be seen from the plot, there seems to be a consistent correlation between
 ```{python echo=FALSE}
 #| warning: false
 
+{python echo=FALSE}
+#| warning: false
+
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -589,7 +592,7 @@ def update_plot(year):
     # Layout settings
     fig.update_layout(
         title=f'Life Expectancy in {year} (Sorted by GDP Per Capita)',
-        xaxis_title='Country',
+        xaxis_title='Country (Sorted by GDP Per Capita)',
         yaxis_title='Life Expectancy',
         xaxis_tickangle=-45,
         yaxis=dict(range=[60, 90]),
@@ -646,7 +649,7 @@ for year in years:
         x=year_df['Country'],
         y=year_df['Moving Average'],
         mode='lines',
-        name=f'{year} Life Expectancy Moving Average',
+        name=f'{year} Life Expectancy Moving Average (5 Countries)',
         line=dict(color='red', width=2),
         hovertemplate='<b>Country:</b> %{x}<br>' +
                       '<b>Year:</b> %{customdata[0]}<br>' +
@@ -676,10 +679,10 @@ fig.update_layout(
             yanchor="top"
         ),
     ],
-    xaxis_title='Country',
+    xaxis_title='Country (Sorted by GDP Per Capita)',
     yaxis_title='Life Expectancy',
     xaxis_tickangle=-45,
-    yaxis=dict(range=y_axis_range), 
+    yaxis=dict(range=y_axis_range),
     barmode='group',
     legend=dict(x=0, y=1.0, bgcolor='#faf0e6'),
     bargap=0.15,
@@ -692,7 +695,7 @@ fig.update_layout(
     title=f"Life Expectancy in {years[0]} (Sorted by GDP Per Capita)"
 );
 
-fig.update_layout(font_color='black')
+fig.update_layout(font_color='black') 
 
 ```
 
