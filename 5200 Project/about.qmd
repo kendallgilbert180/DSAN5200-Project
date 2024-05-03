@@ -13,89 +13,6 @@ a great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 201
 
 ## GDP
 
-```{python echo=FALSE}
-#| warning: false
-#| fig-cap: "Figure 1:"
-
-
-import pandas as pd
-import plotly.graph_objects as go
-import numpy as np
-
-# Read / Cleaning the data
-education = pd.read_csv("Data_cleaned/education.csv", header=1)
-
-education = education.applymap(lambda x: x.strip() if isinstance(x, str) else x)
-
-gdp = pd.read_csv("Data_cleaned/gdp.csv")
-gdp['gdp'] = gdp['gdp'].replace('..', np.nan)
-gdp['gdp'] = gdp['gdp'].str.replace(',', '')
-gdp['gdp'] = gdp['gdp'].astype(float)
-gdp[['Country', 'Year']] = gdp['Country_Year'].str.split('_', expand=True)
-gdp_2001 = gdp[gdp['Year'] == '2021']
-
-education_gdp = pd.merge(gdp_2001, education, on=['Country'])
-
-
-
-education_gdp = education_gdp[['Country', 'Bachelor’s or equivalent level', 'Master’s or equivalent level', 'gdp']]
-
-country_to_region = {
-    'USA': 'North America',
-    'Canada': 'North America',
-    'Germany': 'Europe',
-    'France': 'Europe',
-    'Australia': 'Oceania',
-    'Austria': 'Europe',
-    'Belgium': 'Europe',
-    'Chile': 'South America',
-    'Colombia': 'South America',
-    'Costa Rica': 'North America',
-    'Czechia': 'Europe',
-    'Denmark': 'Europe',
-    'Estonia': 'Europe',
-    'Finland': 'Europe',
-    'Greece': 'Europe',
-    'Hungary': 'Europe',
-    'Iceland': 'Europe',
-    'Ireland': 'Europe',
-    'Israel': 'Middle East',
-    'Italy': 'Europe',
-    'Japan': 'Asia',
-    'Korea': 'Asia',
-    'Latvia': 'Europe',
-    'Lithuania': 'Europe',
-    'Luxembourg': 'Europe',
-    'Mexico': 'North America',
-    'Netherlands': 'Europe',
-    'New Zealand': 'Oceania',
-    'Norway': 'Europe',
-    'Poland': 'Europe',
-    'Portugal': 'Europe',
-    'Slovak Republic': 'Europe',
-    'Slovenia': 'Europe',
-    'Spain': 'Europe',
-    'Sweden': 'Europe',
-    'Switzerland': 'Europe',
-    'Turkey': 'Europe',
-    'United Kingdom': 'Europe',
-    'United States': 'North America',
-    'Türkiye': 'Middle East'
-    
-}
-
-
-education_gdp['Region'] = education_gdp['Country'].map(country_to_region)
-unique_regions = education_gdp['Region'].unique()
-
-# plot a nested pie chart using plotly
-import plotly.express as px
-fig = px.sunburst(education_gdp, path=['Region','Country'], values='gdp', names = 'Country', title='GDP',color_discrete_sequence=px.colors.qualitative.Set3, hover_data=['gdp'])
-# change the plot size
-fig.update_layout(width=500, height=500, plot_bgcolor='#f5f5dc', font_color='black', 
-                  font=dict(family="Montserrat, sans-serif"))
-
-```
 
 ## Healthcare
 
@@ -155,6 +72,7 @@ The highest beds ratio is in Austria where they have 6.91 beds per 1000 inhabita
 
 ```{r echo=FALSE}
 #| warning: false
+#| fig-cap: "Figure 1:"
 
 hospital_bed2 <- read.csv("Data_cleaned/hospital_beds.csv")
 gdp2 <- read.csv("Data_Uncleaned/GDP.csv")
@@ -374,7 +292,7 @@ fig = go.Figure(data=go.Scatter(
         color=average_data['color']
     ),
     text=average_data.apply(lambda row: f"Country: {row['Country']}<br>Avg Social Spending: {format_decimal(row['s_s'])}<br>Avg GDP: {format_decimal(row['gdp'])}", axis=1)
-))
+));
 
 # Update layout
 fig.update_layout(
@@ -397,7 +315,7 @@ fig.update_layout(
     ),
     plot_bgcolor='#faf0e6',
     font_color='black'
-)
+);
 
 # Add fake traces for legend
 for region, color in region_color_map.items():
@@ -413,9 +331,9 @@ for region, color in region_color_map.items():
         name=region
     )
     fig.add_trace(fake_trace)
-
-fig.show()
 ```
+
+Based of the scatter plot there is a small positive correlation between GDP per Capita and Percentage of Social Spending. I can be inferred that European countries spend more on family benefits. Countries that do especially well include Luxembourg and Norway. 
 
 ```{python echo=FALSE}
 #| warning: false
@@ -441,8 +359,6 @@ fig = go.Figure(data=[go.Table(
 ])
 
 fig.update_layout(width=800, height=500)
-fig.show()
-
 ```
 
 ## Education
@@ -779,13 +695,268 @@ fig.update_layout(
 
 fig.update_layout(font_color='black')
 
-fig.show()
 ```
 
-## Population
 
 ## Wealth
 
+GDP is often used as a measurement not only of a country’s well being, but more specifically of its economic prosperity. While it is certainly a useful tool, GDP fails to take numerous other economic factors into consideration. GDP per capita is sometimes used as a method to adjust this metric, taking into account the overall population of a country. However, it fails to integrate the actual wealth distribution within a country. GDP per capita can be very skewed in a financially oligarchic society wherein an elite minority control the vast majority of wealth. As such, we sought to explore a more grassroots approach to quantifying the economic wellbeing of a country. We hypothesized that using a ground up method rather than a top down, or even mean wise approach would lead to significantly different results in terms of economic prosperity. We therefore elected to compare GDP with the percentage of the population with a net worth of less than 25% of that nation’s poverty line. Our goal was to investigate how a metric of extreme poverty would relate to the overall GDP of the country. 
+
+```{python echo=FALSE}
+#| warning: false
+import pandas as pd 
+import numpy as np
+import seaborn as sns
+import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from matplotlib import font_manager
+
+gdp = pd.read_csv('Data_cleaned/gdp.csv')
+gdp = gdp.drop(columns=['Unnamed: 0'])
+
+gdp[['Country', 'Year']] = gdp['Country_Year'].str.split('_', expand=True)
+gdp = gdp.drop(columns = ['Country_Year'])
+
+wealth = pd.read_csv('Data_Uncleaned/wealth.csv')
+wealth = wealth.drop(columns = ['POPULATION', 'Population', 'Flag Codes', 'Flags'])
+
+poverty = wealth[wealth['VAR'] == 'T6AC6'].reset_index()
+poverty  =poverty.drop(columns =['index', 'VAR', 'Variable', 'TIME'])
+poverty.rename(columns = {'Value' : 'Share of Individuals with net Wealth less than 25% of the poverty line', 'Time' : 'Year'}, inplace = True)
+
+poverty['Year'] = poverty['Year'].astype(int)
+gdp['Year'] = gdp['Year'].astype(int)
+merged = pd.merge(poverty, gdp, on = ['Country', 'Year'], how = 'inner')
+merged = merged.sort_values(by = 'Year', ascending= True)
+
+merged['gdp'] = merged['gdp'].str.replace(',', '')
+
+# Convert the 'gdp' column to numeric data type
+merged['gdp'] = pd.to_numeric(merged['gdp'])
+
+dp_counts = merged['Year'].value_counts()
+vis = merged[merged['Year'] == 2014]
+
+vis.to_csv('Data_cleaned/wealth_dist.csv')
+
+
+# Load the font
+font_path = "/Users/kendallgilbert/DSAN5200-Project/5200 Project/PT_Sans_Narrow/PTSansNarrow-Regular.ttf"  # Update with the path to your font file
+font_prop = font_manager.FontProperties(fname=font_path)
+
+plt.figure(figsize=(10, 6))
+ax1 = sns.barplot(data=vis, x="Country", y="Share of Individuals with net Wealth less than 25% of the poverty line", color='#ffcc5c')
+
+ax2 = ax1.twinx()
+ax2.plot(vis['Country'], vis['gdp'], color='#ff6f69', marker='o', linestyle='-')  
+
+ax1.set_xlabel('Country', fontproperties=font_prop)  # Setting font for x-label
+ax1.set_ylabel('Share of Individuals with net Wealth < 25% of Poverty Line', fontproperties=font_prop)  # Setting font for y-label
+
+ax2.set_ylabel('GDP (Billion USD)', color='#ff6f69', fontproperties=font_prop)  # Setting font for y-label of ax2
+
+ax1.set_facecolor('#faf0e6')
+
+ax1.set_xticklabels(vis['Country'], rotation=45, ha='right', fontproperties=font_prop)  # Setting font for x-tick labels
+
+plt.title('Share of Individuals with net Wealth less than 25% of the poverty line and GDP by Country in 2014', fontproperties=font_prop)  # Setting font for title
+plt.tight_layout()
+plt.show()
+```
+
+In this figure, our chosen metric for extreme poverty is on the y axis with GDP on the x axis. This sample is from 2014, and encompasses countries that reported the former. The goal of this figure is to illustrate how different these metrics can be, with high extreme poverty in countries with high GDP and low extreme poverty in countries with relatively smaller GDP. The data shown in this graph would suggest that GDP is not a good overall indicator of economic prosperity, as wealth distribution is radically different in countries with very similar GDPs. Exploration of a more in-depth quantification of a country’s well being in terms of financial success is therefore imperative. 
+
 ## Innovative Chart
+
+
+In this figure we sought to explore a potentially more holistic model for a country’s overall prosperity. Each metric was individually explored in relation to gdp. These quantifiers represent a category encompassing a balanced variety of other metrics within that field. Here, they are simply our chosen indicators for the purposes of creating a mock up. Each field is normalized on a 0-1 with the highest measurement in each category being 1. We hope to show the viewer a more holistic analysis of a country’s overall wellbeing. In the future, we could experiment with higher dimensionality as well as using area to create an empirical score for each country. Additionally, this measurement would be year to year. This instance is for 2014, as it was the year with the most available data for our wealth distribution index. The wealth distribution index is one minus the normalized proportion of the population with net wealth of less than twenty five percent of the poverty line. 
+
+```{python echo=FALSE}
+#| warning: false
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from sklearn.preprocessing import MinMaxScaler
+
+csfont = {'fontname':'Pt Sans Narrow'}
+hfont = {'fontname':'Pt Sans Narrow'}
+
+wealth = pd.read_csv('Data_cleaned/wealth_dist.csv')
+wealth = wealth.drop(columns = ['Unnamed: 0'])
+
+life = pd.read_csv('Data_cleaned/lifeexpectancy.csv')
+life = life[life['Year']==2014].reset_index()
+life = life.drop(columns=['index', 'Female', 'Male', "GDP Per Capita (USD)"])
+
+healthcare = pd.read_csv('Data_cleaned/hospital_beds.csv')
+healthcare = healthcare[healthcare['Year'] == 2014].reset_index()
+healthcare = healthcare.drop(columns=['Unnamed: 0', 'index'])
+
+education = pd.read_csv('Data_cleaned/education.csv')
+education = education.drop(index=0)
+
+education.columns = ['Country', 'Bachelor’s or equivalent level', 'Master’s or equivalent level']
+
+education = education.reset_index(drop=True)
+countries_to_keep = ['Latvia', 'France', 'Greece', 'Luxembourg', 'Italy', 'Hungary', 'Australia', 'Poland', 'Spain', 'Germany', 'Slovak Republic', 'Slovenia', 'Belgium', 'Austria', 'Japan', 'New Zealand']
+
+education = education[education['Country'].isin(countries_to_keep)].reset_index()
+education = education.drop(columns=['index', 'Master’s or equivalent level'])
+
+
+population_data = {
+    'Country': ['Latvia', 'France', 'Greece', 'Luxembourg', 'Italy', 'Hungary', 'Australia', 'Poland', 'Spain', 'Germany', 'Slovak Republic', 'Slovenia', 'Belgium', 'Austria', 'Japan', 'New Zealand'],
+    'Population': [2000000, 66000000, 10800000, 550000, 60700000, 9900000, 23700000, 38400000, 46700000, 80700000, 5400000, 2060000, 11300000, 8540000, 127000000, 4500000]
+}
+
+
+df_population = pd.DataFrame(population_data)
+
+education = pd.merge(education, df_population, on='Country')
+education['Bachelor’s Degrees Per Capita'] = education['Bachelor’s or equivalent level'].astype(int) / education['Population'].astype(int)
+education = education.drop(columns=['Bachelor’s or equivalent level', 'Population'])
+
+merged = pd.merge(wealth, life, on='Country', how='inner')
+merged = pd.merge(merged, healthcare, on = 'Country', how = 'inner')
+merged = pd.merge(merged, education, on = 'Country', how='inner')
+merged['Hospital Beds per 1,000 People'] = merged['beds']
+merged = merged.drop(columns=['COUNTRY','Year_x', 'Year_y', 'beds', 'Year'])
+
+
+columns_to_normalize = merged.columns[1:]
+
+
+scaler = MinMaxScaler()
+
+merged_normalized = merged.copy()
+merged_normalized[columns_to_normalize] = scaler.fit_transform(merged_normalized[columns_to_normalize])
+
+merged_normalized['Wealth Distribution'] = 1-(merged_normalized['Share of Individuals with net Wealth less than 25% of the poverty line'])
+merged_normalized = merged_normalized.drop(columns=['Share of Individuals with net Wealth less than 25% of the poverty line'])
+
+BG = "#D3D3D3"
+BLUE = "#2a475e"
+GREY70 = "#b3b3b3"
+GREY_LIGHT = "#f2efe8"
+COLORS = [
+    "#FF5A5F", "#FF6E64", "#FF8270", "#FF956F",
+    "#FFAA7E", "#FFC08D", "#FFD49B", "#FFE8AA",
+    "#FFB400", "#FFC600", "#FFD800", "#FFE900",
+    "#FFF100", "#FFFB00", "#007A87", "#008AB0"
+]
+
+COUNTRY = merged_normalized["Country"].values.tolist()
+
+
+VARIABLES = merged_normalized.columns.tolist()[1:]
+VARIABLES_N = len(VARIABLES)
+
+ANGLES = [n / VARIABLES_N * 2 * np.pi for n in range(VARIABLES_N)]
+ANGLES += ANGLES[:1]
+
+X_VERTICAL_TICK_PADDING = 5
+X_HORIZONTAL_TICK_PADDING = 50    
+
+HANGLES = np.linspace(0, 2 * np.pi)
+
+
+H0 = np.zeros(len(HANGLES))
+H1 = np.ones(len(HANGLES)) * 0.5
+H2 = np.ones(len(HANGLES))
+
+fig = plt.figure(figsize=(18, 10))
+ax = fig.add_subplot(111, polar=True)
+
+fig.patch.set_facecolor(BG)
+ax.set_facecolor(BG)
+
+ax.set_theta_offset(np.pi / 2)
+ax.set_theta_direction(-1)
+
+#ax.set_ylim(-0.1, 1.05)
+
+for idx, country in enumerate(COUNTRY):
+    values = merged_normalized.iloc[idx].drop("Country").values.tolist()
+    values += values[:1]
+    ax.plot(ANGLES, values, c=COLORS[idx], linewidth=4, label=country)
+    ax.scatter(ANGLES, values, s=160, c=COLORS[idx], zorder=10)
+ax.set_xticks(ANGLES[:-1])
+ax.set_xticklabels(VARIABLES, size=14, **csfont)
+
+
+#ax.set_yticks([])
+ax.yaxis.grid(False)
+ax.xaxis.grid(False)
+
+
+ax.spines["start"].set_color("none")
+ax.spines["polar"].set_color("none")
+
+ax.plot(HANGLES, H0, ls=(0, (6, 6)), c=GREY70)
+ax.plot(HANGLES, H1, ls=(0, (6, 6)), c=COLORS[2])
+ax.plot(HANGLES, H2, ls=(0, (6, 6)), c=GREY70)
+
+
+ax.fill(HANGLES, H2, GREY_LIGHT)
+
+ax.plot([0, 0], [0, 1], lw=2, c=GREY70)
+ax.plot([np.pi, np.pi], [0, 1], lw=2, c=GREY70)
+ax.plot([np.pi / 2, np.pi / 2], [0, 1], lw=2, c=GREY70)
+ax.plot([-np.pi / 2, -np.pi / 2], [0, 1], lw=2, c=GREY70)
+
+PAD = 0.05
+ax.text(-0.4, 0 + PAD, "0%", size=16)
+ax.text(-0.4, 0.5 + PAD, "50%", size=16)
+ax.text(-0.4, 1 + PAD, "100%", size=16)
+
+import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+
+# Your existing code for creating legend handles
+handles = [
+    Line2D([], [], c=color, lw=3, marker="o", markersize=8, label=country)
+    for country, color in zip(COUNTRY, COLORS)
+]
+
+# Creating legend with custom handles
+legend = ax.legend(
+    handles=handles,
+    loc=(-.3, 0),
+    labelspacing=1.3,
+    frameon=False
+)
+
+# Setting font size for legend text
+for text in legend.get_texts():
+    text.set_fontsize(10)
+
+# Adjusting x-axis tick padding
+XTICKS = ax.xaxis.get_major_ticks()
+for tick in XTICKS[0::2]:
+    tick.set_pad(X_VERTICAL_TICK_PADDING)
+
+for tick in XTICKS[1::2]:
+    tick.set_pad(X_HORIZONTAL_TICK_PADDING)
+
+# Setting up figure title
+fig.suptitle(
+    "Model Holistic Review of Country Wellbeing",
+    x=0.17,
+    y=1,
+    ha="left",
+    fontsize=32,
+    weight="bold"
+)
+
+# Setting background color to beige
+fig.patch.set_facecolor('#f7ebdb')
+
+fig
+```
+
 
 ## Conclusion
