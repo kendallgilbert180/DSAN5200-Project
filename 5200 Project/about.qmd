@@ -188,6 +188,7 @@ This spending is beneficial for numerous reasons. First, family benefits help fa
 Based on the chart below you can see countries like Luxembourg, Denmark and Norway dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working.
 
 ```{python echo=FALSE }
+#| fig-cap: "Figure 4: Social Spending on Family Benefits"
 #| warning: false
 import pandas as pd
 import plotly.graph_objects as go
@@ -363,6 +364,7 @@ Education plays a large role in the overall well-being of a Country. Specificall
 
 ```{python echo=FALSE}
 #| warning: false
+#| fig-cap: "Figure 5: Education Count by Region"
 
 import pandas as pd
 import plotly.graph_objects as go
