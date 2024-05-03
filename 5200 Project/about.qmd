@@ -69,7 +69,6 @@ The highest beds ratio is in Austria where they have 6.91 beds per 1000 inhabita
 
 ```{r echo=FALSE}
 #| warning: false
-#| fig-cap: "Figure 1:"
 
 hospital_bed2 <- read.csv("Data_cleaned/hospital_beds.csv")
 gdp2 <- read.csv("Data_Uncleaned/GDP.csv")
@@ -126,6 +125,8 @@ data.p2$cervical_cancer_screening<-as.numeric(data.p2$cervical_cancer_screening)
 
 ```{r echo=FALSE}
 #| warning: false
+#| fig-cap: "Figure 2: Correlation of Healthcare System Indicators and GDP"
+
 
 correlation_mat<-data.p2 %>%
   na.omit() %>%
@@ -148,7 +149,7 @@ The strongest correlation between healthcare indicators was between ratio of hos
 
 ```{r echo=FALSE}
 #| warning: false
-
+#| fig-cap: "Figure 3: Beds Per Capita Based on Hospital Stay Length and GDP"
 library(Ecdat)
 library(Ecfun)
 
