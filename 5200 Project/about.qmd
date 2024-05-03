@@ -7,12 +7,9 @@ code-fold: true
 
 How can we quantify the wellbeing of the individual in various countries? Are some countries more prosperous than others? Can they even be compared? All too often, data scientists fall into the trap of Operationalization. By mis-equating metrics with reality, it is easy to oversimplify extremely complicated and nuanced situations. For example, it is often claimed that policing makes communities safer - but how exactly can we measure safety? At the national scale, this becomes even more complicated. Can countries with billions of people be compared to ones with several hundred thousand? There are countless potential avenues of measurement; Yet it is all too easy to fall into the trap of measuring a countrie's prosperity with the classical metric: GDP. In this exploration, we will conduct a preliminary investigation into other potential ways to quantify a country's wellbeing, ultimately suggesting that steps be taken to make this process more holistic
 
-This analysis will dive deeper into factors regarding healthcare, social spending on family benefits, wealth distribution and population trends (life expectancy, birth rates) in an attempt to quantify a country's wellbeing.
+This analysis will dive deeper into factors regarding healthcare, social spending on family benefits and wealth distributionin an attempt to quantify a country's wellbeing. This project will walk through a visual narrative with the end result being a radar chart that has the ability to show a countries overall well-being. 
 
-a great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn't Add Up. The New Press.
-
-## GDP
-
+A great reference: Stiglitz, Joseph E., Amartya Sen, and Jean-Paul Fitoussi. 2010. Mismeasuring Our Lives: Why GDP Doesn't Add Up. The New Press.
 
 ## Healthcare
 
@@ -182,13 +179,13 @@ subplot(p2, p3, titleX=T, shareY=T) %>%
 
 The side by side comparison of number of hospital beds as it relates to both GDP and average stay length shows that number of beds, while not associated with GDP, is associated with other characteristics of the healthcare system. GDP not being strongly associated with indicators of strong health care systems does mean that GDP might not be a great holistic measure of a country's success. But number of hospital beds could be used as one factor in a more holistic approach to evaluating countries.
 
-## Social Spending
+## Social Spending on Family Benefits
 
 Another important factor that can determine the well-being of a country is social spending in regards to family benefits. OECD countries spend on average 2.29% of GDP on family benefits, with large variations across countries. These variations are evident as illustrated in the bubble chart below.
 
 This spending is beneficial for numerous reasons. First, family benefits help families meet their basic needs. These benefits provide financial assistance that can help with the costs of having a family. By helping families meet their basic needs, social spending on family benefits can improve over wellbeing. Furthermore, spending money on family benefits can directly impact child well-being, healthier work-life balance for parents and economic growth. By supporting families and enabling parents to remain in or return to the workforce, these policies contribute to overall economic stability and prosperity.
 
-Based on the chart below you can see countries like Iceland, Estonia and Luxembourg dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working.
+Based on the chart below you can see countries like Luxembourg, Denmark and Norway dedicate a large percentage of their GDP towards family benefits. Countries like this are notorious for prioritizing well-being and it is proven to be working.
 
 ```{python echo=FALSE }
 #| warning: false
@@ -332,12 +329,11 @@ for region, color in region_color_map.items():
     )
     fig.add_trace(fake_trace)
 ```
-
-Based of the scatter plot there is a small positive correlation between GDP per Capita and Percentage of Social Spending. I can be inferred that European countries spend more on family benefits. Countries that do especially well include Luxembourg and Norway. 
+Based of the scatter plot there is a small positive correlation between GDP per Capita and Percentage of Social Spending. It can be inferred that European countries spend more on family benefits. Countries that do especially well include Luxembourg and Norway. Below is a table created to show the relation between countries, their GDP Per Capita and the Average Percentage Spent towards family benefits. 
 
 ```{python echo=FALSE}
 #| warning: false
-
+#| fig-cap: "Table 1: Average Pecentage Spent Towards Family Benefits"
 import plotly.graph_objects as go
 
 # Formatting function to round to three decimal places
@@ -508,8 +504,8 @@ fig.update_layout(
 );
 
 fig.show()
-
 ```
+From this bar graph you can see that North America has the highest count of Bachelor's Degrees whereas Europe has the highest count of Master's Degrees. These results are interesting because if you look at the average GDP Per Capita throughout the past 20 years, the United States has the fourth highest GDP per Capita and Europe has the highest. This allows us to infer that even if GDP is not the highest, the education graduation rate for higher level degrees is not dependant on GDP. 
 
 ## Life Expectancy
 
