@@ -703,7 +703,7 @@ GDP is often used as a measurement not only of a country’s well being, but mor
 
 ```{python echo=FALSE}
 #| warning: false
-#| warning: false
+
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
