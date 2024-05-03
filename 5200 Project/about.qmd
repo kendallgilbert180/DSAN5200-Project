@@ -469,7 +469,7 @@ fig.update_traces(customdata=melted_test[['Education Level', 'gdp']],
                   width=[0.5, 0.5, 0.5, 0.5, 0.5, 0.5],
                   hovertemplate='<br>'.join([
                       'Region: %{x}',
-                      'Education Level: %{customdata[0]}',
+                      
                       'Total Count: %{y:,.0f}',
                       'Average GDP Per Capita: $%{customdata[1]:,.2f}'
                   ]));
